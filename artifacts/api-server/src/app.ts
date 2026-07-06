@@ -38,7 +38,7 @@ app.use("/api", router);
 
 // In production, serve the built frontend static files
 if (process.env.NODE_ENV === "production") {
-  const frontendDist = path.resolve(__dirname, "../../investa-farm/dist");
+  const frontendDist = path.resolve(__dirname, "../../investa-farm/dist/public");
   app.use(express.static(frontendDist));
   // Fallback: serve index.html for any unmatched route (handles direct page loads)
   app.use((_req, res) => {
