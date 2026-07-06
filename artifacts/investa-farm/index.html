@@ -209,135 +209,6 @@
         </div>
       </section>
 
-      <!-- ===== LIVE FARM LISTINGS + MAP ===== -->
-      <section id="live-farms" class="section live-farms-section reveal">
-        <div class="container">
-          <div class="section-head">
-            <span class="section-kicker live-kicker">🟢 Live Now</span>
-            <h2>Primary Market — Active Farm Listings</h2>
-            <p>Browse real farms currently open for investment. Each listing is verified, geolocated, and funded by investors through the Investa Farm platform.</p>
-          </div>
-
-          <!-- Live Activity Ticker -->
-          <div class="market-ticker-wrap">
-            <div class="ticker-label">
-              <span class="ticker-dot"></span>
-              LIVE ACTIVITY
-            </div>
-            <div class="market-ticker">
-              <div class="ticker-track" id="tickerTrack">
-                <span class="ticker-event">👤 <strong>James K.</strong> invested KES 500 in GoldenBeans Farm · Kiambu</span>
-                <span class="ticker-sep">·</span>
-                <span class="ticker-event">📈 Avocado share price <em class="up">+12%</em> this week · Nakuru</span>
-                <span class="ticker-sep">·</span>
-                <span class="ticker-event">🌾 Nyeri Tea Estate funding: <strong>54% → 57%</strong> in 2h</span>
-                <span class="ticker-sep">·</span>
-                <span class="ticker-event">👤 <strong>Amina W.</strong> listed 200 shares on the Secondary Market</span>
-                <span class="ticker-sep">·</span>
-                <span class="ticker-event">💰 FreshRoots Tomatoes — <em class="up">+18% return</em> paid out to 43 investors</span>
-                <span class="ticker-sep">·</span>
-                <span class="ticker-event">👤 <strong>Peter O.</strong> invested KES 1,200 in Meru French Beans</span>
-                <span class="ticker-sep">·</span>
-                <span class="ticker-event">📊 Coastal Cashew: 75% funded — <em class="up">25% shares left!</em></span>
-                <span class="ticker-sep">·</span>
-                <span class="ticker-event">🥑 AgriWeal Avocado · Secondary Market bid: KES 170/share</span>
-                <span class="ticker-sep">·</span>
-                <span class="ticker-event">👤 <strong>Sarah N.</strong> bought 50 shares · Full Season exit · +28%</span>
-                <span class="ticker-sep">·</span>
-                <span class="ticker-event">☕ Taita Hills Coffee — new batch listed · KES 130/share</span>
-                <span class="ticker-sep">·</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="map-market-layout">
-            <!-- Primary Market Sidebar -->
-            <div class="primary-market-sidebar">
-              <div class="pm-header">
-                <span class="pm-title">Primary Market</span>
-                <span class="pm-sub">Invest in real farms. Earn real returns.</span>
-              </div>
-              <div class="pm-categories">
-                <button class="pm-cat active" data-cat="all">All Farms</button>
-                <button class="pm-cat" data-cat="stable">Stable Income</button>
-                <button class="pm-cat" data-cat="export">Export &amp; Premium</button>
-                <button class="pm-cat" data-cat="growth">High Growth</button>
-              </div>
-              <div class="pm-table-head">
-                <span>Crop / Farm</span>
-                <span>ROI</span>
-                <span>Shares</span>
-                <span>Risk</span>
-                <span></span>
-              </div>
-              <div class="pm-listings" id="pmListings">
-                <div class="pm-row" data-cat="export">
-                  <div class="pm-crop-info">
-                    <div class="pm-crop-img avocado"></div>
-                    <div><strong>Avocado Farm #93</strong><small>Avocado · Nakuru</small></div>
-                  </div>
-                  <span class="pm-roi">28%<small>per season</small></span>
-                  <span class="pm-shares">3,420</span>
-                  <span class="pm-risk moderate"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span>Moderate</span>
-                  <a href="https://app.investafarm.com" class="pm-buy-btn" target="_blank">BUY</a>
-                </div>
-                <div class="pm-row" data-cat="stable">
-                  <div class="pm-crop-info">
-                    <div class="pm-crop-img coffee"></div>
-                    <div><strong>Coffee Farm #77</strong><small>Coffee · Taita Hills</small></div>
-                  </div>
-                  <span class="pm-roi">25%<small>per season</small></span>
-                  <span class="pm-shares">2,150</span>
-                  <span class="pm-risk moderate"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span>Moderate</span>
-                  <a href="https://app.investafarm.com" class="pm-buy-btn" target="_blank">BUY</a>
-                </div>
-                <div class="pm-row" data-cat="growth">
-                  <div class="pm-crop-info">
-                    <div class="pm-crop-img macadamia"></div>
-                    <div><strong>Macadamia Farm #31</strong><small>Macadamia · Kirinyaga</small></div>
-                  </div>
-                  <span class="pm-roi">30%<small>per season</small></span>
-                  <span class="pm-shares">1,780</span>
-                  <span class="pm-risk mod-high"><span></span><span></span><span></span><span></span><span class="dim"></span>Mod-High</span>
-                  <a href="https://app.investafarm.com" class="pm-buy-btn" target="_blank">BUY</a>
-                </div>
-                <div class="pm-row" data-cat="stable">
-                  <div class="pm-crop-info">
-                    <div class="pm-crop-img tea"></div>
-                    <div><strong>Tea Farm #54</strong><small>Tea · Nyeri</small></div>
-                  </div>
-                  <span class="pm-roi">22%<small>per season</small></span>
-                  <span class="pm-shares">4,800</span>
-                  <span class="pm-risk low-mod"><span></span><span></span><span class="dim"></span><span class="dim"></span><span class="dim"></span>Low-Mod</span>
-                  <a href="https://app.investafarm.com" class="pm-buy-btn" target="_blank">BUY</a>
-                </div>
-                <div class="pm-row" data-cat="export">
-                  <div class="pm-crop-info">
-                    <div class="pm-crop-img beans"></div>
-                    <div><strong>Export Beans #14</strong><small>French Beans · Meru</small></div>
-                  </div>
-                  <span class="pm-roi">24%<small>per season</small></span>
-                  <span class="pm-shares">3,050</span>
-                  <span class="pm-risk moderate"><span></span><span></span><span></span><span class="dim"></span><span class="dim"></span>Moderate</span>
-                  <a href="https://app.investafarm.com" class="pm-buy-btn" target="_blank">BUY</a>
-                </div>
-                <div class="pm-row" data-cat="growth">
-                  <div class="pm-crop-info">
-                    <div class="pm-crop-img sunflower"></div>
-                    <div><strong>Sunflower Farm #9</strong><small>Sunflower · Laikipia</small></div>
-                  </div>
-                  <span class="pm-roi">20%<small>per season</small></span>
-                  <span class="pm-shares">2,200</span>
-                  <span class="pm-risk low-mod"><span></span><span></span><span class="dim"></span><span class="dim"></span><span class="dim"></span>Low-Mod</span>
-                  <a href="https://app.investafarm.com" class="pm-buy-btn" target="_blank">BUY</a>
-                </div>
-              </div>
-              <a href="https://app.investafarm.com" class="pm-view-all" target="_blank" rel="noopener">View All Farm Listings →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- ===== PARTNERS ===== -->
       <section id="partners" class="section partners-section reveal">
         <div class="container">
@@ -347,73 +218,23 @@
             <p>We work with leading financial, technology, accelerator, and agricultural organisations across Kenya, the UK, and globally.</p>
           </div>
 
-          <div class="partners-stats-row">
-            <div class="partners-stat"><strong>25+</strong><span>Ecosystem partners</span></div>
-            <div class="partners-stat"><strong>7</strong><span>Global accelerators</span></div>
-            <div class="partners-stat"><strong>3</strong><span>Countries served</span></div>
-          </div>
-
-          <div class="partners-group">
-            <span class="partners-group-label">🚀 Accelerators &amp; Innovation Programmes</span>
-            <div class="partners-marquee-wrap">
-              <div class="marquee-track marquee-track-left">
-                <div class="partner-logo-item"><img src="logo-microsoft.png" alt="Microsoft for Startups Founders Hub" /></div>
-                <div class="partner-logo-item"><img src="logo-mastercard.png" alt="Mastercard Foundation Scholars Program" /></div>
-                <div class="partner-logo-item"><img src="logo-startupbootcamp.png" alt="Startupbootcamp" /></div>
-                <div class="partner-logo-item"><img src="logo-katapult.jpeg" alt="Katapult Africa" /></div>
-                <div class="partner-logo-item"><img src="logo-ygap.jpeg" alt="ygap Kenya" /></div>
-                <div class="partner-logo-item"><img src="logo-mest.jpeg" alt="MEST Africa Challenge" /></div>
-                <div class="partner-logo-item"><img src="logo-africarena.png" alt="AfricArena" /></div>
-                <div class="partner-logo-item"><img src="logo-futuremakers.jpeg" alt="Futuremakers by Standard Chartered" /></div>
-                <div class="partner-logo-item"><img src="logo-ibiz.png" alt="iBiz Africa Incubation Centre — Strathmore University" /></div>
-                <div class="partner-logo-item"><img src="logo-alx.jpeg" alt="ALX Ventures" /></div>
-                <div class="partner-logo-item"><img src="logo-talenteum.png" alt="Talenteum" /></div>
-                <!-- duplicate set for seamless loop -->
-                <div class="partner-logo-item"><img src="logo-microsoft.png" alt="Microsoft for Startups Founders Hub" /></div>
-                <div class="partner-logo-item"><img src="logo-mastercard.png" alt="Mastercard Foundation Scholars Program" /></div>
-                <div class="partner-logo-item"><img src="logo-startupbootcamp.png" alt="Startupbootcamp" /></div>
-                <div class="partner-logo-item"><img src="logo-katapult.jpeg" alt="Katapult Africa" /></div>
-                <div class="partner-logo-item"><img src="logo-ygap.jpeg" alt="ygap Kenya" /></div>
-                <div class="partner-logo-item"><img src="logo-mest.jpeg" alt="MEST Africa Challenge" /></div>
-                <div class="partner-logo-item"><img src="logo-africarena.png" alt="AfricArena" /></div>
-                <div class="partner-logo-item"><img src="logo-futuremakers.jpeg" alt="Futuremakers by Standard Chartered" /></div>
-                <div class="partner-logo-item"><img src="logo-ibiz.png" alt="iBiz Africa Incubation Centre — Strathmore University" /></div>
-                <div class="partner-logo-item"><img src="logo-alx.jpeg" alt="ALX Ventures" /></div>
-                <div class="partner-logo-item"><img src="logo-talenteum.png" alt="Talenteum" /></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="partners-group">
-            <span class="partners-group-label">🌱 Agricultural &amp; Trade Partners</span>
-            <div class="partners-marquee-wrap">
-              <div class="marquee-track marquee-track-right">
-                <div class="partner-logo-item"><img src="logo-ishamba.jpeg" alt="iShamba" /></div>
-                <div class="partner-logo-item"><img src="logo-terralima.jpeg" alt="TerraLima" /></div>
-                <div class="partner-logo-item"><img src="logo-kncci.png" alt="KNCCI — Kenya National Chamber of Commerce & Industry" /></div>
-                <div class="partner-logo-item"><img src="logo-plugmtaani.png" alt="Plug Mtaani" /></div>
-                <!-- duplicate set for seamless loop -->
-                <div class="partner-logo-item"><img src="logo-ishamba.jpeg" alt="iShamba" /></div>
-                <div class="partner-logo-item"><img src="logo-terralima.jpeg" alt="TerraLima" /></div>
-                <div class="partner-logo-item"><img src="logo-kncci.png" alt="KNCCI — Kenya National Chamber of Commerce & Industry" /></div>
-                <div class="partner-logo-item"><img src="logo-plugmtaani.png" alt="Plug Mtaani" /></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="partners-group">
-            <span class="partners-group-label">💳 Payments &amp; Transactions</span>
-            <div class="partners-marquee-wrap">
-              <div class="marquee-track marquee-track-left">
-                <div class="partner-logo-item partner-txt"><strong>M-Pesa</strong><small>Payments</small></div>
-                <div class="partner-logo-item partner-txt"><strong>Paystack</strong><small>Transactions</small></div>
-                <div class="partner-logo-item"><img src="logo-pesira.png" alt="Pesira" /></div>
-                <!-- duplicate set for seamless loop -->
-                <div class="partner-logo-item partner-txt"><strong>M-Pesa</strong><small>Payments</small></div>
-                <div class="partner-logo-item partner-txt"><strong>Paystack</strong><small>Transactions</small></div>
-                <div class="partner-logo-item"><img src="logo-pesira.png" alt="Pesira" /></div>
-              </div>
-            </div>
+          <div class="partners-logo-grid">
+            <div class="partner-logo-item"><img src="logo-microsoft.png" alt="Microsoft for Startups" /></div>
+            <div class="partner-logo-item"><img src="logo-mastercard.png" alt="Mastercard Foundation" /></div>
+            <div class="partner-logo-item"><img src="logo-startupbootcamp.png" alt="Startupbootcamp" /></div>
+            <div class="partner-logo-item"><img src="logo-katapult.jpeg" alt="Katapult Africa" /></div>
+            <div class="partner-logo-item"><img src="logo-ygap.jpeg" alt="ygap Kenya" /></div>
+            <div class="partner-logo-item"><img src="logo-mest.jpeg" alt="MEST Africa" /></div>
+            <div class="partner-logo-item"><img src="logo-africarena.png" alt="AfricArena" /></div>
+            <div class="partner-logo-item"><img src="logo-futuremakers.jpeg" alt="Futuremakers" /></div>
+            <div class="partner-logo-item"><img src="logo-ibiz.png" alt="iBiz Africa" /></div>
+            <div class="partner-logo-item"><img src="logo-alx.jpeg" alt="ALX Ventures" /></div>
+            <div class="partner-logo-item"><img src="logo-talenteum.png" alt="Talenteum" /></div>
+            <div class="partner-logo-item"><img src="logo-ishamba.jpeg" alt="iShamba" /></div>
+            <div class="partner-logo-item"><img src="logo-terralima.jpeg" alt="TerraLima" /></div>
+            <div class="partner-logo-item"><img src="logo-kncci.png" alt="KNCCI" /></div>
+            <div class="partner-logo-item"><img src="logo-plugmtaani.png" alt="Plug Mtaani" /></div>
+            <div class="partner-logo-item"><img src="logo-pesira.png" alt="Pesira" /></div>
           </div>
 
           <p class="partners-cta-text">Interested in partnering with Investa Farm?
@@ -454,30 +275,6 @@
               <span class="proof-author">David Kamau</span>
               <span class="proof-role">Individual Investor · London, UK</span>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== PWA CTA ===== -->
-      <section class="section pwa-cta reveal">
-        <div class="blur-bg"></div>
-        <div class="container pwa-cta-inner">
-          <div class="pwa-cta-copy">
-            <h2>Access Investa Farm from any device — no app store required</h2>
-            <p>Investa Farm is a Progressive Web App (PWA). Open it in your mobile browser, tap "Add to Home Screen", and it works just like a native app.</p>
-            <div class="pwa-steps">
-              <div class="pwa-step"><strong>1.</strong> Open <em>app.investafarm.com</em> in your browser</div>
-              <div class="pwa-step"><strong>2.</strong> Tap the Share or Menu icon</div>
-              <div class="pwa-step"><strong>3.</strong> Tap "Add to Home Screen"</div>
-              <div class="pwa-step"><strong>4.</strong> Done — launch like any app!</div>
-            </div>
-            <div class="pwa-cta-btns">
-              <a href="https://app.investafarm.com" class="primary-btn pwa-big-btn" target="_blank" rel="noopener">Open Investa Farm App →</a>
-              <a href="app.html" class="outline-btn">See App Walkthrough</a>
-            </div>
-          </div>
-          <div class="pwa-cta-screens">
-            <img src="img-app-steps.jpeg" alt="Investa Farm app investment steps" class="app-steps-img" />
           </div>
         </div>
       </section>

@@ -1930,6 +1930,14 @@ p { margin: 0; color: var(--muted); line-height: 1.68; }
   text-align: center;
 }
 
+.partners-logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto 2rem;
+}
+
 .partners-group { margin-bottom: 2rem; }
 .partners-group:last-of-type { margin-bottom: 1.75rem; }
 
