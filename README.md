@@ -122,54 +122,51 @@ Without `GROQ_API_KEY` the chat widget falls back to a rules-based response engi
 
 ## Deploying to Render
 
-This project deploys as **two Render services**: a static site (frontend) and a web service (API). Both can be created from one GitHub repo.
+The repo includes a `render.yaml` that auto-configures everything. Render will detect it automatically when you connect the repo — **no manual service configuration needed**.
 
-### Step 1 — Deploy the API server (Web Service)
+The setup is a **single Web Service**: Express builds and serves both the API and the compiled frontend from one process, so there's no cross-service routing to worry about.
 
-1. Go to [render.com/new](https://render.com/new) → **Web Service**
-2. Connect your GitHub repo
-3. Configure the service:
+### One-time setup
 
-| Setting | Value |
+1. Go to [render.com/new](https://render.com/new) → **Blueprint**
+2. Connect your GitHub repo (`Investa-Farm/investafarm`)
+3. Render reads `render.yaml` and pre-fills everything — click **Apply**
+4. Under **Environment** for the `investa-farm` service, paste in your secret values for the keys marked `sync: false`:
+
+| Key | Where to get it |
 |---|---|
-| **Root directory** | `artifacts/api-server` |
-| **Runtime** | Node |
-| **Build command** | `npm install -g pnpm && pnpm install --frozen-lockfile && pnpm run build` |
-| **Start command** | `node dist/index.mjs` |
-| **Instance type** | Free (or Starter for production) |
+| `GROQ_API_KEY` | [console.groq.com](https://console.groq.com) |
+| `ADMIN_PASSWORD` | Choose any password — used for `/admin.html` |
+| `PAYSTACK_SECRET_KEY` / `PUBLIC_KEY` | Paystack dashboard |
+| `STRIPE_SECRET_KEY` / `PUBLIC_KEY` | Stripe dashboard |
+| `RESEND_API_KEY` | Resend dashboard |
+| `DARAJA_CONSUMER_KEY` / `SECRET` | Safaricom Developer Portal |
+| `VAPID_PUBLIC_KEY` / `PRIVATE_KEY` | Run `npx web-push generate-vapid-keys` locally |
+| `CIRCLE_API_KEY` | Circle dashboard |
+| `GNEWS_API_KEY` / `MEDIASTACK_API_KEY` | Their respective developer portals |
+| `STELLAR_ISSUER_PUBLIC_KEY` | Stellar account |
 
-4. Under **Environment Variables**, add all the keys from the table above (especially `GROQ_API_KEY` and `ADMIN_PASSWORD`).
-5. Note the service URL Render assigns — e.g. `https://investa-farm-api.onrender.com`. You'll need it in Step 2.
+5. Click **Save** → Render kicks off the first deploy automatically
 
-### Step 2 — Deploy the frontend (Static Site)
+### What the build does
 
-1. Go to **render.com/new** → **Static Site**
-2. Connect the same GitHub repo
-3. Configure the service:
+```
+npm install -g pnpm
+pnpm install --frozen-lockfile
+pnpm --filter @workspace/investa-farm run build   # Vite → artifacts/investa-farm/dist/
+pnpm --filter @workspace/api-server  run build   # esbuild → artifacts/api-server/dist/
+node artifacts/api-server/dist/index.mjs          # serves everything
+```
 
-| Setting | Value |
-|---|---|
-| **Root directory** | `artifacts/investa-farm` |
-| **Build command** | `npm install -g pnpm && pnpm install --frozen-lockfile && pnpm run build` |
-| **Publish directory** | `dist` |
+Express handles `/api/*` routes first; everything else is served from the compiled Vite output. No second service required.
 
-4. Add a **Redirect/Rewrite rule** so `/api/*` calls reach your API server:
+### Custom domain (optional)
 
-| Source | Destination | Action |
-|---|---|---|
-| `/api/*` | `https://investa-farm-api.onrender.com/api/:splat` | Rewrite (200) |
-
-   *(Replace the destination URL with your actual API service URL from Step 1)*
-
-5. Click **Deploy** — the site will be live at a `*.onrender.com` URL within a few minutes.
-
-### Step 3 — Custom domain (optional)
-
-In each Render service → **Settings → Custom Domains**, add your domain and follow the DNS instructions. Point your apex domain (`investafarm.com`) to the static site and a subdomain (`api.investafarm.com`) to the API service if preferred.
+Render service → **Settings → Custom Domains** → add `investafarm.com`. Follow the DNS instructions (usually an A record or CNAME pointing to Render's IP).
 
 ### Auto-deploys
 
-Every `git push` to `main` triggers a new deployment on both services automatically.
+Every `git push` to `master` triggers a new deployment automatically.
 
 ---
 
