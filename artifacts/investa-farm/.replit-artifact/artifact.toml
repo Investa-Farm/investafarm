@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Investa Farm"
+version = "1.0.0"
+id = "artifacts/investa-farm"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19899
+
+[services.development]
+run = "pnpm --filter @workspace/investa-farm run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/investa-farm", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/investa-farm/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19899"
+BASE_PATH = "/"

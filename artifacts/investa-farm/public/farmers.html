@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Farmers | Investa Farm</title>
+    <meta name="description" content="Join Investa Farm as a farmer partner. We provide full capital, inputs, and hands-on support. You earn 35–55% revenue share at harvest. No loans — real partnership." />
+    <meta name="theme-color" content="#0f8e5e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+
+    <!-- ===== CHATBOT ===== -->
+    <div class="chatbot-fab" id="chatFab" title="Chat with Investa Farm Bot">
+      <span class="fab-pulse-ring"></span>
+      <span class="fab-pulse-ring fab-pulse-ring-2"></span>
+      <div class="fab-inner">
+        <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm Bot" class="chat-fab-logo" />
+      </div>
+      <span class="fab-notification-dot"></span>
+    </div>
+
+    <div class="chatbot-panel" id="chatPanel">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <div class="chat-bot-avatar">
+            <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm Bot" />
+            <span class="avatar-online-ring"></span>
+          </div>
+          <div class="chat-header-text">
+            <strong>Investa Farm Bot</strong>
+            <small><span class="online-dot-small"></span>Online · AI-powered · Replies instantly</small>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button class="chat-new-btn" id="chatNew" title="New Chat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            New
+          </button>
+          <button class="chat-close" id="chatClose" title="Close">✕</button>
+        </div>
+      </div>
+      <div class="chat-suggestions" id="chatSuggestions">
+        <button class="suggestion-chip" data-q="How do farmers earn revenue share?">🌾 Revenue share</button>
+        <button class="suggestion-chip" data-q="How do I join Investa Farm as a farmer?">📝 How to join</button>
+        <button class="suggestion-chip" data-q="What support does Investa Farm provide farmers?">🤝 Farmer support</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">
+          <div class="msg-bubble">Hi! 👋 I'm the <strong>Investa Farm Bot</strong>. Ask me anything about our farmer partnership, revenue share, how we support farmers, or how to join. 🌾</div>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask anything about Investa Farm…" autocomplete="off" />
+        <button id="chatSend" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="brand">
+          <a href="index.html"><img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm logo" /></a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Open menu" id="menuToggle">&#9776;</button>
+        <div class="nav-links" id="navLinks">
+          <a href="investors.html">For Investors</a>
+          <a href="farmers.html" class="nav-active">For Farmers</a>
+          <a href="app.html">App</a>
+          <a href="cooperatives.html">Cooperatives</a>
+          <a href="team.html">Team</a>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" target="_blank" rel="noopener" class="community-nav-link">💬 Community</a>
+        </div>
+        <div class="nav-cta">
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="community-top-btn" target="_blank" rel="noopener">💬 Join Community</a>
+          <a href="https://app.investafarm.com" class="primary-btn" target="_blank" rel="noopener">Get Started</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===== FARMER HERO ===== -->
+    <section class="inner-hero farmer-hero section">
+      <div class="container inner-hero-content">
+        <div class="inner-hero-copy">
+          <span class="eyebrow">🌾 For Kenyan Farmers</span>
+          <h1>We fund your farm.<br>You earn your <span class="hero-highlight-alt">fair share.</span></h1>
+          <p>Forget the bank loans that take half your profits. Investa Farm covers 100% of your production costs — seeds, inputs, equipment, and expert support — and you earn 35–55% of the harvest revenue. No debt. No risk. Just farming.</p>
+          <div class="farmer-earn-strip">
+            <div class="earn-box">
+              <strong>35–55%</strong>
+              <span>Revenue Share</span>
+              <small>Paid to your M-Pesa</small>
+            </div>
+            <div class="earn-box">
+              <strong>0%</strong>
+              <span>Loans or Debt</span>
+              <small>100% risk-free farming</small>
+            </div>
+            <div class="earn-box">
+              <strong>100%</strong>
+              <span>Capital Provided</span>
+              <small>Seeds · inputs · labour</small>
+            </div>
+          </div>
+          <a href="https://app.investafarm.com" class="primary-btn farmer-btn" target="_blank" rel="noopener">Apply as a Farmer Partner →</a>
+        </div>
+        <div class="inner-hero-visual farmer-app-showcase">
+          <div class="app-phone-stack">
+            <div class="app-phone-frame app-phone-back">
+              <img src="appscreens/app-farmer-profile.png" alt="Farmer profile on Investa Farm app" class="phone-screenshot" />
+            </div>
+            <div class="app-phone-frame app-phone-front">
+              <img src="appscreens/app-farmer-dash.png" alt="Farmer dashboard on Investa Farm app" class="phone-screenshot" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+
+      <!-- ===== HOW IT WORKS FOR FARMERS ===== -->
+      <section class="section how-it-works farmer-how reveal">
+        <div class="container-narrow">
+          <div class="section-head" style="text-align:center">
+            <span class="section-kicker">How It Works</span>
+            <h2>We own the process. You operate the land.</h2>
+            <p>Investa Farm manages the entire production cycle — from raising investor capital to connecting harvests to verified offtakers. You partner with us and earn your revenue share at harvest.</p>
+          </div>
+          <div class="farmer-how-grid">
+            <div class="fhg-step">
+              <div class="fhg-num farmer-num">1</div>
+              <div class="fhg-body">
+                <h3>Register Your Farm Group</h3>
+                <p>Register as an individual farmer or farmer group. Complete your KYC — Farm Report, National ID, Land Title, and Group Certificate where applicable.</p>
+                <a href="https://app.investafarm.com" target="_blank" rel="noopener" class="fhg-cta">Start Registration →</a>
+              </div>
+            </div>
+            <div class="fhg-step">
+              <div class="fhg-num farmer-num">2</div>
+              <div class="fhg-body">
+                <h3>Investa Farm Provides Full Capital</h3>
+                <p>We fund 100% of your production costs — seeds, fertilisers, equipment, labour, and irrigation. No loans, no debt. We invest in your farm together.</p>
+              </div>
+            </div>
+            <div class="fhg-step">
+              <div class="fhg-num farmer-num">3</div>
+              <div class="fhg-body">
+                <h3>Hands-On Agricultural Support</h3>
+                <p>Our team provides expert agronomic support throughout the season — field visits, crop monitoring, pest management, and progress reporting to investors.</p>
+              </div>
+            </div>
+            <div class="fhg-step">
+              <div class="fhg-num farmer-num">4</div>
+              <div class="fhg-body">
+                <h3>Offtakers Ready at Harvest</h3>
+                <p>We connect your harvest to pre-arranged, verified offtakers — buyers committed to purchasing your produce at competitive market prices. No more selling at a loss.</p>
+              </div>
+            </div>
+            <div class="fhg-step">
+              <div class="fhg-num farmer-num">5</div>
+              <div class="fhg-body">
+                <h3>Revenue Shared at Harvest</h3>
+                <p>After harvest and sale, revenue is split transparently. You earn 35–55% depending on crop type, paid directly to your M-Pesa account.</p>
+              </div>
+            </div>
+            <div class="fhg-step">
+              <div class="fhg-num farmer-num">6</div>
+              <div class="fhg-body">
+                <h3>Build a Track Record &amp; Grow</h3>
+                <p>Each season your farming record grows on our platform. Access larger partnerships, cooperative opportunities, and connect with other farmers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== REVENUE SHARE TABLE ===== -->
+      <section class="section revenue-share-section reveal">
+        <div class="container-narrow">
+          <div class="section-head" style="text-align:center">
+            <span class="section-kicker">Farmer Earnings</span>
+            <h2>Revenue share by crop type</h2>
+            <p>Your earnings are based on harvest revenue — not a fixed loan repayment. Higher-value crops attract higher revenue shares.</p>
+          </div>
+
+          <!-- Unique visual earnings table -->
+          <div class="farmer-earnings-table">
+            <div class="fet-row fet-header">
+              <span>Crop</span>
+              <span>Your Share</span>
+              <span>Share Bar (out of 55%)</span>
+              <span>Season</span>
+              <span>Category</span>
+            </div>
+
+            <div class="fet-row">
+              <div class="fet-crop">
+                <span class="fet-emoji">🥑</span>
+                <div><strong>Avocado</strong><small>Export Premium</small></div>
+              </div>
+              <div class="fet-pct fet-pct-top">48–55%</div>
+              <div class="fet-bar-col">
+                <div class="fet-bar">
+                  <div class="fet-fill fet-fill-top" style="width:100%"></div>
+                </div>
+                <small>up to 55%</small>
+              </div>
+              <div class="fet-season">6–8 months</div>
+              <div class="fet-cat"><span class="fct-badge fct-export">🌍 Export Premium</span></div>
+            </div>
+
+            <div class="fet-row fet-highlight">
+              <div class="fet-crop">
+                <span class="fet-emoji">🌰</span>
+                <div><strong>Macadamia</strong><small>Premium Crop</small></div>
+              </div>
+              <div class="fet-pct fet-pct-top">50–55%</div>
+              <div class="fet-bar-col">
+                <div class="fet-bar">
+                  <div class="fet-fill fet-fill-top" style="width:100%"></div>
+                </div>
+                <small>up to 55% — highest share</small>
+              </div>
+              <div class="fet-season">8–12 months</div>
+              <div class="fet-cat"><span class="fct-badge fct-premium">⭐ Premium Crop</span></div>
+            </div>
+
+            <div class="fet-row">
+              <div class="fet-crop">
+                <span class="fet-emoji">☕</span>
+                <div><strong>Coffee</strong><small>Export Premium</small></div>
+              </div>
+              <div class="fet-pct fet-pct-top">45–52%</div>
+              <div class="fet-bar-col">
+                <div class="fet-bar">
+                  <div class="fet-fill fet-fill-top" style="width:94%"></div>
+                </div>
+                <small>up to 52%</small>
+              </div>
+              <div class="fet-season">6–9 months</div>
+              <div class="fet-cat"><span class="fct-badge fct-export">🌍 Export Premium</span></div>
+            </div>
+
+            <div class="fet-row">
+              <div class="fet-crop">
+                <span class="fet-emoji">🫘</span>
+                <div><strong>French Beans</strong><small>Export Crop</small></div>
+              </div>
+              <div class="fet-pct">42–48%</div>
+              <div class="fet-bar-col">
+                <div class="fet-bar">
+                  <div class="fet-fill" style="width:87%"></div>
+                </div>
+                <small>up to 48%</small>
+              </div>
+              <div class="fet-season">3–4 months</div>
+              <div class="fet-cat"><span class="fct-badge fct-export">🌍 Export Crop</span></div>
+            </div>
+
+            <div class="fet-row">
+              <div class="fet-crop">
+                <span class="fet-emoji">🍵</span>
+                <div><strong>Tea</strong><small>Stable Income</small></div>
+              </div>
+              <div class="fet-pct">40–46%</div>
+              <div class="fet-bar-col">
+                <div class="fet-bar">
+                  <div class="fet-fill" style="width:83%"></div>
+                </div>
+                <small>up to 46%</small>
+              </div>
+              <div class="fet-season">Continuous</div>
+              <div class="fet-cat"><span class="fct-badge fct-stable">📊 Stable Income</span></div>
+            </div>
+
+            <div class="fet-row">
+              <div class="fet-crop">
+                <span class="fet-emoji">🍅</span>
+                <div><strong>Tomatoes</strong><small>Balanced Growth</small></div>
+              </div>
+              <div class="fet-pct">38–44%</div>
+              <div class="fet-bar-col">
+                <div class="fet-bar">
+                  <div class="fet-fill" style="width:80%"></div>
+                </div>
+                <small>up to 44%</small>
+              </div>
+              <div class="fet-season">3–4 months</div>
+              <div class="fet-cat"><span class="fct-badge fct-balanced">⚖️ Balanced</span></div>
+            </div>
+
+            <div class="fet-row">
+              <div class="fet-crop">
+                <span class="fet-emoji">🌽</span>
+                <div><strong>Maize</strong><small>Stable Income</small></div>
+              </div>
+              <div class="fet-pct">35–40%</div>
+              <div class="fet-bar-col">
+                <div class="fet-bar">
+                  <div class="fet-fill" style="width:72%"></div>
+                </div>
+                <small>up to 40%</small>
+              </div>
+              <div class="fet-season">3–4 months</div>
+              <div class="fet-cat"><span class="fct-badge fct-stable">📊 Stable Income</span></div>
+            </div>
+
+            <div class="fet-row">
+              <div class="fet-crop">
+                <span class="fet-emoji">🌾</span>
+                <div><strong>Rice</strong><small>Stable Income</small></div>
+              </div>
+              <div class="fet-pct">35–42%</div>
+              <div class="fet-bar-col">
+                <div class="fet-bar">
+                  <div class="fet-fill" style="width:76%"></div>
+                </div>
+                <small>up to 42%</small>
+              </div>
+              <div class="fet-season">4–5 months</div>
+              <div class="fet-cat"><span class="fct-badge fct-stable">📊 Stable Income</span></div>
+            </div>
+          </div>
+
+          <p class="revenue-note">* Revenue share percentages are indicative and confirmed at onboarding based on crop, region, and production scale.</p>
+        </div>
+      </section>
+
+      <!-- ===== WHAT WE PROVIDE ===== -->
+      <section class="section farmer-support-section reveal">
+        <div class="container-narrow">
+          <div class="section-head" style="text-align:center">
+            <span class="section-kicker">Full Production Support</span>
+            <h2>Everything we bring to your farm</h2>
+            <p>We cover every cost so you focus purely on farming. Here's what Investa Farm provides to every partner farmer.</p>
+          </div>
+          <div class="farmer-support-grid">
+            <div class="fsg-card" style="--fsg-color:#2e7d32">
+              <div class="fsg-icon">💰</div>
+              <h3>Full Capital</h3>
+              <p>100% of production costs covered. Seeds, fertilisers, pesticides, irrigation, and labour — all funded before you plant.</p>
+            </div>
+            <div class="fsg-card" style="--fsg-color:#1565c0">
+              <div class="fsg-icon">🚜</div>
+              <h3>Equipment &amp; Inputs</h3>
+              <p>Quality agricultural equipment, certified seeds, and approved inputs sourced through our trusted agribusiness network.</p>
+            </div>
+            <div class="fsg-card" style="--fsg-color:#6a1b9a">
+              <div class="fsg-icon">👩‍🌾</div>
+              <h3>Expert Agronomists</h3>
+              <p>Hands-on field support — crop monitoring, soil testing, pest control, and best practice guidance through every season.</p>
+            </div>
+            <div class="fsg-card" style="--fsg-color:#e65100">
+              <div class="fsg-icon">🏪</div>
+              <h3>Verified Offtakers</h3>
+              <p>Pre-vetted buyers — export companies, processors, and retail chains — committed to fair market prices at harvest.</p>
+            </div>
+            <div class="fsg-card" style="--fsg-color:#00695c">
+              <div class="fsg-icon">📱</div>
+              <h3>Digital Farm Management</h3>
+              <p>Track progress, financials, and season performance through our Farmer Operations Engine. Fully transparent reporting.</p>
+            </div>
+            <div class="fsg-card" style="--fsg-color:#558b2f">
+              <div class="fsg-icon">🤝</div>
+              <h3>Cooperative Support</h3>
+              <p>We work with farmer groups and cooperatives — pool land and labour, benefit from scale, and earn collectively.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== REAL APP SCREENSHOTS ===== -->
+      <section class="section real-app-showcase reveal">
+        <div class="container-narrow">
+          <div class="section-head">
+            <span class="section-kicker">Live App</span>
+            <h2>Your farm, fully managed from one app</h2>
+            <p>GPS-verified farm map, crop timeline, input marketplace, harvest contracts, and M-Pesa earnings — all in the Investa Farm app.</p>
+          </div>
+
+          <div class="farmer-mini-strip-label">
+            <span class="farmer-row-kicker">Getting Started · KYC Verification</span>
+          </div>
+          <div class="farmer-mini-strip">
+            <div class="fms-item">
+              <div class="fms-phone"><img src="public/app-farmer-home-dashboard.png" alt="Farmer Home" /></div>
+              <span class="fms-num farmer-num">1</span>
+              <h4>Farmer Home</h4>
+              <p>Active crop, health score &amp; projected harvest revenue</p>
+            </div>
+            <div class="fms-item">
+              <div class="fms-phone"><img src="public/app-kyc-required.png" alt="KYC Verification" /></div>
+              <span class="fms-num farmer-num">2</span>
+              <h4>KYC Verification</h4>
+              <p>Upload National ID, farm ownership proof &amp; passport photo</p>
+            </div>
+            <div class="fms-item">
+              <div class="fms-phone"><img src="public/app-kyc-email-otp.png" alt="Email OTP" /></div>
+              <span class="fms-num farmer-num">3</span>
+              <h4>Email Verification</h4>
+              <p>Instant OTP from Investa Farm — quick one-time verification</p>
+            </div>
+            <div class="fms-item">
+              <div class="fms-phone"><img src="public/app-kyc-email-review.png" alt="KYC Review" /></div>
+              <span class="fms-num farmer-num">4</span>
+              <h4>KYC Under Review</h4>
+              <p>Docs reviewed within 24–48 hrs. Notified by email once approved.</p>
+            </div>
+          </div>
+
+          <div class="farmer-mini-strip-label" style="margin-top:2rem">
+            <span class="farmer-row-kicker">After Approval · Farm Management</span>
+          </div>
+          <div class="farmer-mini-strip">
+            <div class="fms-item">
+              <div class="fms-phone"><img src="public/app-my-farm-gps.png" alt="GPS Farm Map" /></div>
+              <span class="fms-num farmer-num">5</span>
+              <h4>GPS Farm Map</h4>
+              <p>Live map, crop stage, soil moisture &amp; yield projection</p>
+            </div>
+            <div class="fms-item">
+              <div class="fms-phone"><img src="public/app-farm-market-inputs.png" alt="Input Marketplace" /></div>
+              <span class="fms-num farmer-num">6</span>
+              <h4>Input Marketplace</h4>
+              <p>Order seeds, fertilisers &amp; tools from verified suppliers</p>
+            </div>
+            <div class="fms-item">
+              <div class="fms-phone"><img src="public/app-farm-contracts.png" alt="Harvest Contracts" /></div>
+              <span class="fms-num farmer-num">7</span>
+              <h4>Harvest Contracts</h4>
+              <p>Track offtaker contracts &amp; expected harvest revenue</p>
+            </div>
+            <div class="fms-item">
+              <div class="fms-phone"><img src="public/app-farmer-wallet.png" alt="Farmer Wallet" /></div>
+              <span class="fms-num farmer-num">8</span>
+              <h4>Farmer Wallet</h4>
+              <p>Earnings balance &amp; instant M-Pesa withdrawal</p>
+            </div>
+          </div>
+
+          <div class="how-cta-row">
+            <a href="https://app.investafarm.com" class="primary-btn" target="_blank" rel="noopener">Open Farmer App →</a>
+            <a href="farmers.html#eligibility" class="secondary-outline-btn">Check Eligibility →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ELIGIBILITY ===== -->
+      <section class="section farmer-eligibility-section reveal" id="eligibility">
+        <div class="container-narrow">
+          <div class="section-head" style="text-align:center">
+            <span class="section-kicker">Who Can Join</span>
+            <h2>Farmer eligibility requirements</h2>
+            <p>We work with individual farmers, farmer groups, and cooperatives across Kenya.</p>
+          </div>
+          <div class="felig-layout">
+            <div class="felig-checklist">
+              <div class="felig-item">
+                <div class="felig-check farmer-num">✓</div>
+                <div>
+                  <strong>Registered farmer or farmer group</strong>
+                  <p>Cooperative registration is a plus but not required to apply.</p>
+                </div>
+              </div>
+              <div class="felig-item">
+                <div class="felig-check farmer-num">✓</div>
+                <div>
+                  <strong>Access to arable land</strong>
+                  <p>Owned, leased, or group-held — we work with all arrangements.</p>
+                </div>
+              </div>
+              <div class="felig-item">
+                <div class="felig-check farmer-num">✓</div>
+                <div>
+                  <strong>National ID / valid identification</strong>
+                  <p>For all group members — required for KYC verification.</p>
+                </div>
+              </div>
+              <div class="felig-item">
+                <div class="felig-check farmer-num">✓</div>
+                <div>
+                  <strong>Land Title or lease agreement</strong>
+                  <p>Proves land access and ensures transparent farm registration.</p>
+                </div>
+              </div>
+              <div class="felig-item">
+                <div class="felig-check farmer-num">✓</div>
+                <div>
+                  <strong>Farm Report</strong>
+                  <p>Current state of land and previous production history required.</p>
+                </div>
+              </div>
+              <div class="felig-item">
+                <div class="felig-check farmer-num">✓</div>
+                <div>
+                  <strong>Group Certificate (for cooperatives)</strong>
+                  <p>Required for farmer groups — unlocks collective funding options.</p>
+                </div>
+              </div>
+              <a href="https://app.investafarm.com" class="primary-btn farmer-btn" target="_blank" rel="noopener" style="margin-top:1.5rem; display:inline-block">Apply as a Farmer Partner →</a>
+            </div>
+            <div class="felig-stats">
+              <div class="felig-stat">
+                <strong>10,800+</strong>
+                <span>Farmers financed</span>
+              </div>
+              <div class="felig-stat">
+                <strong>15+</strong>
+                <span>Active farm listings</span>
+              </div>
+              <div class="felig-stat">
+                <strong>35–55%</strong>
+                <span>Revenue share earned</span>
+              </div>
+              <div class="felig-stat">
+                <strong>100%</strong>
+                <span>Capital provided upfront</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm" />
+          </div>
+          <p>Africa's leading financially inclusive platform — connecting farmers and investors through a transparent agricultural market.</p>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="footer-whatsapp-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Join Our WhatsApp Community
+          </a>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <p><a href="investors.html">For Investors</a></p>
+          <p><a href="farmers.html">For Farmers</a></p>
+          <p><a href="cooperatives.html">Cooperatives</a></p>
+          <p><a href="app.html">App Walkthrough</a></p>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <p><a href="team.html">Our Team &amp; History</a></p>
+          <p><a href="mailto:info@investafarm.com">Contact Us</a></p>
+        </div>
+        <div class="footer-offices">
+          <h4>Contact Us</h4>
+          <p><a href="mailto:info@investafarm.com">info@investafarm.com</a></p>
+          <p>Mon – Fri, 8:00 – 18:00 EAT</p>
+          <h4>Offices</h4>
+          <p>Kenya: P.O. Box CPA 5364</p>
+          <p>London: 21 Wenlock Road, N1 7GU</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Investa Farm Limited. All rights reserved.</p>
+        <p>Kenya · United Kingdom · USA</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

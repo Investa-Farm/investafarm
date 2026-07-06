@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Investa Farm</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#0f8e5e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .admin-shell { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem 1rem; }
+      .admin-login-card { background: #fff; border-radius: 18px; padding: 2.5rem; max-width: 380px; width: 100%; box-shadow: 0 12px 40px rgba(14,34,58,0.12); text-align: center; }
+      .admin-login-card img { width: 56px; margin-bottom: 1rem; }
+      .admin-login-card h1 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+      .admin-login-card p { color: #667085; font-size: 0.9rem; margin-bottom: 1.5rem; }
+      .admin-login-card input { width: 100%; padding: 0.8rem 1rem; border: 1.5px solid #e3e8ef; border-radius: 10px; font-size: 0.95rem; margin-bottom: 1rem; box-sizing: border-box; }
+      .admin-login-card input:focus { outline: none; border-color: var(--primary); }
+      .admin-login-card button { width: 100%; padding: 0.85rem; border: none; border-radius: 10px; background: var(--primary); color: #fff; font-weight: 600; font-size: 0.95rem; cursor: pointer; }
+      .admin-login-card button:hover { opacity: 0.92; }
+      .admin-error { color: #d92d20; font-size: 0.85rem; margin-top: 0.75rem; display: none; }
+      .admin-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; display: none; }
+      .admin-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+      .admin-header h1 { font-size: 1.5rem; margin: 0; }
+      .admin-logout-btn { padding: 0.6rem 1.2rem; border-radius: 10px; border: 1.5px solid #e3e8ef; background: #fff; cursor: pointer; font-weight: 600; font-size: 0.85rem; color: #344054; }
+      .admin-logout-btn:hover { border-color: var(--primary); color: var(--primary); }
+      .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-bottom: 2.5rem; }
+      .stat-card { background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(14,34,58,0.06); }
+      .stat-card .stat-value { font-size: 2rem; font-weight: 800; color: var(--primary); }
+      .stat-card .stat-label { color: #667085; font-size: 0.85rem; margin-top: 0.3rem; }
+      .admin-panel { background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(14,34,58,0.06); margin-bottom: 1.5rem; }
+      .admin-panel h2 { font-size: 1.05rem; margin: 0 0 1rem; }
+      .page-row { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f2f5; font-size: 0.9rem; }
+      .page-row:last-child { border-bottom: none; }
+      .page-row .bar-track { flex: 1; height: 8px; background: #f0f2f5; border-radius: 6px; margin: 0 1rem; overflow: hidden; }
+      .page-row .bar-fill { height: 100%; background: var(--primary); border-radius: 6px; }
+      .visit-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+      .visit-table th { text-align: left; color: #667085; font-weight: 600; padding: 0.5rem; border-bottom: 1.5px solid #f0f2f5; }
+      .visit-table td { padding: 0.55rem 0.5rem; border-bottom: 1px solid #f5f6f8; color: #344054; }
+      .visit-table tr:last-child td { border-bottom: none; }
+      .empty-note { color: #98a2b3; font-size: 0.88rem; padding: 1rem 0; text-align: center; }
+    </style>
+  </head>
+  <body style="background:#f7f8fa;">
+
+    <div class="admin-shell" id="loginShell">
+      <div class="admin-login-card">
+        <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm" />
+        <h1>Admin Dashboard</h1>
+        <p>Sign in to view site visit analytics.</p>
+        <input type="password" id="adminPassword" placeholder="Enter admin password" autocomplete="current-password" />
+        <button id="adminLoginBtn">Sign In</button>
+        <div class="admin-error" id="adminError">Incorrect password. Please try again.</div>
+      </div>
+    </div>
+
+    <div class="admin-wrap" id="dashboardWrap">
+      <div class="admin-header">
+        <h1>📊 Site Visit Dashboard</h1>
+        <button class="admin-logout-btn" id="adminLogoutBtn">Log Out</button>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="statTotal">0</div>
+          <div class="stat-label">Total Page Views</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statToday">0</div>
+          <div class="stat-label">Visits Today</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statPages">0</div>
+          <div class="stat-label">Pages Tracked</div>
+        </div>
+      </div>
+
+      <div class="admin-panel">
+        <h2>Views by Page</h2>
+        <div id="pageBreakdown"></div>
+      </div>
+
+      <div class="admin-panel">
+        <h2>Recent Visits</h2>
+        <div id="recentVisits"></div>
+      </div>
+    </div>
+
+    <script>
+      const loginShell = document.getElementById('loginShell');
+      const dashboardWrap = document.getElementById('dashboardWrap');
+      const adminError = document.getElementById('adminError');
+
+      function showDashboard() {
+        loginShell.style.display = 'none';
+        dashboardWrap.style.display = 'block';
+        loadStats();
+      }
+
+      function showLogin() {
+        loginShell.style.display = 'flex';
+        dashboardWrap.style.display = 'none';
+      }
+
+      async function checkAuth() {
+        try {
+          const res = await fetch('/api/admin/check');
+          const data = await res.json();
+          if (data.authenticated) showDashboard();
+          else showLogin();
+        } catch {
+          showLogin();
+        }
+      }
+
+      document.getElementById('adminLoginBtn').addEventListener('click', login);
+      document.getElementById('adminPassword').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') login();
+      });
+
+      async function login() {
+        const password = document.getElementById('adminPassword').value;
+        adminError.style.display = 'none';
+        try {
+          const res = await fetch('/api/admin/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password })
+          });
+          if (res.ok) {
+            showDashboard();
+          } else {
+            adminError.style.display = 'block';
+          }
+        } catch {
+          adminError.style.display = 'block';
+        }
+      }
+
+      document.getElementById('adminLogoutBtn').addEventListener('click', async () => {
+        await fetch('/api/admin/logout', { method: 'POST' });
+        showLogin();
+      });
+
+      async function loadStats() {
+        try {
+          const res = await fetch('/api/admin/stats');
+          if (!res.ok) { showLogin(); return; }
+          const data = await res.json();
+          renderStats(data);
+        } catch (err) {
+          console.error('Failed to load stats', err);
+        }
+      }
+
+      function renderStats(data) {
+        const today = new Date().toISOString().slice(0, 10);
+        document.getElementById('statTotal').textContent = data.totalVisits || 0;
+        document.getElementById('statToday').textContent = (data.dailyVisits && data.dailyVisits[today]) || 0;
+        const pageEntries = Object.entries(data.pageViews || {}).sort((a, b) => b[1] - a[1]);
+        document.getElementById('statPages').textContent = pageEntries.length;
+
+        const maxViews = pageEntries.length ? pageEntries[0][1] : 1;
+        const breakdown = document.getElementById('pageBreakdown');
+        breakdown.innerHTML = pageEntries.length
+          ? pageEntries.map(([page, count]) => `
+            <div class="page-row">
+              <span>${page}</span>
+              <div class="bar-track"><div class="bar-fill" style="width:${(count / maxViews) * 100}%"></div></div>
+              <strong>${count}</strong>
+            </div>
+          `).join('')
+          : '<div class="empty-note">No page views recorded yet.</div>';
+
+        const recent = document.getElementById('recentVisits');
+        const visits = (data.recentVisits || []).slice(0, 25);
+        recent.innerHTML = visits.length
+          ? `<table class="visit-table">
+              <thead><tr><th>Page</th><th>Time</th><th>Referrer</th></tr></thead>
+              <tbody>
+                ${visits.map(v => `
+                  <tr>
+                    <td>${v.page}</td>
+                    <td>${new Date(v.timestamp).toLocaleString()}</td>
+                    <td>${v.referrer === 'direct' ? 'Direct' : v.referrer}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>`
+          : '<div class="empty-note">No visits recorded yet.</div>';
+      }
+
+      checkAuth();
+    </script>
+  </body>
+</html>
