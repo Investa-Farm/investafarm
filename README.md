@@ -151,7 +151,6 @@ The setup is a **single Web Service**: Express builds and serves both the API an
 ### What the build does
 
 ```
-corepack enable pnpm
 pnpm install --frozen-lockfile
 pnpm --filter @workspace/investa-farm run build   # Vite → artifacts/investa-farm/dist/
 pnpm --filter @workspace/api-server  run build   # esbuild → artifacts/api-server/dist/
