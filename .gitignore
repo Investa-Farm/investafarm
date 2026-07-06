@@ -47,4 +47,13 @@ Thumbs.db
 # Replit
 .cache/
 .local/
-attached_assets/*.env
+attached_assets/
+
+# Environment / secrets — never commit these
+.env
+.env.*
+*.env
+!.env.example
+
+# Migration artefacts — local reference only, not part of the repo
+.migration-backup/

@@ -1,0 +1,17 @@
+{
+  "totalVisits": 1,
+  "pageViews": {
+    "/": 1
+  },
+  "dailyVisits": {
+    "2026-07-06": 1
+  },
+  "recentVisits": [
+    {
+      "page": "/",
+      "timestamp": "2026-07-06T15:33:09.863Z",
+      "referrer": "https://85d16f7c-f8d0-493c-b433-0d5177785fc9-00-4b0yzbycjatz.riker.replit.dev/",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    }
+  ]
+}
