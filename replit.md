@@ -1,41 +1,45 @@
-# Investa Farm
+# [Project name]
 
-A fintech-enabled agricultural investment platform connecting investors with smallholder farmers and cooperatives in Kenya, UK, and USA. Structured like a "digital stock exchange for agriculture."
+_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+
+## Run & Operate
+
+- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm run typecheck` — full typecheck across all packages
+- `pnpm run build` — typecheck + build all packages
+- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
+- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
+- Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack
-- **Backend**: Node.js + Express serving static files, a `/api/chat` endpoint, visit-tracking middleware, and admin APIs
-- **Frontend**: Vanilla HTML/CSS/JS with Leaflet.js maps and Paystack payments
-- **AI Chat**: Groq API (Llama 3.3) with a rules-based fallback when no key is set
-- **PWA**: manifest.json + service worker for installable mobile experience
 
-## Pages
-- `index.html` — homepage
-- `investors.html`, `farmers.html`, `cooperatives.html` — audience-specific landing pages
-- `app.html` — app walkthrough with an investor/farmer step navigator and a "Book a Demo Call" CTA
-- `team.html` — company story, founders, and awards
-- `admin.html` — password-protected dashboard showing site visit analytics
+- pnpm workspaces, Node.js 24, TypeScript 5.9
+- API: Express 5
+- DB: PostgreSQL + Drizzle ORM
+- Validation: Zod (`zod/v4`), `drizzle-zod`
+- API codegen: Orval (from OpenAPI spec)
+- Build: esbuild (CJS bundle)
 
-## Site Visit Tracking
-- Every page view to a tracked page is logged server-side (in-memory + persisted to `data/visits.json`)
-- Tracks total visits, per-page view counts, daily visit counts, and the last 200 visits (page, timestamp, referrer, user agent)
-- No cookies or tracking are used on the visitor's side — this is server-side aggregate analytics only
+## Where things live
 
-## Admin Dashboard
-- Available at `/admin.html`
-- Protected by the `ADMIN_PASSWORD` secret; login issues an HttpOnly session cookie (in-memory session store)
-- Shows total page views, today's visits, a per-page breakdown, and a recent-visits table via `/api/admin/stats`
+_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
 
-## Running the app
-```
-npm install
-node server.js
-```
-Runs on port 5000.
+## Architecture decisions
 
-## Environment Variables
-- `GROQ_API_KEY` — Groq API key for the AI chat assistant (optional; falls back to rules-based chat)
-- `ADMIN_PASSWORD` — password to access the `/admin.html` visit-tracking dashboard
-- `PORT` — Server port (defaults to 5000)
+_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+
+## Product
+
+_Describe the high-level user-facing capabilities of this app once they exist._
 
 ## User preferences
-- Keep the existing project structure and file layout
+
+_Populate as you build — explicit user instructions worth remembering across sessions._
+
+## Gotchas
+
+_Populate as you build — sharp edges, "always run X before Y" rules._
+
+## Pointers
+
+- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
