@@ -1,0 +1,110 @@
+INVESTA FARM — SYSTEM REPORT
+1. Introduction
+This report provides an overview of the Investa Farm system based on the product deck,
+user flow materials and the public landing page (www.investafarm.com). It focuses on user
+experience, customer access flows, landing page structure and usability issues identified
+during review.
+Investa Farm is a dual user agricultural fintech platform connecting farmers and investors
+through a structured digital ecosystem.
+2. How Customers Access the App
+Customers access Investa Farm through multiple entry points depending on onboarding
+context.
+Access Channels
+●
+●
+●
+●
+Official landing page (www.investafarm.com)
+Mobile application access links
+Early access or invitation based onboarding
+Cooperative based onboarding for farmers
+User Access Flow
+The platform uses a role based onboarding system:
+1. User enters via landing page or app
+2. Selects user role:
+○
+Investor
+○
+Farmer
+3. Account registration
+4. Identity verification (KYC)
+5. Access to role specific dashboard
+This structure ensures users are routed into separate journeys based on role selection at
+entry point.
+3. Landing Page
+The landing page presents Investa Farm as a financial agriculture platform that enables
+participation in farming through investment or production.
+It positions agriculture as a structured and investable asset class supported by real time
+visibility and performance tracking.
+Key Elements
+●
+●
+●
+●
+Platform scale metrics including farmers onboarded, transaction value and uptime
+Two primary call to action paths: Start Investing and Run Your Farm
+Testimonials from farmers and investors
+Overview of the dual app ecosystem
+The landing page combines credibility indicators with product explanation to communicate
+trust and platform functionality.
+4. User Experience
+Farmer Experience
+Farmers are onboarded into a structured system that provides access to farming tools and
+financial support.
+Flow:
+monitoring cycle
+Registration → KYC verification → access to farming tools → participation in financing and
+Investor Experience
+Investors interact with the platform through a marketplace style experience for agricultural
+opportunities.
+Flow:
+Registration → KYC verification → browse farm listings → invest → track performance
+The platform maintains two distinct user journeys within a shared ecosystem.
+5. Issues Identified
+1. Onboarding Complexity (High Severity)
+The onboarding process includes multiple mandatory steps before users access core
+functionality.
+Impact: This increases time to value and may reduce completion rates.
+Suggested Improvements:
+●
+●
+●
+Add a progress indicator during onboarding
+Allow limited platform exploration before full KYC completion
+Reduce initial registration fields to essential information only
+2. Landing Page Cognitive Load (High Severity)
+The landing page introduces multiple concepts including investment, farming and
+performance tracking within a single view.
+Impact: This may reduce clarity for first time users and delay understanding of the primary
+action.
+Suggested Improvements:
+●
+●
+●
+Separate landing content into farmer and investor focused sections
+Add a simple explainer section summarizing the platform in under 30 seconds
+Move advanced financial explanations lower on the page
+3. Role Selection Dependency (Medium Severity)
+Users must choose between investor and farmer paths at entry point.
+Impact: Incorrect selection may lead to misaligned onboarding experience.
+Suggested Improvements:
+●
+●
+Add guided onboarding questions before role selection
+Provide recommended path based on user intent
+4. Language Complexity (Medium Severity)
+Some terminology assumes familiarity with financial and investment concepts.
+Impact: This may reduce accessibility for non technical users.
+Suggested Improvements:
+●
+●
+●
+Simplify farmer facing language
+Add tooltips or explanations for financial terms
+Use more contextual onboarding guidance
+6. Conclusion
+Investa Farm is a structured dual user fintech agriculture platform connecting farmers and
+investors through a digital ecosystem. The onboarding flow and landing page effectively
+communicate scale, trust and purpose while maintaining separate user journeys.
+Improvements in onboarding simplicity, early stage clarity and user guidance would enhance
+accessibility and first time user experience.

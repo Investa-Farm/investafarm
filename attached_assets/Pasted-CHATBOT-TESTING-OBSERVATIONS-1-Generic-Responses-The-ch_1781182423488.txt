@@ -1,0 +1,65 @@
+CHATBOT TESTING OBSERVATIONS
+1. Generic Responses
+The chatbot is able to answer questions related to farming, investing and platform usage.
+However, many responses feel generic and could apply to almost any agricultural investment
+platform.
+For example, when asked how to invest on Investa Farm, the response provides a standard
+investment process but does not reference the actual user journey observed in the
+application. The answers would be more useful if they reflected the specific features and
+workflows available on Investa Farm.
+2. Accuracy and Consistency
+Some responses introduce information that could not be verified during testing.
+Examples include:
+●
+●
+●
+Specific repayment terms and interest rates
+Biometric verification requirements
+Payment methods and operational processes
+If these details are not implemented or documented within the platform, the chatbot may
+create confusion by presenting assumptions as facts.
+Recommendation:
+The chatbot should prioritize information directly sourced from Investa Farm documentation
+and platform functionality.
+3. Response Structure and Readability
+Most responses are presented as long blocks of text with multiple numbered items.
+While informative, the answers can feel lengthy for simple questions and may reduce
+readability on mobile devices.
+Recommendation:
+Responses should be structured using:
+●
+●
+●
+●
+Short paragraphs
+Clear headings
+Bullet points where appropriate
+Direct answers before detailed explanations
+Example:
+Question: How does KYC work?
+Preferred Format:
+KYC helps verify your identity before you can access certain platform features.
+Required Documents:
+• National ID or Passport
+• Proof of Address (if required)
+Process:
+1. Upload required documents.
+2. Documents are reviewed.
+3. Once approved, your account gains access to restricted features.
+This format is easier to scan and understand.
+4. Conversation Management
+The chatbot currently operates within a single conversation thread.
+Recommendation:
+Add a "New Chat" option to allow users to start a fresh conversation without carrying over
+previous questions. This would improve usability and make the chatbot easier to use for
+multiple topics.
+5. Additional Observation
+The chatbot close/exit button was reported as non-functional during testing. This should be
+reviewed before production deployment.
+Conclusion
+Overall, the chatbot is functional and capable of answering key questions about the Investa
+Farm platform. However, its current responses tend to be too generic, occasionally include
+assumptions and lack a consistent, easy-to-read structure. Improving specificity, grounding
+answers strictly in platform data and refining formatting would significantly enhance user
+trust and usability. Additionally, adding better conversation management features like a “New
+Chat” option and fixing minor U

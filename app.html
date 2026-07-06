@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The App | Investa Farm</title>
+    <meta name="description" content="See how the Investa Farm app works for both investors and farmers. Browse farms, invest via M-Pesa, track returns, and manage your portfolio — all in one powerful app." />
+    <meta name="theme-color" content="#0f8e5e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+
+    <!-- ===== CHATBOT ===== -->
+    <div class="chatbot-fab" id="chatFab" title="Chat with Investa Farm Bot">
+      <span class="fab-pulse-ring"></span>
+      <span class="fab-pulse-ring fab-pulse-ring-2"></span>
+      <div class="fab-inner">
+        <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm Bot" class="chat-fab-logo" />
+      </div>
+      <span class="fab-notification-dot"></span>
+    </div>
+
+    <div class="chatbot-panel" id="chatPanel">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <div class="chat-bot-avatar">
+            <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm Bot" />
+            <span class="avatar-online-ring"></span>
+          </div>
+          <div class="chat-header-text">
+            <strong>Investa Farm Bot</strong>
+            <small><span class="online-dot-small"></span>Online · AI-powered · Replies instantly</small>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button class="chat-new-btn" id="chatNew" title="New Chat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            New
+          </button>
+          <button class="chat-close" id="chatClose" title="Close">✕</button>
+        </div>
+      </div>
+      <div class="chat-suggestions" id="chatSuggestions">
+        <button class="suggestion-chip" data-q="How do I use the Investa Farm app?">📱 How to use the app</button>
+        <button class="suggestion-chip" data-q="How do I invest via M-Pesa?">💳 M-Pesa investment</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">
+          <div class="msg-bubble">Hi! 👋 Ask me anything about the Investa Farm app and how it works. 🌾</div>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask anything about Investa Farm…" autocomplete="off" />
+        <button id="chatSend" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="brand">
+          <a href="index.html"><img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm logo" /></a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Open menu" id="menuToggle">&#9776;</button>
+        <div class="nav-links" id="navLinks">
+          <a href="investors.html">For Investors</a>
+          <a href="farmers.html">For Farmers</a>
+          <a href="app.html" class="nav-active">App</a>
+          <a href="cooperatives.html">Cooperatives</a>
+          <a href="team.html">Team</a>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" target="_blank" rel="noopener" class="community-nav-link">💬 Community</a>
+        </div>
+        <div class="nav-cta">
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="community-top-btn" target="_blank" rel="noopener">💬 Join Community</a>
+          <a href="https://app.investafarm.com" class="primary-btn" target="_blank" rel="noopener">Get Started</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===== APP HERO ===== -->
+    <section class="inner-hero app-hero section">
+      <div class="container inner-hero-content">
+        <div class="inner-hero-copy">
+          <span class="eyebrow">📱 Progressive Web App</span>
+          <h1>One powerful app.<br>Two sides of <span class="hero-highlight">African farming.</span></h1>
+          <p>Whether you're an investor growing your wealth or a farmer partnering for production — Investa Farm's app puts everything you need in the palm of your hand. Open <strong>app.investafarm.com</strong> in your phone browser and you're ready to go.</p>
+          <div class="app-dual-badges">
+            <div class="app-side-badge investor-side-badge">
+              <span class="side-icon">📈</span>
+              <div>
+                <strong>Investor Side</strong>
+                <small>Browse farms · invest · track returns</small>
+              </div>
+            </div>
+            <div class="app-side-badge farmer-side-badge">
+              <span class="side-icon">🌾</span>
+              <div>
+                <strong>Farmer Side</strong>
+                <small>Manage farm · monitor progress · earn share</small>
+              </div>
+            </div>
+          </div>
+          <div class="app-hero-ctas">
+            <a href="https://app.investafarm.com" class="primary-btn" target="_blank" rel="noopener">Open the App →</a>
+            <a href="#investor-side" class="secondary-outline-btn">See how it works ↓</a>
+            <a href="mailto:info@investafarm.com?subject=Book%20a%20Demo%20Call&body=Hi%20Investa%20Farm%20team%2C%0A%0AI'd%20like%20to%20book%20a%20demo%20call%20to%20learn%20more%20about%20the%20app.%0A%0AName%3A%0APreferred%20date%2Ftime%3A%0AI'm%20interested%20as%20a%3A%20(Investor%20%2F%20Farmer%20%2F%20Cooperative)" class="secondary-outline-btn">📞 Book a Demo Call</a>
+          </div>
+        </div>
+        <div class="inner-hero-visual app-hero-visual">
+          <div class="app-dual-phone-hero">
+            <div class="app-phone-frame dual-phone-left">
+              <img src="public/app-primary-market.png" alt="Investor side — Live Market" class="phone-screenshot" />
+            </div>
+            <div class="app-phone-frame dual-phone-right">
+              <img src="public/app-farmer-home.png" alt="Farmer side — Dashboard" class="phone-screenshot" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+
+      <!-- ===== INVESTOR SIDE SHOWCASE ===== -->
+      <section class="section app-side-section investor-side-section reveal" id="investor-side">
+        <div class="container">
+          <div class="app-side-header-new investor-header-new">
+            <span class="app-side-pill investor-pill">📈 For Investors</span>
+            <h2>Invest in real farms.<br>Earn real returns.</h2>
+            <p>10 steps from sign-up to payout — every screen below is live from the app. Browse farms, pay via M-Pesa, track your portfolio, and withdraw to M-Pesa at harvest.</p>
+            <div class="ashn-stats">
+              <div class="ashn-stat"><strong>KES 100</strong><span>Min. investment</span></div>
+              <div class="ashn-divider"></div>
+              <div class="ashn-stat"><strong>+28%</strong><span>Full season return</span></div>
+              <div class="ashn-divider"></div>
+              <div class="ashn-stat"><strong>5 min</strong><span>To start investing</span></div>
+            </div>
+          </div>
+
+          <!-- Step Navigator -->
+          <div class="step-navigator" id="investorNavigator">
+            <div class="step-nav-display">
+              <div class="step-nav-phone-wrap">
+                <div class="app-phone-frame step-nav-phone">
+                  <img id="stepNavImg" src="public/app-portfolio.png" alt="Investor Portal" class="phone-screenshot" />
+                </div>
+              </div>
+              <div class="step-nav-info">
+                <div class="step-nav-badge investor-step-badge">
+                  <span id="stepNavNum">01</span>
+                  <span>/10</span>
+                </div>
+                <h3 id="stepNavTitle">Investor Portal</h3>
+                <p id="stepNavDesc">Sign in or create your account. Your personal investor dashboard awaits — with demo mode so you can explore before committing.</p>
+                <div class="step-nav-progress">
+                  <div class="step-nav-bar" id="stepNavBar" style="width:10%"></div>
+                </div>
+                <div class="step-nav-arrows">
+                  <button class="sna-btn" id="stepPrev" onclick="changeStep(-1)">← Prev</button>
+                  <button class="sna-btn sna-primary" id="stepNext" onclick="changeStep(1)">Next →</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-nav-list" id="stepNavList">
+              <div class="step-nav-item active" data-index="0">
+                <span class="sni-num">01</span>
+                <div class="sni-thumb"><img src="public/app-portfolio.png" alt="Investor Portal" /></div>
+                <div class="sni-text"><strong>Investor Portal</strong><small>Sign in &amp; explore your dashboard</small></div>
+              </div>
+              <div class="step-nav-item" data-index="1">
+                <span class="sni-num">02</span>
+                <div class="sni-thumb"><img src="public/app-primary-market.png" alt="Live Farm Market" /></div>
+                <div class="sni-text"><strong>Live Farm Market</strong><small>Browse KES 7.6M+ in farm listings</small></div>
+              </div>
+              <div class="step-nav-item" data-index="2">
+                <span class="sni-num">03</span>
+                <div class="sni-thumb"><img src="appscreens/app-inv-primary-market.png" alt="Primary Market" /></div>
+                <div class="sni-text"><strong>Primary Market</strong><small>Buy shares at fixed prices</small></div>
+              </div>
+              <div class="step-nav-item" data-index="3">
+                <span class="sni-num">04</span>
+                <div class="sni-thumb"><img src="public/app-farm-exchange.png" alt="Choose Shares" /></div>
+                <div class="sni-text"><strong>Choose Your Shares</strong><small>Pick quantity &amp; compare exit strategies</small></div>
+              </div>
+              <div class="step-nav-item" data-index="4">
+                <span class="sni-num">05</span>
+                <div class="sni-thumb"><img src="appscreens/app-inv-review-order.png" alt="Review Order" /></div>
+                <div class="sni-text"><strong>Review Your Order</strong><small>Transparent breakdown before you commit</small></div>
+              </div>
+              <div class="step-nav-item" data-index="5">
+                <span class="sni-num">06</span>
+                <div class="sni-thumb"><img src="appscreens/app-inv-mpesa.png" alt="M-Pesa Payment" /></div>
+                <div class="sni-text"><strong>Pay via M-Pesa</strong><small>STK push to your phone — enter PIN &amp; done</small></div>
+              </div>
+              <div class="step-nav-item" data-index="6">
+                <span class="sni-num">07</span>
+                <div class="sni-thumb"><img src="appscreens/app-inv-complete.png" alt="Investment Complete" /></div>
+                <div class="sni-text"><strong>Investment Complete!</strong><small>You now own shares in a real farm</small></div>
+              </div>
+              <div class="step-nav-item" data-index="7">
+                <span class="sni-num">08</span>
+                <div class="sni-thumb"><img src="public/app-inv-wallet.png" alt="Investa Wallet" /></div>
+                <div class="sni-text"><strong>Investa Wallet</strong><small>Fund once, invest in multiple farms</small></div>
+              </div>
+              <div class="step-nav-item" data-index="8">
+                <span class="sni-num">09</span>
+                <div class="sni-thumb"><img src="appscreens/app-inv-exit-choose.png" alt="Request Exit" /></div>
+                <div class="sni-text"><strong>Request Your Exit</strong><small>Choose strategy &amp; see exact payout</small></div>
+              </div>
+              <div class="step-nav-item" data-index="9">
+                <span class="sni-num">10</span>
+                <div class="sni-thumb"><img src="appscreens/app-inv-exit-done.png" alt="Exit Confirmed" /></div>
+                <div class="sni-text"><strong>Exit Confirmed &amp; Paid</strong><small>Payout lands in M-Pesa on time</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="app-side-cta">
+            <a href="https://app.investafarm.com" class="primary-btn" target="_blank" rel="noopener">Start Investing Now →</a>
+            <a href="investors.html" class="secondary-outline-btn">Learn more about investing</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FARMER SIDE SHOWCASE ===== -->
+      <section class="section app-side-section farmer-side-section reveal" id="farmer-side">
+        <div class="container">
+          <div class="farmer-funded-hero">
+            <div class="ffh-badge"><span class="app-side-pill farmer-pill">🌾 For Farmers</span></div>
+            <h2 class="ffh-title">Your farm. Fully funded.<br><span class="ffh-accent">Your earnings — paid to M-Pesa.</span></h2>
+            <p class="ffh-sub">Farmers on Investa Farm get 100% of production costs covered and a dedicated digital presence on the platform. From registration to harvest payout, the app keeps everything transparent and trackable.</p>
+            <div class="ffh-stats">
+              <div class="ffh-stat">
+                <strong>35–55%</strong>
+                <span>Revenue Share</span>
+              </div>
+              <div class="ffh-stat-divider"></div>
+              <div class="ffh-stat">
+                <strong>0%</strong>
+                <span>Loans or Debt</span>
+              </div>
+              <div class="ffh-stat-divider"></div>
+              <div class="ffh-stat">
+                <strong>100%</strong>
+                <span>Capital Provided</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Farmer Screenshots Strip -->
+          <div class="farmer-screens-strip">
+            <div class="farmer-strip-scroll">
+              <div class="farmer-strip-card">
+                <div class="farmer-strip-phone">
+                  <img src="public/app-farmer-home-dashboard.png" alt="Farmer Home Dashboard" class="phone-screenshot" />
+                </div>
+                <div class="farmer-strip-label">
+                  <span class="fsl-num farmer-num">1</span>
+                  <div><strong>Farmer Home</strong><small>Active crop, health score &amp; revenue forecast</small></div>
+                </div>
+              </div>
+              <div class="farmer-strip-card">
+                <div class="farmer-strip-phone">
+                  <img src="public/app-farmer-profile.png" alt="Farmer Profile" class="phone-screenshot" />
+                </div>
+                <div class="farmer-strip-label">
+                  <span class="fsl-num farmer-num">2</span>
+                  <div><strong>Farmer Profile</strong><small>Your verified KYC farming identity</small></div>
+                </div>
+              </div>
+              <div class="farmer-strip-card">
+                <div class="farmer-strip-phone">
+                  <img src="public/app-kyc-required.png" alt="KYC Verification" class="phone-screenshot" />
+                </div>
+                <div class="farmer-strip-label">
+                  <span class="fsl-num farmer-num">3</span>
+                  <div><strong>KYC Verification</strong><small>Upload ID, farm docs &amp; selfie</small></div>
+                </div>
+              </div>
+              <div class="farmer-strip-card">
+                <div class="farmer-strip-phone">
+                  <img src="public/app-my-farm-gps.png" alt="GPS Farm Map" class="phone-screenshot" />
+                </div>
+                <div class="farmer-strip-label">
+                  <span class="fsl-num farmer-num">4</span>
+                  <div><strong>GPS Farm Map</strong><small>Live map, crop stage &amp; soil moisture</small></div>
+                </div>
+              </div>
+              <div class="farmer-strip-card">
+                <div class="farmer-strip-phone">
+                  <img src="public/app-farm-market-inputs.png" alt="Agri-Input Marketplace" class="phone-screenshot" />
+                </div>
+                <div class="farmer-strip-label">
+                  <span class="fsl-num farmer-num">5</span>
+                  <div><strong>Input Marketplace</strong><small>Order seeds, fertilisers &amp; tools</small></div>
+                </div>
+              </div>
+              <div class="farmer-strip-card">
+                <div class="farmer-strip-phone">
+                  <img src="public/app-farm-contracts.png" alt="Harvest Contracts" class="phone-screenshot" />
+                </div>
+                <div class="farmer-strip-label">
+                  <span class="fsl-num farmer-num">6</span>
+                  <div><strong>Harvest Contracts</strong><small>Track offtaker contracts &amp; expected revenue</small></div>
+                </div>
+              </div>
+              <div class="farmer-strip-card">
+                <div class="farmer-strip-phone">
+                  <img src="public/app-farmer-wallet.png" alt="Farmer Wallet" class="phone-screenshot" />
+                </div>
+                <div class="farmer-strip-label">
+                  <span class="fsl-num farmer-num">7</span>
+                  <div><strong>Farmer Wallet</strong><small>Earnings balance &amp; M-Pesa withdrawal</small></div>
+                </div>
+              </div>
+              <div class="farmer-strip-card">
+                <div class="farmer-strip-phone">
+                  <img src="appscreens/app-farmer-dash.png" alt="Farmer Operations Dashboard" class="phone-screenshot" />
+                </div>
+                <div class="farmer-strip-label">
+                  <span class="fsl-num farmer-num">8</span>
+                  <div><strong>Operations Engine</strong><small>Season milestones &amp; investor reporting</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- How farmers join & earn -->
+          <div class="farmer-how-steps-block">
+            <h3>How farmers join &amp; earn — 5 simple steps</h3>
+            <div class="farmer-steps-timeline">
+              <div class="fst-step">
+                <div class="fst-icon">📋</div>
+                <div class="fst-content">
+                  <strong>1. Register your farm or group</strong>
+                  <p>Complete KYC — National ID, Land Title, Farm Report, Group Certificate. Fully digital via the app.</p>
+                </div>
+              </div>
+              <div class="fst-connector"></div>
+              <div class="fst-step">
+                <div class="fst-icon">💰</div>
+                <div class="fst-content">
+                  <strong>2. Investa Farm funds 100% of production</strong>
+                  <p>Seeds, fertiliser, labour, irrigation, and agronomist visits — all funded before you plant. Zero loans.</p>
+                </div>
+              </div>
+              <div class="fst-connector"></div>
+              <div class="fst-step">
+                <div class="fst-icon">👩‍🌾</div>
+                <div class="fst-content">
+                  <strong>3. Farm with expert guidance</strong>
+                  <p>Our agronomists visit your farm, monitor progress, and help achieve the best possible yield every season.</p>
+                </div>
+              </div>
+              <div class="fst-connector"></div>
+              <div class="fst-step">
+                <div class="fst-icon">🏪</div>
+                <div class="fst-content">
+                  <strong>4. Harvest sold to verified offtakers</strong>
+                  <p>We connect your harvest directly to export companies and retail buyers at fair market prices.</p>
+                </div>
+              </div>
+              <div class="fst-connector"></div>
+              <div class="fst-step">
+                <div class="fst-icon">📱</div>
+                <div class="fst-content">
+                  <strong>5. Revenue share paid to M-Pesa</strong>
+                  <p>35–55% of harvest revenue lands directly in your M-Pesa. Transparent, on time, every time.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="app-side-cta">
+            <a href="https://app.investafarm.com" class="primary-btn farmer-btn" target="_blank" rel="noopener">Apply as a Farmer →</a>
+            <a href="farmers.html" class="secondary-outline-btn">Learn more about farming with us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== HOW TO INSTALL ===== -->
+      <section class="section pwa-cta reveal">
+        <div class="blur-bg"></div>
+        <div class="container pwa-cta-inner">
+          <div class="pwa-cta-copy">
+            <h2>Install in under 30 seconds. No app store needed.</h2>
+            <p>Investa Farm is a Progressive Web App (PWA). Just open the link in your browser, add it to your home screen, and it works like a native app — even on slow connections.</p>
+            <div class="pwa-steps">
+              <div class="pwa-step"><strong>1.</strong> Open <em>app.investafarm.com</em> on your phone (Chrome or Safari)</div>
+              <div class="pwa-step"><strong>2.</strong> Tap the Share icon (iOS) or ⋮ menu (Android)</div>
+              <div class="pwa-step"><strong>3.</strong> Tap <em>"Add to Home Screen"</em></div>
+              <div class="pwa-step"><strong>4.</strong> Done — the app icon appears. Open and invest.</div>
+            </div>
+            <a href="https://app.investafarm.com" class="primary-btn pwa-big-btn" target="_blank" rel="noopener">Open Investa Farm App →</a>
+          </div>
+          <div class="pwa-cta-screens">
+            <div class="pwa-screen-phone">
+              <div class="app-phone-frame">
+                <img src="appscreens/app-inv-listings.png" alt="All farm listings" class="phone-screenshot" />
+              </div>
+            </div>
+            <div class="pwa-screen-phone pwa-phone-offset">
+              <div class="app-phone-frame">
+                <img src="appscreens/app-inv-exit-confirm.png" alt="Exit confirmation" class="phone-screenshot" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm" />
+          </div>
+          <p>Africa's leading financially inclusive platform — connecting farmers and investors through a transparent agricultural market.</p>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="footer-whatsapp-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Join Our WhatsApp Community
+          </a>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <p><a href="investors.html">For Investors</a></p>
+          <p><a href="farmers.html">For Farmers</a></p>
+          <p><a href="cooperatives.html">Cooperatives</a></p>
+          <p><a href="app.html">App Walkthrough</a></p>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <p><a href="team.html">Our Team &amp; History</a></p>
+          <p><a href="mailto:info@investafarm.com">Contact Us</a></p>
+        </div>
+        <div class="footer-offices">
+          <h4>Contact Us</h4>
+          <p><a href="mailto:info@investafarm.com">info@investafarm.com</a></p>
+          <p>Mon – Fri, 8:00 – 18:00 EAT</p>
+          <h4>Offices</h4>
+          <p>Kenya: P.O. Box CPA 5364</p>
+          <p>London: 21 Wenlock Road, N1 7GU</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Investa Farm Limited. All rights reserved.</p>
+        <p>Kenya · United Kingdom · USA</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Step Navigator Logic
+      const steps = [
+        {
+          img: "public/app-portfolio.png",
+          alt: "Investor Portal",
+          num: "01", title: "Investor Portal",
+          desc: "Sign in or create your account. Your personal investor dashboard awaits — with demo mode so you can explore before committing."
+        },
+        {
+          img: "public/app-primary-market.png",
+          alt: "Live Farm Market",
+          num: "02", title: "Live Farm Market",
+          desc: "Browse KES 7.6M+ in live farm listings. See real-time price tickers, risk levels, and top movers — just like a stock exchange, but for real farms."
+        },
+        {
+          img: "appscreens/app-inv-primary-market.png",
+          alt: "Primary Market",
+          num: "03", title: "Primary Market",
+          desc: "Buy shares directly in new farm listings at fixed prices. Choose Mid-Season Exit (10% in 60 days) or Full Season Exit (up to 28% in 6 months)."
+        },
+        {
+          img: "public/app-farm-exchange.png",
+          alt: "Choose Your Shares",
+          num: "04", title: "Choose Your Shares",
+          desc: "Pick how many shares you want. Compare exit strategies side-by-side with exact KES returns shown — no guessing, just clear numbers."
+        },
+        {
+          img: "appscreens/app-inv-review-order.png",
+          alt: "Review Your Order",
+          num: "05", title: "Review Your Order",
+          desc: "See everything before you commit — farm, shares, price per share, exit strategy, expected duration, and exact estimated return. Transparent to the last shilling."
+        },
+        {
+          img: "appscreens/app-inv-mpesa.png",
+          alt: "Pay via M-Pesa",
+          num: "06", title: "Pay via M-Pesa",
+          desc: "Secured by Paystack. An M-Pesa STK push goes straight to your phone — enter your PIN and done. No cards, no bank queues."
+        },
+        {
+          img: "appscreens/app-inv-complete.png",
+          alt: "Investment Complete",
+          num: "07", title: "Investment Complete!",
+          desc: "You now own shares in a real Kenyan farm. Your portfolio updates instantly — showing exactly what you'll earn at exit."
+        },
+        {
+          img: "public/app-inv-wallet.png",
+          alt: "Investa Wallet",
+          num: "08", title: "Investa Wallet",
+          desc: "Fund your wallet once — then invest in multiple farms with one tap. Add funds via Paystack, withdraw earnings to M-Pesa or bank at any time."
+        },
+        {
+          img: "appscreens/app-inv-exit-choose.png",
+          alt: "Request Your Exit",
+          num: "09", title: "Request Your Exit",
+          desc: "When you're ready to cash out, choose your strategy. See the exact payout you'll receive — calculated right there, before you confirm."
+        },
+        {
+          img: "appscreens/app-inv-exit-done.png",
+          alt: "Exit Confirmed & Paid",
+          num: "10", title: "Exit Confirmed & Paid",
+          desc: "Your Full Season Exit is submitted. Expected payout lands in your M-Pesa or bank within the timeline — no chasing, no delays."
+        }
+      ];
+
+      let currentStep = 0;
+
+      function updateNavigator() {
+        const s = steps[currentStep];
+        document.getElementById('stepNavImg').src = s.img;
+        document.getElementById('stepNavImg').alt = s.alt;
+        document.getElementById('stepNavNum').textContent = s.num;
+        document.getElementById('stepNavTitle').textContent = s.title;
+        document.getElementById('stepNavDesc').textContent = s.desc;
+        const pct = ((currentStep + 1) / steps.length) * 100;
+        document.getElementById('stepNavBar').style.width = pct + '%';
+        document.querySelectorAll('.step-nav-item').forEach((el, i) => {
+          el.classList.toggle('active', i === currentStep);
+        });
+        document.getElementById('stepPrev').disabled = currentStep === 0;
+        document.getElementById('stepNext').disabled = currentStep === steps.length - 1;
+      }
+
+      function changeStep(dir) {
+        currentStep = Math.max(0, Math.min(steps.length - 1, currentStep + dir));
+        updateNavigator();
+        document.getElementById('stepNavImg').closest('.step-nav-phone-wrap').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      document.querySelectorAll('.step-nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+          currentStep = parseInt(item.dataset.index);
+          updateNavigator();
+        });
+      });
+
+      updateNavigator();
+    </script>
+  </body>
+</html>

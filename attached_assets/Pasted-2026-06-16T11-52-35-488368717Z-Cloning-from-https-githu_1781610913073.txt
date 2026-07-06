@@ -1,0 +1,51 @@
+2026-06-16T11:52:35.488368717Z ==> Cloning from https://github.com/MosesOchieng/investafarm
+2026-06-16T11:52:43.427239895Z ==> Checking out commit 2e1d715716d70e1726157c228fe3389da32ee9b8 in branch master
+2026-06-16T11:52:45.582218455Z ==> Using Node.js version 24.14.1 (default)
+2026-06-16T11:52:45.582233456Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2026-06-16T11:52:45.626647085Z ==> Running build command 'npm install'...
+2026-06-16T11:52:46.538675221Z
+2026-06-16T11:52:46.538698252Z added 66 packages, and audited 67 packages in 786ms
+2026-06-16T11:52:46.538711512Z
+2026-06-16T11:52:46.538787543Z 24 packages are looking for funding
+2026-06-16T11:52:46.538858344Z   run `npm fund` for details
+2026-06-16T11:52:46.539742137Z
+2026-06-16T11:52:46.539754908Z found 0 vulnerabilities
+2026-06-16T11:52:47.545921983Z ==> Uploading build...
+2026-06-16T11:52:57.044115413Z ==> Uploaded in 9.0s. Compression took 0.5s
+2026-06-16T11:52:57.120933151Z ==> Build successful 🎉
+2026-06-16T11:53:04.360689162Z ==> Deploying...
+2026-06-16T11:53:04.419675155Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-06-16T11:53:18.228432197Z ==> Running 'node script.js'
+2026-06-16T11:53:18.532667494Z /opt/render/project/src/script.js:128
+2026-06-16T11:53:18.532693645Z const siteHeader = document.querySelector('.site-header');
+2026-06-16T11:53:18.532697794Z                    ^
+2026-06-16T11:53:18.532700185Z
+2026-06-16T11:53:18.532702605Z ReferenceError: document is not defined
+2026-06-16T11:53:18.532745595Z     at Object.<anonymous> (/opt/render/project/src/script.js:128:20)
+2026-06-16T11:53:18.532748896Z     at Module._compile (node:internal/modules/cjs/loader:1812:14)
+2026-06-16T11:53:18.532751596Z     at Object..js (node:internal/modules/cjs/loader:1943:10)
+2026-06-16T11:53:18.532754096Z     at Module.load (node:internal/modules/cjs/loader:1533:32)
+2026-06-16T11:53:18.532756396Z     at Module._load (node:internal/modules/cjs/loader:1335:12)
+2026-06-16T11:53:18.532758696Z     at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+2026-06-16T11:53:18.532761576Z     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+2026-06-16T11:53:18.532763956Z     at node:internal/main/run_main_module:33:47
+2026-06-16T11:53:18.532766206Z
+2026-06-16T11:53:18.532768596Z Node.js v24.14.1
+2026-06-16T11:53:21.380620803Z ==> Exited with status 1
+2026-06-16T11:53:21.382799778Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+2026-06-16T11:53:25.244298901Z ==> Running 'node script.js'
+2026-06-16T11:53:25.451830884Z /opt/render/project/src/script.js:128
+2026-06-16T11:53:25.451869415Z const siteHeader = document.querySelector('.site-header');
+2026-06-16T11:53:25.451874405Z                    ^
+2026-06-16T11:53:25.451876875Z
+2026-06-16T11:53:25.451880196Z ReferenceError: document is not defined
+2026-06-16T11:53:25.451884316Z     at Object.<anonymous> (/opt/render/project/src/script.js:128:20)
+2026-06-16T11:53:25.451887476Z     at Module._compile (node:internal/modules/cjs/loader:1812:14)
+2026-06-16T11:53:25.451890636Z     at Object..js (node:internal/modules/cjs/loader:1943:10)
+2026-06-16T11:53:25.451894096Z     at Module.load (node:internal/modules/cjs/loader:1533:32)
+2026-06-16T11:53:25.451897216Z     at Module._load (node:internal/modules/cjs/loader:1335:12)
+2026-06-16T11:53:25.451900326Z     at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+2026-06-16T11:53:25.451904076Z     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+2026-06-16T11:53:25.451907176Z     at node:internal/main/run_main_module:33:47
+2026-06-16T11:53:25.451909606Z
+2026-06-16T11:53:25.451912296Z Node.js v24.14.1

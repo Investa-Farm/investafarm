@@ -1,0 +1,27 @@
+ there's already a rich library of app screenshots (onboarding, KYC, buying shares, M-Pesa, exit strategy, etc.) sitting unused in the repo, which is perfect fuel for a visual chat walkthrough. Let me give you the full picture.
+
+UI/UX gaps
+Navigation & structure
+
+No active/current-page indicator in the nav bar beyond a subtle highlight — easy to lose track of where you are across 6+ pages.
+No breadcrumbs or "back to home" pattern on deep pages (KYC, review-order flows shown in screenshots aren't in the live site itself — they're just marketing images).
+Mobile menu behavior wasn't verified — worth checking a hamburger menu exists and works well on small screens.
+Trust & conversion gaps
+
+No visible testimonials/social proof from real investors or farmers (only awards/press logos).
+No FAQ page/section — a lot of chat questions (fees, KYC, risk) duplicate what an FAQ accordion could answer instantly without opening chat.
+"Get Started" CTA goes to an external app subdomain — no in-context preview of what signing up looks like before leaving the marketing site.
+Chat widget UX
+
+Chat only opens as a floating bubble — no in-page entry points (e.g., inline "Ask us" links near pricing/risk sections).
+No unread-state persistence messaging — the notification dot exists, but there's no proactive nudge (e.g., auto-open after 20s on the investor page).
+No message timestamps, no way to copy/share a response, no feedback (👍/👎) on AI answers.
+Suggestion chips disappear after first message and never reappear contextually.
+AI chat gaps
+Fallback quality: Rules-based fallback is keyword matching only — no memory of conversation context, can't handle typos/phrasing variety well, and gives a generic "couldn't understand" message often.
+No streaming: Groq responses arrive all at once with a fixed typing delay — feels slower than it needs to for a real backend call.
+No guardrails/citations: The AI can hallucinate specifics (e.g., exact fee %) since it's just a system prompt with general knowledge fallback — worth constraining it more strictly to only the platform facts.
+No images/media in responses at all — every reply is plain text, even when a visual would help enormously (e.g., "how do I invest" would land much better as a mini screenshot walkthrough).
+No handoff to human — if the bot can't help, it just prints an email/WhatsApp link as text rather than an actual clickable action button.
+Yes — adding pictures to "walk me through" answers is very doable
+I can wire this so that when someone asks something like "take me through how to invest" or "show me how to use the app", the bot replies with real screenshots from your appscreens/ folder (onboarding → KYC → buy shares → M-Pesa → confirmation) inline in the chat bubble, not just text steps.
