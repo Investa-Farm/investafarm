@@ -3,7 +3,7 @@ services:
     name: investa-farm
     runtime: node
     plan: free
-    buildCommand: npm install -g pnpm && pnpm install --frozen-lockfile && pnpm --filter @workspace/investa-farm run build && pnpm --filter @workspace/api-server run build
+    buildCommand: corepack enable pnpm && pnpm install --frozen-lockfile && pnpm --filter @workspace/investa-farm run build && pnpm --filter @workspace/api-server run build
     startCommand: node artifacts/api-server/dist/index.mjs
     envVars:
       - key: NODE_ENV
