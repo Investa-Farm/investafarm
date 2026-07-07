@@ -1,12 +1,54 @@
 {
-  "totalVisits": 3,
+  "totalVisits": 9,
   "pageViews": {
-    "/": 3
+    "/": 4,
+    "/investors.html": 1,
+    "/farmers.html": 1,
+    "/app.html": 1,
+    "/team.html": 1,
+    "/cooperatives.html": 1
   },
   "dailyVisits": {
-    "2026-07-06": 3
+    "2026-07-06": 3,
+    "2026-07-07": 6
   },
   "recentVisits": [
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-07T08:00:37.405Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/team.html",
+      "timestamp": "2026-07-07T08:00:14.316Z",
+      "referrer": "http://127.0.0.1/team.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/app.html",
+      "timestamp": "2026-07-07T08:00:12.600Z",
+      "referrer": "http://127.0.0.1/app.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/farmers.html",
+      "timestamp": "2026-07-07T08:00:10.577Z",
+      "referrer": "http://127.0.0.1/farmers.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/investors.html",
+      "timestamp": "2026-07-07T08:00:08.465Z",
+      "referrer": "http://127.0.0.1/investors.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-07T07:59:59.116Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
     {
       "page": "/",
       "timestamp": "2026-07-06T16:31:19.894Z",
