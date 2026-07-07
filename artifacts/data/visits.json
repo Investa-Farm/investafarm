@@ -1,12 +1,18 @@
 {
-  "totalVisits": 2,
+  "totalVisits": 3,
   "pageViews": {
-    "/": 2
+    "/": 3
   },
   "dailyVisits": {
-    "2026-07-06": 2
+    "2026-07-06": 3
   },
   "recentVisits": [
+    {
+      "page": "/",
+      "timestamp": "2026-07-06T16:31:19.894Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
     {
       "page": "/",
       "timestamp": "2026-07-06T16:18:31.820Z",
