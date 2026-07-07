@@ -664,7 +664,7 @@ function buildPWABanner() {
   banner.id = "if-pwa-banner";
   banner.innerHTML = `
     <div class="if-pwa-banner-inner">
-      <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm" class="if-pwa-logo" />
+      <img src="investa-logo.png" alt="Investa Farm" class="if-pwa-logo" />
       <div class="if-pwa-text">
         <strong>Add Investa Farm to your home screen</strong>
         <span>${isIOS ? 'Tap <b>Share</b> → <b>Add to Home Screen</b>' : 'Open app.investafarm.com in your browser'}</span>
@@ -760,3 +760,64 @@ function handleFormSubmit(form, successMsg) {
 
 handleFormSubmit(contactForm, '✅ <strong>Message sent!</strong> Our team will get back to you within 24 hours. Thank you! 🌾');
 handleFormSubmit(newsletterForm, '📬 <strong>Subscribed!</strong> Thank you — you\'ll hear from us soon!');
+
+// ===== BOOK DEMO MODAL =====
+document.addEventListener('DOMContentLoaded', function () {
+  var overlay = document.getElementById('demoModal');
+  if (!overlay) return;
+
+  function openModal() {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  var openBtn = document.getElementById('openDemoModal');
+  if (openBtn) openBtn.addEventListener('click', openModal);
+
+  var closeBtn = document.getElementById('demoModalClose');
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  var successClose = document.getElementById('demoSuccessClose');
+  if (successClose) successClose.addEventListener('click', closeModal);
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  var form = document.getElementById('demoForm');
+  var successDiv = document.getElementById('demoSuccess');
+  var submitBtn = document.getElementById('demoSubmitBtn');
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var orig = submitBtn.textContent;
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          successDiv.style.display = 'block';
+        } else {
+          submitBtn.textContent = '❌ Something went wrong — try again';
+          submitBtn.disabled = false;
+        }
+      }).catch(function () {
+        submitBtn.textContent = '❌ Something went wrong — try again';
+        submitBtn.disabled = false;
+      });
+    });
+  }
+});

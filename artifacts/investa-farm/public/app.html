@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The App | Investa Farm</title>
     <meta name="description" content="See how the Investa Farm app works for both investors and farmers. Browse farms, invest via M-Pesa, track returns, and manage your portfolio — all in one powerful app." />
+    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0f8e5e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +20,7 @@
       <span class="fab-pulse-ring"></span>
       <span class="fab-pulse-ring fab-pulse-ring-2"></span>
       <div class="fab-inner">
-        <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm Bot" class="chat-fab-logo" />
+        <img src="investa-logo.png" alt="Investa Farm Bot" class="chat-fab-logo" />
       </div>
       <span class="fab-notification-dot"></span>
     </div>
@@ -28,7 +29,7 @@
       <div class="chat-header">
         <div class="chat-header-left">
           <div class="chat-bot-avatar">
-            <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm Bot" />
+            <img src="investa-logo.png" alt="Investa Farm Bot" />
             <span class="avatar-online-ring"></span>
           </div>
           <div class="chat-header-text">
@@ -65,7 +66,7 @@
     <header class="site-header">
       <nav class="nav container">
         <div class="brand">
-          <a href="index.html"><img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm logo" /></a>
+          <a href="index.html"><img src="investa-logo.png" alt="Investa Farm logo" /></a>
         </div>
         <button class="mobile-menu-btn" aria-label="Open menu" id="menuToggle">&#9776;</button>
         <div class="nav-links" id="navLinks">
@@ -109,7 +110,7 @@
           <div class="app-hero-ctas">
             <a href="https://app.investafarm.com" class="primary-btn" target="_blank" rel="noopener">Open the App →</a>
             <a href="#investor-side" class="secondary-outline-btn">See how it works ↓</a>
-            <a href="mailto:info@investafarm.com?subject=Book%20a%20Demo%20Call&body=Hi%20Investa%20Farm%20team%2C%0A%0AI'd%20like%20to%20book%20a%20demo%20call%20to%20learn%20more%20about%20the%20app.%0A%0AName%3A%0APreferred%20date%2Ftime%3A%0AI'm%20interested%20as%20a%3A%20(Investor%20%2F%20Farmer%20%2F%20Cooperative)" class="secondary-outline-btn">📞 Book a Demo Call</a>
+            <button class="secondary-outline-btn" id="openDemoModal">📞 Book a Demo Call</button>
           </div>
         </div>
         <div class="inner-hero-visual app-hero-visual">
@@ -422,7 +423,7 @@
       <div class="container footer-grid">
         <div class="footer-brand">
           <div class="footer-logo-wrap">
-            <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm" />
+            <img src="investa-logo.png" alt="Investa Farm" />
           </div>
           <p>Africa's leading financially inclusive platform — connecting farmers and investors through a transparent agricultural market.</p>
           <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="footer-whatsapp-btn" target="_blank" rel="noopener">
@@ -556,5 +557,84 @@
 
       updateNavigator();
     </script>
+
+    <!-- ===== BOOK DEMO MODAL ===== -->
+    <div class="demo-modal-overlay" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
+      <div class="demo-modal-card">
+        <button class="demo-modal-close" id="demoModalClose" aria-label="Close">✕</button>
+
+        <div class="demo-modal-header">
+          <img src="investa-logo.png" alt="Investa Farm" class="demo-modal-logo" />
+          <h2 id="demoModalTitle">Book a Demo Call</h2>
+          <p>We run demos every <strong>Tuesday</strong> and <strong>Thursday</strong>. Pick your slot and we'll confirm within 2 hours.</p>
+        </div>
+
+        <form class="demo-form" id="demoForm" action="https://formspree.io/investafarm@proton.me" method="POST">
+          <input type="hidden" name="_subject" value="Demo Call Booking — Investa Farm" />
+
+          <div class="demo-form-row">
+            <div class="demo-form-group">
+              <label for="demoName">Full Name *</label>
+              <input type="text" id="demoName" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="demo-form-group">
+              <label for="demoEmail">Email Address *</label>
+              <input type="email" id="demoEmail" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+
+          <div class="demo-form-row">
+            <div class="demo-form-group">
+              <label for="demoPhone">Phone / WhatsApp *</label>
+              <input type="tel" id="demoPhone" name="phone" placeholder="+254 700 000 000" required />
+            </div>
+            <div class="demo-form-group">
+              <label for="demoRole">I'm interested as a…</label>
+              <select id="demoRole" name="role">
+                <option value="Investor">Investor</option>
+                <option value="Farmer">Farmer / Farmer Group</option>
+                <option value="Cooperative">Cooperative</option>
+                <option value="Agribusiness">Agribusiness / Partner</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="demo-day-picker">
+            <label>Preferred Day *</label>
+            <div class="demo-day-btns">
+              <label class="demo-day-btn">
+                <input type="radio" name="day" value="Tuesday" required />
+                <span>📅 Tuesday</span>
+              </label>
+              <label class="demo-day-btn">
+                <input type="radio" name="day" value="Thursday" />
+                <span>📅 Thursday</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="demo-form-group">
+            <label for="demoTime">Preferred Time (East Africa Time) *</label>
+            <select id="demoTime" name="time" required>
+              <option value="">— Select a time slot —</option>
+              <option value="9:00 AM – 10:00 AM EAT (7–8 AM UK / 2–3 AM ET)">9:00 AM – 10:00 AM EAT &nbsp;(7–8 AM UK)</option>
+              <option value="11:00 AM – 12:00 PM EAT (9–10 AM UK / 4–5 AM ET)">11:00 AM – 12:00 PM EAT &nbsp;(9–10 AM UK)</option>
+              <option value="2:00 PM – 3:00 PM EAT (12–1 PM UK / 7–8 AM ET)">2:00 PM – 3:00 PM EAT &nbsp;(12–1 PM UK)</option>
+              <option value="4:00 PM – 5:00 PM EAT (2–3 PM UK / 9–10 AM ET)">4:00 PM – 5:00 PM EAT &nbsp;(2–3 PM UK)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="primary-btn demo-submit-btn" id="demoSubmitBtn">Book My Demo Slot →</button>
+        </form>
+
+        <div class="demo-success" id="demoSuccess" style="display:none;">
+          <div class="demo-success-icon">✅</div>
+          <h3>You're booked!</h3>
+          <p>We've received your request and will confirm your slot within 2 hours via email or WhatsApp.</p>
+          <button class="primary-btn" id="demoSuccessClose" style="margin-top:1rem;">Done</button>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

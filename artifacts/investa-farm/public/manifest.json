@@ -9,12 +9,12 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "Investa_8_-removebg-preview (1).png",
+      "src": "investa-logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "Investa_8_-removebg-preview (1).png",
+      "src": "investa-logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }
