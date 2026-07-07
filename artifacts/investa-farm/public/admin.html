@@ -47,11 +47,13 @@
 
     <div class="admin-shell" id="loginShell">
       <div class="admin-login-card">
-        <img src="Investa_8_-removebg-preview (1).png" alt="Investa Farm" />
+        <img src="investa-logo.png" alt="Investa Farm" />
         <h1>Admin Dashboard</h1>
         <p>Sign in to view site visit analytics.</p>
-        <input type="password" id="adminPassword" placeholder="Enter admin password" autocomplete="current-password" />
-        <button id="adminLoginBtn">Sign In</button>
+        <form onsubmit="return false;" autocomplete="on">
+          <input type="password" id="adminPassword" name="password" placeholder="Enter admin password" autocomplete="current-password" />
+          <button id="adminLoginBtn" type="submit">Sign In</button>
+        </form>
         <div class="admin-error" id="adminError">Incorrect password. Please try again.</div>
       </div>
     </div>
