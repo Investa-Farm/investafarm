@@ -821,3 +821,34 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// ===== PAGE PROGRESS BAR =====
+(function () {
+  const bar = document.createElement('div');
+  bar.id = 'pageProgress';
+  document.body.prepend(bar);
+  // Animate in on load
+  bar.style.width = '100%';
+  setTimeout(() => { bar.style.opacity = '0'; }, 400);
+  // Animate out on navigation
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('tel')) return;
+    bar.style.opacity = '1';
+    bar.style.width = '0%';
+    requestAnimationFrame(() => { bar.style.width = '72%'; });
+    setTimeout(() => { bar.style.width = '100%'; }, 250);
+  });
+  window.addEventListener('beforeunload', () => { bar.style.width = '100%'; });
+})();
+
+// ===== MOBILE NAV CLOSE BUTTON =====
+(function () {
+  const navCloseBtn = document.getElementById('navCloseBtn');
+  const navLinks = document.getElementById('navLinks');
+  if (navCloseBtn && navLinks) {
+    navCloseBtn.addEventListener('click', () => navLinks.classList.remove('open'));
+  }
+})();
