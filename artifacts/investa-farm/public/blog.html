@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Investa Farm</title>
+    <meta name="description" content="News, insights, and farm updates from Investa Farm. Learn about agricultural investment, farmer success stories, crop performance, and the future of African farming." />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Investa Farm blog, agricultural investment news, Kenya farming, farm investment insights" />
+    <link rel="canonical" href="https://investafarm.com/blog.html" />
+    <meta name="theme-color" content="#2e7d32" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="investa-logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="investa-logo.png" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://investafarm.com/blog.html" />
+    <meta property="og:title" content="Blog | Investa Farm" />
+    <meta property="og:description" content="News, insights, and farm updates from Investa Farm — agricultural investment, farmer stories, and the future of African farming." />
+    <meta property="og:image" content="https://investafarm.com/investa-logo.png" />
+    <meta property="og:site_name" content="Investa Farm" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@investa_farm" />
+    <meta name="twitter:title" content="Blog | Investa Farm" />
+    <meta name="twitter:description" content="News, insights, and farm updates from Investa Farm." />
+    <meta name="twitter:image" content="https://investafarm.com/investa-logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ===== BLOG PAGE STYLES ===== */
+      .blog-hero {
+        background: linear-gradient(150deg, #1a3d2e 0%, #2d6e3b 45%, #3a8c46 100%);
+        padding: 5rem 0 4rem;
+        text-align: center;
+        color: #fff;
+      }
+      .blog-hero .section-kicker { background: rgba(255,255,255,0.15); color: #a5d6a7; border-color: rgba(255,255,255,0.2); }
+      .blog-hero h1 { color: #fff; font-size: clamp(2rem, 5vw, 3rem); margin: 0.75rem 0 1rem; }
+      .blog-hero p { color: rgba(255,255,255,0.82); max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
+
+      .blog-filters {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        padding: 2rem 0 0.5rem;
+      }
+      .blog-filter-btn {
+        padding: 0.45rem 1.1rem;
+        border-radius: 999px;
+        border: 1.5px solid var(--line);
+        background: transparent;
+        color: var(--muted);
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.18s;
+        font-family: inherit;
+      }
+      .blog-filter-btn:hover, .blog-filter-btn.active {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+        margin-top: 2.5rem;
+      }
+      @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+
+      .blog-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--glow-card);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.18s, box-shadow 0.18s;
+      }
+      .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(30,94,32,0.13); }
+
+      .blog-card-img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        background: var(--bg-soft);
+      }
+      .blog-card-img-placeholder {
+        width: 100%;
+        height: 190px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      }
+      .blog-card-body {
+        padding: 1.4rem 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .blog-card-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+      .blog-card-tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--primary);
+        background: var(--primary-light);
+        padding: 0.25rem 0.65rem;
+        border-radius: 999px;
+      }
+      .blog-card-date { font-size: 0.8rem; color: var(--muted); }
+      .blog-card h3 { font-size: 1.08rem; font-weight: 700; color: #0d1f0e; margin: 0 0 0.6rem; line-height: 1.4; }
+      .blog-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; flex: 1; margin: 0 0 1.25rem; }
+      .blog-card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--primary);
+        text-decoration: none;
+        transition: gap 0.18s;
+      }
+      .blog-card-link:hover { gap: 0.55rem; }
+
+      .blog-featured {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        box-shadow: var(--glow-card);
+        background: #fff;
+        transition: transform 0.18s, box-shadow 0.18s;
+      }
+      .blog-featured:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(30,94,32,0.13); }
+      .blog-featured-img {
+        min-height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        background: linear-gradient(135deg, #1a3d2e, #2e7d32);
+      }
+      .blog-featured-body {
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .blog-featured-body .blog-card-tag { margin-bottom: 1rem; display: inline-block; width: fit-content; }
+      .blog-featured-body h2 { font-size: 1.45rem; font-weight: 800; color: #0d1f0e; margin: 0 0 0.75rem; line-height: 1.3; }
+      .blog-featured-body p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin: 0 0 1.5rem; }
+      @media (max-width: 700px) {
+        .blog-featured { grid-template-columns: 1fr; }
+        .blog-featured-img { min-height: 160px; }
+      }
+
+      .newsletter-blog {
+        background: linear-gradient(145deg, #1b5e20, #2e7d32);
+        border-radius: 20px;
+        padding: 3rem 2.5rem;
+        text-align: center;
+        color: #fff;
+        margin-top: 3rem;
+      }
+      .newsletter-blog h3 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+      .newsletter-blog p { color: rgba(255,255,255,0.8); margin: 0 0 1.5rem; }
+      .newsletter-blog-form { display: flex; gap: 0.75rem; max-width: 440px; margin: 0 auto; }
+      .newsletter-blog-form input {
+        flex: 1;
+        padding: 0.7rem 1rem;
+        border-radius: 10px;
+        border: none;
+        font-size: 0.95rem;
+        outline: none;
+        font-family: inherit;
+      }
+      .newsletter-blog-form button {
+        padding: 0.7rem 1.4rem;
+        border-radius: 10px;
+        border: none;
+        background: #fff;
+        color: var(--primary-strong);
+        font-weight: 700;
+        font-size: 0.95rem;
+        cursor: pointer;
+        white-space: nowrap;
+        font-family: inherit;
+        transition: transform 0.18s;
+      }
+      .newsletter-blog-form button:hover { transform: translateY(-1px); }
+      @media (max-width: 500px) { .newsletter-blog-form { flex-direction: column; } }
+    </style>
+  </head>
+  <body>
+
+    <!-- ===== CHATBOT ===== -->
+    <div class="chatbot-fab" id="chatFab" title="Chat with Investa Farm Bot">
+      <span class="fab-pulse-ring"></span>
+      <span class="fab-pulse-ring fab-pulse-ring-2"></span>
+      <div class="fab-inner">
+        <img src="investa-logo.png" alt="Investa Farm Bot" class="chat-fab-logo" />
+      </div>
+      <span class="fab-notification-dot"></span>
+    </div>
+    <div class="chatbot-panel" id="chatPanel">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <div class="chat-bot-avatar">
+            <img src="investa-logo.png" alt="Investa Farm Bot" />
+            <span class="avatar-online-ring"></span>
+          </div>
+          <div class="chat-header-text">
+            <strong>Investa Farm Bot</strong>
+            <small><span class="online-dot-small"></span>Online · AI-powered · Replies instantly</small>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button class="chat-new-btn" id="chatNew" title="New Chat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            New
+          </button>
+          <button class="chat-close" id="chatClose" title="Close">✕</button>
+        </div>
+      </div>
+      <div class="chat-suggestions" id="chatSuggestions">
+        <button class="suggestion-chip" data-q="How do I invest in a farm?">💰 How to invest</button>
+        <button class="suggestion-chip" data-q="What returns can investors expect?">📈 Investor returns</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">
+          <div class="msg-bubble">Hi! 👋 Ask me anything about Investa Farm — investing, farming, partnerships, or how to get started. 🌾</div>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask anything about Investa Farm…" autocomplete="off" />
+        <button id="chatSend" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="brand">
+          <a href="index.html"><img src="investa-logo.png" alt="Investa Farm logo" /></a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Open menu" id="menuToggle">&#9776;</button>
+        <div class="nav-links" id="navLinks">
+          <a href="investors.html">For Investors</a>
+          <a href="farmers.html">For Farmers</a>
+          <a href="app.html">App</a>
+          <a href="cooperatives.html">Cooperatives</a>
+          <a href="team.html">Team</a>
+          <a href="blog.html" class="nav-active">Blog</a>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" target="_blank" rel="noopener" class="community-nav-link">💬 Community</a>
+        </div>
+        <div class="nav-cta">
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="community-top-btn" target="_blank" rel="noopener">💬 Join Community</a>
+          <a href="https://app.investafarm.com/register" class="primary-btn" target="_blank" rel="noopener">Create Account</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===== BLOG HERO ===== -->
+    <section class="blog-hero">
+      <div class="container">
+        <span class="section-kicker">Investa Farm Blog</span>
+        <h1>Insights from the field</h1>
+        <p>Farm updates, investment insights, farmer success stories, and the latest news from Africa's agricultural investment frontier.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section">
+        <div class="container">
+
+          <!-- Filter tabs -->
+          <div class="blog-filters">
+            <button class="blog-filter-btn active" data-filter="all">All Posts</button>
+            <button class="blog-filter-btn" data-filter="investment">Investment</button>
+            <button class="blog-filter-btn" data-filter="farming">Farming</button>
+            <button class="blog-filter-btn" data-filter="news">Company News</button>
+            <button class="blog-filter-btn" data-filter="impact">Impact</button>
+          </div>
+
+          <!-- Blog grid -->
+          <div class="blog-grid">
+
+            <!-- Featured post -->
+            <article class="blog-featured" data-category="investment">
+              <div class="blog-featured-img">🌾</div>
+              <div class="blog-featured-body">
+                <span class="blog-card-tag">Investment</span>
+                <h2>How Kenyan investors are earning 28% returns from real farms — not stocks</h2>
+                <p>Forget volatile stock markets. A growing wave of retail investors in Kenya are putting their money into something real: verified farm seasons. Here's how the model works, what the risks look like, and why the returns are predictable.</p>
+                <span class="blog-card-date">June 2026</span>
+                <br /><br />
+                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
+              </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="blog-card" data-category="farming">
+              <div class="blog-card-img-placeholder">🥬</div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span class="blog-card-tag">Farming</span>
+                  <span class="blog-card-date">May 2026</span>
+                </div>
+                <h3>Kale at KES 100 a share: how small-scale farming becomes investable</h3>
+                <p>With entry points from KES 100, Investa Farm has turned kale, tomato, and maize farms into fractional investment opportunities accessible to anyone with a phone.</p>
+                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
+              </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="blog-card" data-category="impact">
+              <div class="blog-card-img-placeholder">🤝</div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span class="blog-card-tag">Impact</span>
+                  <span class="blog-card-date">April 2026</span>
+                </div>
+                <h3>35–55% revenue share: what it actually means for a Kenyan farmer</h3>
+                <p>We sat down with three farmers in our network — in Kiambu, Nakuru, and Meru — to understand what a season with Investa Farm looks like from their perspective.</p>
+                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
+              </div>
+            </article>
+
+            <!-- Post 4 -->
+            <article class="blog-card" data-category="news">
+              <div class="blog-card-img-placeholder">🏆</div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span class="blog-card-tag">Company News</span>
+                  <span class="blog-card-date">March 2026</span>
+                </div>
+                <h3>Investa Farm named finalist at AfricArena — what it means for the platform</h3>
+                <p>Being selected from hundreds of agri-fintech startups across the continent validates the model. But more importantly, it opens doors to capital, networks, and markets we couldn't reach before.</p>
+                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
+              </div>
+            </article>
+
+            <!-- Post 5 -->
+            <article class="blog-card" data-category="investment">
+              <div class="blog-card-img-placeholder">📱</div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span class="blog-card-tag">Investment</span>
+                  <span class="blog-card-date">February 2026</span>
+                </div>
+                <h3>The Investa Farm stockbroker programme: earning commissions by growing the network</h3>
+                <p>Beyond investing in farms, top community members can become stockbrokers — earning a commission on every investor they bring to the platform. Here's how it works.</p>
+                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
+              </div>
+            </article>
+
+            <!-- Post 6 -->
+            <article class="blog-card" data-category="farming">
+              <div class="blog-card-img-placeholder">🌍</div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span class="blog-card-tag">Farming</span>
+                  <span class="blog-card-date">January 2026</span>
+                </div>
+                <h3>Why we're expanding to the UK and USA — and what that means for diaspora investors</h3>
+                <p>Millions of Kenyans in the diaspora want to invest back home but lack safe, transparent vehicles to do so. Investa Farm is building that bridge — one farm at a time.</p>
+                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
+              </div>
+            </article>
+
+          </div><!-- /blog-grid -->
+
+          <!-- Newsletter signup -->
+          <div class="newsletter-blog">
+            <h3>Get farm updates in your inbox</h3>
+            <p>New farm listings, harvest reports, and investment insights — delivered monthly.</p>
+            <form class="newsletter-blog-form" onsubmit="handleBlogSubscribe(event)">
+              <input type="email" placeholder="your@email.com" required />
+              <button type="submit">Subscribe →</button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="investa-logo.png" alt="Investa Farm" />
+          </div>
+          <p>Africa's leading financially inclusive platform — connecting farmers and investors through a transparent, regulated agricultural market.</p>
+          <p class="footer-operates">Operates in Kenya, United Kingdom &amp; USA</p>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="footer-whatsapp-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Join Our WhatsApp Community
+          </a>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <p><a href="investors.html">For Investors</a></p>
+          <p><a href="farmers.html">For Farmers</a></p>
+          <p><a href="cooperatives.html">Cooperatives</a></p>
+          <p><a href="app.html">App Walkthrough</a></p>
+          <p><a href="https://app.investafarm.com" target="_blank" rel="noopener">Live Farm Listings</a></p>
+          <p><a href="https://app.investafarm.com/register" target="_blank" rel="noopener">Create Account</a></p>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <p><a href="team.html">Our Team &amp; History</a></p>
+          <p><a href="team.html#awards">Awards &amp; Recognition</a></p>
+          <p><a href="blog.html">Blog</a></p>
+          <p><a href="index.html#partners">Our Partners</a></p>
+          <p><a href="mailto:info@investafarm.com">Contact Us</a></p>
+          <h4>Community</h4>
+          <p><a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" target="_blank" rel="noopener">💬 WhatsApp Community</a></p>
+        </div>
+        <div class="footer-offices">
+          <h4>Contact Us</h4>
+          <p><a href="mailto:info@investafarm.com">info@investafarm.com</a></p>
+          <p>Mon – Fri, 8:00 – 18:00 EAT</p>
+          <h4>Offices</h4>
+          <p>Kenya: P.O. Box CPA 5364</p>
+          <p>London: 21 Wenlock Road, N1 7GU</p>
+          <p>United States</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Investa Farm Limited. All rights reserved.</p>
+        <p>Kenya · United Kingdom · USA</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Blog filter logic
+      document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          document.querySelectorAll('.blog-grid article').forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      function handleBlogSubscribe(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button');
+        btn.textContent = 'Subscribed ✓';
+        btn.style.background = '#a5d6a7';
+        e.target.querySelector('input').value = '';
+        setTimeout(() => { btn.textContent = 'Subscribe →'; btn.style.background = ''; }, 3000);
+      }
+    </script>
+  </body>
+</html>
