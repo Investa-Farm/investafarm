@@ -1,4 +1,4 @@
-modules = ["nodejs-24", "python-3.11"]
+modules = ["web", "nodejs-20", "bash"]
 
 [deployment]
 router = "application"
@@ -24,3 +24,6 @@ timeoutMs = 20000
 [userenv.shared]
 ALLOWED_ORIGINS = "https://app.investafarm.com/"
 RESEND_FROM_EMAIL = "Investa Farm <onboarding@app.investafarm.com>"
+
+[nix]
+channel = "stable-25_05"
