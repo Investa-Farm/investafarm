@@ -23,23 +23,23 @@ export interface BlogPost {
   featured?: boolean;
 }
 
-// ── RSS sources relevant to agriculture, fintech, and Africa ─────────────────
+// ── RSS sources focused on agriculture, agri-fintech, and African farming ─────
 const RSS_SOURCES = [
-  {
-    url: "https://feeds.bbci.co.uk/news/world/africa/rss.xml",
-    label: "BBC Africa",
-  },
   {
     url: "https://www.theguardian.com/environment/agriculture/rss",
     label: "Guardian Agriculture",
   },
   {
-    url: "https://feeds.reuters.com/reuters/businessNews",
-    label: "Reuters Business",
+    url: "https://www.fao.org/newsroom/rss/en/",
+    label: "FAO News",
   },
   {
-    url: "https://rss.nytimes.com/services/xml/rss/nyt/Africa.xml",
-    label: "NYT Africa",
+    url: "https://agfundernews.com/feed",
+    label: "AgFunder News",
+  },
+  {
+    url: "https://feeds.bbci.co.uk/news/world/africa/rss.xml",
+    label: "BBC Africa",
   },
 ];
 

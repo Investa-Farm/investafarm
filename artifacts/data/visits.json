@@ -1,7 +1,7 @@
 {
-  "totalVisits": 19,
+  "totalVisits": 20,
   "pageViews": {
-    "/": 9,
+    "/": 10,
     "/investors.html": 1,
     "/farmers.html": 1,
     "/app.html": 2,
@@ -12,9 +12,15 @@
   "dailyVisits": {
     "2026-07-06": 3,
     "2026-07-07": 8,
-    "2026-07-14": 8
+    "2026-07-14": 9
   },
   "recentVisits": [
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T09:35:17.236Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
     {
       "page": "/cooperatives.html",
       "timestamp": "2026-07-14T08:02:04.031Z",
