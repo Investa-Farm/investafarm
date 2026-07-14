@@ -4,39 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog | Investa Farm</title>
-    <meta name="description" content="News, insights, and farm updates from Investa Farm. Learn about agricultural investment, farmer success stories, crop performance, and the future of African farming." />
+    <meta name="description" content="News, insights, and farm updates from Investa Farm. Agricultural investment, farmer success stories, crop performance, and the future of African farming — powered by AI and real-time news." />
     <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="Investa Farm blog, agricultural investment news, Kenya farming, farm investment insights" />
     <link rel="canonical" href="https://investafarm.com/blog.html" />
     <meta name="theme-color" content="#2e7d32" />
-
-    <!-- Favicon -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="investa-logo.png" type="image/png" />
     <link rel="apple-touch-icon" href="investa-logo.png" />
     <link rel="manifest" href="manifest.json" />
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://investafarm.com/blog.html" />
     <meta property="og:title" content="Blog | Investa Farm" />
-    <meta property="og:description" content="News, insights, and farm updates from Investa Farm — agricultural investment, farmer stories, and the future of African farming." />
+    <meta property="og:description" content="AI-powered blog: current agricultural news reframed for investors and farmers in Kenya, UK, and USA." />
     <meta property="og:image" content="https://investafarm.com/investa-logo.png" />
     <meta property="og:site_name" content="Investa Farm" />
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@investa_farm" />
     <meta name="twitter:title" content="Blog | Investa Farm" />
-    <meta name="twitter:description" content="News, insights, and farm updates from Investa Farm." />
+    <meta name="twitter:description" content="AI-powered agricultural investment insights, updated from real-time news." />
     <meta name="twitter:image" content="https://investafarm.com/investa-logo.png" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      /* ===== BLOG PAGE STYLES ===== */
+      /* ===== BLOG PAGE ===== */
       .blog-hero {
         background: linear-gradient(150deg, #1a3d2e 0%, #2d6e3b 45%, #3a8c46 100%);
         padding: 5rem 0 4rem;
@@ -45,176 +37,183 @@
       }
       .blog-hero .section-kicker { background: rgba(255,255,255,0.15); color: #a5d6a7; border-color: rgba(255,255,255,0.2); }
       .blog-hero h1 { color: #fff; font-size: clamp(2rem, 5vw, 3rem); margin: 0.75rem 0 1rem; }
-      .blog-hero p { color: rgba(255,255,255,0.82); max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
+      .blog-hero p { color: rgba(255,255,255,0.82); max-width: 580px; margin: 0 auto 1.25rem; font-size: 1.05rem; }
+      .blog-hero-badge {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+        color: rgba(255,255,255,0.88); font-size: 0.8rem; font-weight: 600;
+        padding: 0.35rem 0.9rem; border-radius: 999px; margin-top: 0.5rem;
+      }
+      .blog-hero-badge span.dot { width: 7px; height: 7px; background: #69f0ae; border-radius: 50%; display: inline-block; animation: blogPulse 2s ease-in-out infinite; }
+      @keyframes blogPulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
       .blog-filters {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        padding: 2rem 0 0.5rem;
+        display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;
+        padding: 2.25rem 0 0;
       }
       .blog-filter-btn {
-        padding: 0.45rem 1.1rem;
-        border-radius: 999px;
-        border: 1.5px solid var(--line);
-        background: transparent;
-        color: var(--muted);
-        font-size: 0.875rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.18s;
-        font-family: inherit;
+        padding: 0.45rem 1.1rem; border-radius: 999px; border: 1.5px solid var(--line);
+        background: transparent; color: var(--muted); font-size: 0.875rem; font-weight: 600;
+        cursor: pointer; transition: all 0.18s; font-family: inherit;
       }
       .blog-filter-btn:hover, .blog-filter-btn.active {
-        background: var(--primary);
-        color: #fff;
-        border-color: var(--primary);
+        background: var(--primary); color: #fff; border-color: var(--primary);
       }
 
-      .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.75rem;
-        margin-top: 2.5rem;
+      /* Loading skeleton */
+      .blog-skeleton { margin-top: 2.5rem; }
+      .skeleton-featured {
+        display: grid; grid-template-columns: 1fr 1fr; border-radius: 18px;
+        overflow: hidden; border: 1px solid var(--line); height: 280px; margin-bottom: 1.75rem;
       }
-      @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+      .skeleton-card-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+      .skeleton-block {
+        background: linear-gradient(90deg, #e8f5e9 25%, #d4edda 50%, #e8f5e9 75%);
+        background-size: 400% 100%;
+        animation: shimmer 1.5s infinite;
+        border-radius: 14px;
+      }
+      .skeleton-featured .skeleton-block { border-radius: 0; }
+      .skeleton-card { height: 280px; border-radius: 18px; overflow: hidden; }
+      @keyframes shimmer { 0%{background-position:100% 0} 100%{background-position:-100% 0} }
+      @media(max-width:900px){ .skeleton-card-grid{grid-template-columns:repeat(2,1fr)} .skeleton-featured{grid-template-columns:1fr;height:auto} .skeleton-featured .skeleton-block:first-child{height:160px} }
+      @media(max-width:580px){ .skeleton-card-grid{grid-template-columns:1fr} }
 
+      /* Error state */
+      .blog-error {
+        text-align: center; padding: 3rem 1.5rem; background: #fff8f8;
+        border: 1px solid #ffd7d7; border-radius: 18px; margin-top: 2.5rem;
+      }
+      .blog-error h3 { color: #c0392b; margin: 0 0 0.5rem; }
+      .blog-error p { color: var(--muted); margin: 0 0 1.25rem; }
+
+      /* Blog grid */
+      .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; margin-top: 2.5rem; }
+      @media(max-width:900px){ .blog-grid{grid-template-columns:repeat(2,1fr)} }
+      @media(max-width:580px){ .blog-grid{grid-template-columns:1fr} }
+
+      /* Cards */
       .blog-card {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        overflow: hidden;
-        box-shadow: var(--glow-card);
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.18s, box-shadow 0.18s;
+        background: #fff; border: 1px solid var(--line); border-radius: 18px;
+        overflow: hidden; box-shadow: var(--glow-card); display: flex;
+        flex-direction: column; transition: transform 0.18s, box-shadow 0.18s; cursor: pointer;
       }
       .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(30,94,32,0.13); }
-
-      .blog-card-img {
-        width: 100%;
-        height: 190px;
-        object-fit: cover;
-        background: var(--bg-soft);
-      }
-      .blog-card-img-placeholder {
-        width: 100%;
-        height: 190px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
+      .blog-card-icon {
+        display: flex; align-items: center; justify-content: center;
+        font-size: 2.8rem; height: 130px;
         background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
       }
-      .blog-card-body {
-        padding: 1.4rem 1.5rem 1.5rem;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
+      .blog-card-body { padding: 1.35rem 1.5rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+      .blog-card-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+      .blog-tag {
+        font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+        padding: 0.25rem 0.65rem; border-radius: 999px;
       }
-      .blog-card-meta {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-      }
-      .blog-card-tag {
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: var(--primary);
-        background: var(--primary-light);
-        padding: 0.25rem 0.65rem;
-        border-radius: 999px;
-      }
-      .blog-card-date { font-size: 0.8rem; color: var(--muted); }
-      .blog-card h3 { font-size: 1.08rem; font-weight: 700; color: #0d1f0e; margin: 0 0 0.6rem; line-height: 1.4; }
-      .blog-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; flex: 1; margin: 0 0 1.25rem; }
-      .blog-card-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: var(--primary);
-        text-decoration: none;
-        transition: gap 0.18s;
-      }
-      .blog-card-link:hover { gap: 0.55rem; }
+      .blog-tag-investment { color: #1a56db; background: #e8f0fe; }
+      .blog-tag-farming    { color: var(--primary); background: var(--primary-light); }
+      .blog-tag-news       { color: #92400e; background: #fef3c7; }
+      .blog-tag-impact     { color: #065f46; background: #d1fae5; }
+      .blog-card-date { font-size: 0.78rem; color: var(--muted); }
+      .blog-card-source { font-size: 0.72rem; color: var(--muted); font-style: italic; }
+      .blog-card h3 { font-size: 1.05rem; font-weight: 700; color: #0d1f0e; margin: 0 0 0.6rem; line-height: 1.4; }
+      .blog-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; flex: 1; margin: 0 0 1.1rem; }
+      .blog-card-link { font-size: 0.875rem; font-weight: 600; color: var(--primary); cursor: pointer; }
+      .blog-card:hover .blog-card-link { text-decoration: underline; }
 
+      /* Featured card */
       .blog-featured {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        border-radius: 18px;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        box-shadow: var(--glow-card);
-        background: #fff;
-        transition: transform 0.18s, box-shadow 0.18s;
+        grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr;
+        border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
+        box-shadow: var(--glow-card); background: #fff;
+        transition: transform 0.18s, box-shadow 0.18s; cursor: pointer;
       }
       .blog-featured:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(30,94,32,0.13); }
-      .blog-featured-img {
-        min-height: 280px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 5rem;
+      .blog-featured-visual {
+        display: flex; align-items: center; justify-content: center;
+        font-size: 5rem; min-height: 280px;
         background: linear-gradient(135deg, #1a3d2e, #2e7d32);
       }
-      .blog-featured-body {
-        padding: 2.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .blog-featured-body .blog-card-tag { margin-bottom: 1rem; display: inline-block; width: fit-content; }
-      .blog-featured-body h2 { font-size: 1.45rem; font-weight: 800; color: #0d1f0e; margin: 0 0 0.75rem; line-height: 1.3; }
-      .blog-featured-body p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin: 0 0 1.5rem; }
-      @media (max-width: 700px) {
-        .blog-featured { grid-template-columns: 1fr; }
-        .blog-featured-img { min-height: 160px; }
+      .blog-featured-body { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+      .blog-featured-body .blog-tag { margin-bottom: 1rem; display: inline-block; width: fit-content; }
+      .blog-featured-body h2 { font-size: 1.5rem; font-weight: 800; color: #0d1f0e; margin: 0 0 0.75rem; line-height: 1.3; }
+      .blog-featured-body p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin: 0 0 0.5rem; }
+      .blog-featured-body .blog-card-meta { margin-bottom: 1rem; }
+      .blog-featured-body .blog-card-link { margin-top: 1rem; display: inline-block; }
+      @media(max-width:700px){
+        .blog-featured{grid-template-columns:1fr}
+        .blog-featured-visual{min-height:160px}
       }
 
+      /* Modal */
+      .blog-modal-overlay {
+        display: none; position: fixed; inset: 0; z-index: 9000;
+        background: rgba(10,30,15,0.6); backdrop-filter: blur(6px);
+        align-items: center; justify-content: center; padding: 1.5rem;
+      }
+      .blog-modal-overlay.open { display: flex; }
+      .blog-modal {
+        background: #fff; border-radius: 20px; max-width: 720px; width: 100%;
+        max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.22);
+        animation: modalIn 0.25s cubic-bezier(0.16,1,0.3,1);
+      }
+      @keyframes modalIn { from{transform:translateY(20px);opacity:0} to{transform:translateY(0);opacity:1} }
+      .blog-modal-header {
+        padding: 2rem 2rem 1.25rem; border-bottom: 1px solid var(--line);
+        display: flex; gap: 1rem; align-items: flex-start; position: sticky; top: 0; background: #fff; z-index: 1;
+      }
+      .blog-modal-emoji { font-size: 2.5rem; flex-shrink: 0; }
+      .blog-modal-header-text { flex: 1; }
+      .blog-modal-close {
+        background: none; border: none; font-size: 1.3rem; cursor: pointer;
+        color: var(--muted); padding: 0.25rem; line-height: 1; flex-shrink: 0;
+        transition: color 0.15s;
+      }
+      .blog-modal-close:hover { color: #0d1f0e; }
+      .blog-modal-header h2 { font-size: 1.35rem; font-weight: 800; color: #0d1f0e; margin: 0 0 0.5rem; line-height: 1.35; }
+      .blog-modal-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; align-items: center; }
+      .blog-modal-body { padding: 1.75rem 2rem 2.5rem; }
+      .blog-modal-body p { color: #2d4a30; line-height: 1.8; font-size: 1rem; margin: 0 0 1.1rem; }
+      .blog-modal-source { font-size: 0.82rem; color: var(--muted); margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+      .blog-modal-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+      @media(max-width:540px){ .blog-modal-header{padding:1.5rem 1.25rem 1rem} .blog-modal-body{padding:1.25rem 1.25rem 2rem} }
+
+      /* Newsletter */
       .newsletter-blog {
-        background: linear-gradient(145deg, #1b5e20, #2e7d32);
-        border-radius: 20px;
-        padding: 3rem 2.5rem;
-        text-align: center;
-        color: #fff;
-        margin-top: 3rem;
+        background: linear-gradient(145deg, #1b5e20, #2e7d32); border-radius: 20px;
+        padding: 3rem 2.5rem; text-align: center; color: #fff; margin-top: 3rem;
       }
       .newsletter-blog h3 { font-size: 1.5rem; margin: 0 0 0.5rem; }
-      .newsletter-blog p { color: rgba(255,255,255,0.8); margin: 0 0 1.5rem; }
+      .newsletter-blog p { color: rgba(255,255,255,0.82); margin: 0 0 1.5rem; }
       .newsletter-blog-form { display: flex; gap: 0.75rem; max-width: 440px; margin: 0 auto; }
       .newsletter-blog-form input {
-        flex: 1;
-        padding: 0.7rem 1rem;
-        border-radius: 10px;
-        border: none;
-        font-size: 0.95rem;
-        outline: none;
-        font-family: inherit;
+        flex: 1; padding: 0.7rem 1rem; border-radius: 10px; border: none;
+        font-size: 0.95rem; outline: none; font-family: inherit;
       }
       .newsletter-blog-form button {
-        padding: 0.7rem 1.4rem;
-        border-radius: 10px;
-        border: none;
-        background: #fff;
-        color: var(--primary-strong);
-        font-weight: 700;
-        font-size: 0.95rem;
-        cursor: pointer;
-        white-space: nowrap;
-        font-family: inherit;
+        padding: 0.7rem 1.4rem; border-radius: 10px; border: none;
+        background: #fff; color: var(--primary-strong); font-weight: 700;
+        font-size: 0.95rem; cursor: pointer; white-space: nowrap; font-family: inherit;
         transition: transform 0.18s;
       }
       .newsletter-blog-form button:hover { transform: translateY(-1px); }
-      @media (max-width: 500px) { .newsletter-blog-form { flex-direction: column; } }
+      @media(max-width:500px){ .newsletter-blog-form{flex-direction:column} }
+
+      /* Refresh bar */
+      .blog-meta-bar {
+        display: flex; align-items: center; justify-content: space-between;
+        flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; padding: 0.85rem 1.25rem;
+        background: #f0faf0; border: 1px solid #c8dfc4; border-radius: 12px;
+        font-size: 0.83rem; color: var(--muted);
+      }
+      .blog-meta-bar strong { color: var(--primary); }
+      .blog-refresh-btn {
+        background: none; border: 1px solid var(--primary); color: var(--primary);
+        padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.8rem;
+        font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.18s;
+      }
+      .blog-refresh-btn:hover { background: var(--primary); color: #fff; }
+      .blog-refresh-btn:disabled { opacity: 0.5; cursor: not-allowed; }
     </style>
   </head>
   <body>
@@ -223,9 +222,7 @@
     <div class="chatbot-fab" id="chatFab" title="Chat with Investa Farm Bot">
       <span class="fab-pulse-ring"></span>
       <span class="fab-pulse-ring fab-pulse-ring-2"></span>
-      <div class="fab-inner">
-        <img src="investa-logo.png" alt="Investa Farm Bot" class="chat-fab-logo" />
-      </div>
+      <div class="fab-inner"><img src="investa-logo.png" alt="Investa Farm Bot" class="chat-fab-logo" /></div>
       <span class="fab-notification-dot"></span>
     </div>
     <div class="chatbot-panel" id="chatPanel">
@@ -283,17 +280,21 @@
         </div>
         <div class="nav-cta">
           <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="community-top-btn" target="_blank" rel="noopener">💬 Join Community</a>
-          <a href="https://app.investafarm.com/register" class="primary-btn" target="_blank" rel="noopener">Create Account</a>
+          <a href="https://app.investafarm.com" class="primary-btn" target="_blank" rel="noopener">Open App</a>
+          <a href="https://app.investafarm.com/register" class="primary-btn" style="background:var(--forest)" target="_blank" rel="noopener">Create Account</a>
         </div>
       </nav>
     </header>
 
-    <!-- ===== BLOG HERO ===== -->
+    <!-- ===== HERO ===== -->
     <section class="blog-hero">
       <div class="container">
         <span class="section-kicker">Investa Farm Blog</span>
         <h1>Insights from the field</h1>
-        <p>Farm updates, investment insights, farmer success stories, and the latest news from Africa's agricultural investment frontier.</p>
+        <p>Agricultural investment news, farmer stories, and market insights — written by AI from real-time sources, in Investa Farm's voice.</p>
+        <div class="blog-hero-badge">
+          <span class="dot"></span> AI-generated · Updated from live news every hour
+        </div>
       </div>
     </section>
 
@@ -310,96 +311,39 @@
             <button class="blog-filter-btn" data-filter="impact">Impact</button>
           </div>
 
-          <!-- Blog grid -->
-          <div class="blog-grid">
+          <!-- Meta bar (shown after load) -->
+          <div class="blog-meta-bar" id="blogMetaBar" style="display:none">
+            <span id="blogMetaText">Loading…</span>
+            <button class="blog-refresh-btn" id="blogRefreshBtn">↻ Refresh posts</button>
+          </div>
 
-            <!-- Featured post -->
-            <article class="blog-featured" data-category="investment">
-              <div class="blog-featured-img">🌾</div>
-              <div class="blog-featured-body">
-                <span class="blog-card-tag">Investment</span>
-                <h2>How Kenyan investors are earning 28% returns from real farms — not stocks</h2>
-                <p>Forget volatile stock markets. A growing wave of retail investors in Kenya are putting their money into something real: verified farm seasons. Here's how the model works, what the risks look like, and why the returns are predictable.</p>
-                <span class="blog-card-date">June 2026</span>
-                <br /><br />
-                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
-              </div>
-            </article>
+          <!-- Loading skeleton -->
+          <div class="blog-skeleton" id="blogSkeleton">
+            <div class="skeleton-featured">
+              <div class="skeleton-block" style="height:100%"></div>
+              <div class="skeleton-block" style="height:100%;opacity:0.6"></div>
+            </div>
+            <div class="skeleton-card-grid">
+              <div class="skeleton-card skeleton-block"></div>
+              <div class="skeleton-card skeleton-block" style="opacity:0.7"></div>
+              <div class="skeleton-card skeleton-block" style="opacity:0.5"></div>
+              <div class="skeleton-card skeleton-block" style="opacity:0.4"></div>
+              <div class="skeleton-card skeleton-block" style="opacity:0.3"></div>
+            </div>
+          </div>
 
-            <!-- Post 2 -->
-            <article class="blog-card" data-category="farming">
-              <div class="blog-card-img-placeholder">🥬</div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-card-tag">Farming</span>
-                  <span class="blog-card-date">May 2026</span>
-                </div>
-                <h3>Kale at KES 100 a share: how small-scale farming becomes investable</h3>
-                <p>With entry points from KES 100, Investa Farm has turned kale, tomato, and maize farms into fractional investment opportunities accessible to anyone with a phone.</p>
-                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
-              </div>
-            </article>
+          <!-- Error state -->
+          <div class="blog-error" id="blogError" style="display:none">
+            <h3>⚠️ Blog unavailable</h3>
+            <p id="blogErrorMsg">The AI blog requires a GROQ_API_KEY secret to generate posts. Add it in Replit Secrets and the blog will come to life.</p>
+            <a href="mailto:info@investafarm.com" class="primary-btn">Contact the team</a>
+          </div>
 
-            <!-- Post 3 -->
-            <article class="blog-card" data-category="impact">
-              <div class="blog-card-img-placeholder">🤝</div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-card-tag">Impact</span>
-                  <span class="blog-card-date">April 2026</span>
-                </div>
-                <h3>35–55% revenue share: what it actually means for a Kenyan farmer</h3>
-                <p>We sat down with three farmers in our network — in Kiambu, Nakuru, and Meru — to understand what a season with Investa Farm looks like from their perspective.</p>
-                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
-              </div>
-            </article>
+          <!-- Blog grid (populated by JS) -->
+          <div class="blog-grid" id="blogGrid" style="display:none"></div>
 
-            <!-- Post 4 -->
-            <article class="blog-card" data-category="news">
-              <div class="blog-card-img-placeholder">🏆</div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-card-tag">Company News</span>
-                  <span class="blog-card-date">March 2026</span>
-                </div>
-                <h3>Investa Farm named finalist at AfricArena — what it means for the platform</h3>
-                <p>Being selected from hundreds of agri-fintech startups across the continent validates the model. But more importantly, it opens doors to capital, networks, and markets we couldn't reach before.</p>
-                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
-              </div>
-            </article>
-
-            <!-- Post 5 -->
-            <article class="blog-card" data-category="investment">
-              <div class="blog-card-img-placeholder">📱</div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-card-tag">Investment</span>
-                  <span class="blog-card-date">February 2026</span>
-                </div>
-                <h3>The Investa Farm stockbroker programme: earning commissions by growing the network</h3>
-                <p>Beyond investing in farms, top community members can become stockbrokers — earning a commission on every investor they bring to the platform. Here's how it works.</p>
-                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
-              </div>
-            </article>
-
-            <!-- Post 6 -->
-            <article class="blog-card" data-category="farming">
-              <div class="blog-card-img-placeholder">🌍</div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-card-tag">Farming</span>
-                  <span class="blog-card-date">January 2026</span>
-                </div>
-                <h3>Why we're expanding to the UK and USA — and what that means for diaspora investors</h3>
-                <p>Millions of Kenyans in the diaspora want to invest back home but lack safe, transparent vehicles to do so. Investa Farm is building that bridge — one farm at a time.</p>
-                <a href="mailto:info@investafarm.com?subject=Blog enquiry" class="blog-card-link">Read more →</a>
-              </div>
-            </article>
-
-          </div><!-- /blog-grid -->
-
-          <!-- Newsletter signup -->
-          <div class="newsletter-blog">
+          <!-- Newsletter -->
+          <div class="newsletter-blog" id="blogNewsletter" style="display:none">
             <h3>Get farm updates in your inbox</h3>
             <p>New farm listings, harvest reports, and investment insights — delivered monthly.</p>
             <form class="newsletter-blog-form" onsubmit="handleBlogSubscribe(event)">
@@ -412,13 +356,33 @@
       </section>
     </main>
 
+    <!-- ===== POST MODAL ===== -->
+    <div class="blog-modal-overlay" id="blogModalOverlay" role="dialog" aria-modal="true">
+      <div class="blog-modal" id="blogModal">
+        <div class="blog-modal-header">
+          <div class="blog-modal-emoji" id="modalEmoji">🌾</div>
+          <div class="blog-modal-header-text">
+            <h2 id="modalTitle"></h2>
+            <div class="blog-modal-meta" id="modalMeta"></div>
+          </div>
+          <button class="blog-modal-close" id="blogModalClose" aria-label="Close">✕</button>
+        </div>
+        <div class="blog-modal-body">
+          <div id="modalBody"></div>
+          <p class="blog-modal-source" id="modalSource"></p>
+          <div class="blog-modal-cta">
+            <a href="https://app.investafarm.com/register" class="primary-btn" target="_blank" rel="noopener">Create Account →</a>
+            <a href="https://app.investafarm.com" class="outline-btn" target="_blank" rel="noopener">Browse Farms →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo-wrap">
-            <img src="investa-logo.png" alt="Investa Farm" />
-          </div>
+          <div class="footer-logo-wrap"><img src="investa-logo.png" alt="Investa Farm" /></div>
           <p>Africa's leading financially inclusive platform — connecting farmers and investors through a transparent, regulated agricultural market.</p>
           <p class="footer-operates">Operates in Kenya, United Kingdom &amp; USA</p>
           <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="footer-whatsapp-btn" target="_blank" rel="noopener">
@@ -463,30 +427,197 @@
 
     <script src="script.js"></script>
     <script>
-      // Blog filter logic
+    (function () {
+      'use strict';
+
+      const TAG_CLASS = {
+        investment: 'blog-tag-investment',
+        farming:    'blog-tag-farming',
+        news:       'blog-tag-news',
+        impact:     'blog-tag-impact',
+      };
+
+      let allPosts = [];
+      let activeFilter = 'all';
+      let openPost = null;
+
+      // ── Render helpers ──────────────────────────────────────────────────────
+      function tagHtml(category) {
+        const cls = TAG_CLASS[category] || 'blog-tag-farming';
+        const label = { investment:'Investment', farming:'Farming', news:'Company News', impact:'Impact' }[category] || category;
+        return `<span class="blog-tag ${cls}">${label}</span>`;
+      }
+
+      function renderFeatured(post) {
+        return `
+          <article class="blog-featured" data-id="${post.id}" data-category="${post.category}">
+            <div class="blog-featured-visual">${post.emoji}</div>
+            <div class="blog-featured-body">
+              ${tagHtml(post.category)}
+              <h2>${escHtml(post.title)}</h2>
+              <div class="blog-card-meta">
+                <span class="blog-card-date">${escHtml(post.date)}</span>
+                ${post.source ? `<span class="blog-card-source">via ${escHtml(post.source)}</span>` : ''}
+              </div>
+              <p>${escHtml(post.excerpt)}</p>
+              <span class="blog-card-link">Read full article →</span>
+            </div>
+          </article>`;
+      }
+
+      function renderCard(post) {
+        return `
+          <article class="blog-card" data-id="${post.id}" data-category="${post.category}">
+            <div class="blog-card-icon">${post.emoji}</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                ${tagHtml(post.category)}
+                <span class="blog-card-date">${escHtml(post.date)}</span>
+              </div>
+              <h3>${escHtml(post.title)}</h3>
+              <p>${escHtml(post.excerpt)}</p>
+              <span class="blog-card-link">Read more →</span>
+            </div>
+          </article>`;
+      }
+
+      function escHtml(s) {
+        return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      }
+
+      // ── Grid rendering ───────────────────────────────────────────────────────
+      function renderGrid(posts) {
+        const grid = document.getElementById('blogGrid');
+        const filtered = activeFilter === 'all' ? posts : posts.filter(p => p.category === activeFilter);
+        if (!filtered.length) { grid.innerHTML = '<p style="text-align:center;color:var(--muted);grid-column:1/-1;padding:2rem">No posts in this category yet.</p>'; return; }
+
+        const featured = filtered.find(p => p.featured) || filtered[0];
+        const rest = filtered.filter(p => p.id !== featured.id);
+        grid.innerHTML = renderFeatured(featured) + rest.map(renderCard).join('');
+
+        grid.querySelectorAll('[data-id]').forEach(el => {
+          el.addEventListener('click', () => openModal(allPosts.find(p => p.id === el.dataset.id)));
+        });
+      }
+
+      // ── Modal ────────────────────────────────────────────────────────────────
+      function openModal(post) {
+        if (!post) return;
+        openPost = post;
+        document.getElementById('modalEmoji').textContent = post.emoji;
+        document.getElementById('modalTitle').textContent = post.title;
+        document.getElementById('modalMeta').innerHTML =
+          tagHtml(post.category) +
+          `<span class="blog-card-date">${escHtml(post.date)}</span>` +
+          (post.source ? `<span class="blog-card-source">via ${escHtml(post.source)}</span>` : '');
+
+        // Body: split into paragraphs
+        const bodyEl = document.getElementById('modalBody');
+        bodyEl.innerHTML = (post.body || post.excerpt)
+          .split(/\n{2,}/)
+          .filter(Boolean)
+          .map(p => `<p>${escHtml(p.trim())}</p>`)
+          .join('');
+
+        document.getElementById('modalSource').textContent =
+          post.source ? `Sources: ${post.source} — This post was written by Investa Farm's AI content engine based on real-time news.` :
+          'This post was written by Investa Farm\'s AI content engine based on real-time agricultural and financial news.';
+
+        document.getElementById('blogModalOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        document.getElementById('blogModalOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+        openPost = null;
+      }
+
+      document.getElementById('blogModalClose').addEventListener('click', closeModal);
+      document.getElementById('blogModalOverlay').addEventListener('click', e => {
+        if (e.target === e.currentTarget) closeModal();
+      });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+      // ── Filter tabs ──────────────────────────────────────────────────────────
       document.querySelectorAll('.blog-filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          const filter = btn.dataset.filter;
-          document.querySelectorAll('.blog-grid article').forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
-          });
+          activeFilter = btn.dataset.filter;
+          if (allPosts.length) renderGrid(allPosts);
         });
       });
 
-      function handleBlogSubscribe(e) {
+      // ── Meta bar ─────────────────────────────────────────────────────────────
+      function showMetaBar(data) {
+        const bar = document.getElementById('blogMetaBar');
+        const txt = document.getElementById('blogMetaText');
+        const stale = data.stale ? ' (stale — will refresh shortly)' : '';
+        const cached = data.cached ? 'Cached' : 'Fresh';
+        const when = data.generatedAt ? new Date(data.generatedAt).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) : '';
+        txt.innerHTML = `<strong>AI-generated</strong> from <strong>${data.headlineCount ?? 0}</strong> live headlines · ${cached}${when ? ` · Generated at ${when}` : ''}${stale}`;
+        bar.style.display = 'flex';
+      }
+
+      // ── Fetch posts ───────────────────────────────────────────────────────────
+      async function loadPosts(forceRefresh) {
+        const skeleton = document.getElementById('blogSkeleton');
+        const grid = document.getElementById('blogGrid');
+        const errEl = document.getElementById('blogError');
+        const newsletter = document.getElementById('blogNewsletter');
+        const refreshBtn = document.getElementById('blogRefreshBtn');
+
+        skeleton.style.display = '';
+        grid.style.display = 'none';
+        errEl.style.display = 'none';
+        newsletter.style.display = 'none';
+        if (refreshBtn) { refreshBtn.disabled = true; refreshBtn.textContent = '↻ Refreshing…'; }
+
+        try {
+          const url = forceRefresh ? '/api/blog/posts?bust=' + Date.now() : '/api/blog/posts';
+          const res = await fetch(url);
+          const data = await res.json();
+
+          if (!res.ok || data.error) {
+            throw new Error(data.message || data.error || 'Failed to load');
+          }
+
+          allPosts = data.posts || [];
+          if (!allPosts.length) throw new Error('No posts returned');
+
+          skeleton.style.display = 'none';
+          grid.style.display = 'grid';
+          newsletter.style.display = 'block';
+          renderGrid(allPosts);
+          showMetaBar(data);
+        } catch (err) {
+          skeleton.style.display = 'none';
+          errEl.style.display = 'block';
+          document.getElementById('blogErrorMsg').textContent =
+            err.message.includes('GROQ') || err.message.includes('key')
+              ? 'The AI blog requires a GROQ_API_KEY secret to generate posts. Add it in Replit Secrets and the blog will come to life.'
+              : 'Could not load blog posts right now. The AI is generating fresh content — please try again in a moment.';
+        } finally {
+          if (refreshBtn) { refreshBtn.disabled = false; refreshBtn.textContent = '↻ Refresh posts'; }
+        }
+      }
+
+      document.getElementById('blogRefreshBtn')?.addEventListener('click', () => loadPosts(true));
+
+      // Newsletter submit
+      window.handleBlogSubscribe = function(e) {
         e.preventDefault();
         const btn = e.target.querySelector('button');
         btn.textContent = 'Subscribed ✓';
         btn.style.background = '#a5d6a7';
         e.target.querySelector('input').value = '';
-        setTimeout(() => { btn.textContent = 'Subscribe →'; btn.style.background = ''; }, 3000);
-      }
+        setTimeout(() => { btn.textContent = 'Subscribe →'; btn.style.background = ''; }, 3500);
+      };
+
+      // Boot
+      loadPosts(false);
+    })();
     </script>
   </body>
 </html>
