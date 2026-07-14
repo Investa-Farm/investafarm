@@ -1,7 +1,7 @@
 {
-  "totalVisits": 16,
+  "totalVisits": 17,
   "pageViews": {
-    "/": 7,
+    "/": 8,
     "/investors.html": 1,
     "/farmers.html": 1,
     "/app.html": 2,
@@ -12,9 +12,15 @@
   "dailyVisits": {
     "2026-07-06": 3,
     "2026-07-07": 8,
-    "2026-07-14": 5
+    "2026-07-14": 6
   },
   "recentVisits": [
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T07:49:53.839Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
     {
       "page": "/blog.html",
       "timestamp": "2026-07-14T06:54:01.117Z",
