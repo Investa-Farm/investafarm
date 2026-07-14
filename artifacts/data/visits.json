@@ -1,20 +1,38 @@
 {
-  "totalVisits": 24,
+  "totalVisits": 27,
   "pageViews": {
-    "/": 14,
-    "/investors.html": 1,
+    "/": 15,
+    "/investors.html": 2,
     "/farmers.html": 1,
     "/app.html": 2,
     "/team.html": 2,
     "/cooperatives.html": 2,
-    "/blog.html": 2
+    "/blog.html": 3
   },
   "dailyVisits": {
     "2026-07-06": 3,
     "2026-07-07": 8,
-    "2026-07-14": 13
+    "2026-07-14": 16
   },
   "recentVisits": [
+    {
+      "page": "/blog.html",
+      "timestamp": "2026-07-14T10:03:51.836Z",
+      "referrer": "http://127.0.0.1/blog.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/investors.html",
+      "timestamp": "2026-07-14T10:03:49.836Z",
+      "referrer": "http://127.0.0.1/investors.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T10:03:47.756Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
     {
       "page": "/",
       "timestamp": "2026-07-14T10:02:44.670Z",
