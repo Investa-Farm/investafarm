@@ -107,7 +107,7 @@ router.post("/admin/login", (req, res) => {
   const secureFlag = process.env.NODE_ENV === "production" ? "; Secure" : "";
   res.setHeader(
     "Set-Cookie",
-    `admin_session=${token}; HttpOnly; Path=/; SameSite=Strict; Max-Age=86400${secureFlag}`,
+    `admin_session=${token}; HttpOnly; Path=/; SameSite=Lax; Max-Age=86400${secureFlag}`,
   );
   return res.json({ ok: true });
 });
