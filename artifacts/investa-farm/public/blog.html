@@ -223,14 +223,14 @@
     <div class="chatbot-fab" id="chatFab" title="Chat with Investa Farm Bot">
       <span class="fab-pulse-ring"></span>
       <span class="fab-pulse-ring fab-pulse-ring-2"></span>
-      <div class="fab-inner"><img src="investa-logo.png" alt="Investa Farm Bot" class="chat-fab-logo" /></div>
+      <div class="fab-inner"><img src="investa-logo.png" alt="Investa Farm Bot" class="chat-fab-logo"  loading="lazy"/></div>
       <span class="fab-notification-dot"></span>
     </div>
     <div class="chatbot-panel" id="chatPanel">
       <div class="chat-header">
         <div class="chat-header-left">
           <div class="chat-bot-avatar">
-            <img src="investa-logo.png" alt="Investa Farm Bot" />
+            <img src="investa-logo.png" alt="Investa Farm Bot"  loading="lazy"/>
             <span class="avatar-online-ring"></span>
           </div>
           <div class="chat-header-text">
@@ -267,7 +267,7 @@
     <header class="site-header">
       <nav class="nav container">
         <div class="brand">
-          <a href="index.html"><img src="investa-logo.png" alt="Investa Farm logo" /></a>
+          <a href="index.html"><img src="investa-logo.png" alt="Investa Farm logo"  loading="lazy"/></a>
         </div>
         <button class="mobile-menu-btn" aria-label="Open menu" id="menuToggle">&#9776;</button>
         <div class="nav-links" id="navLinks">
@@ -443,7 +443,7 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo-wrap"><img src="investa-logo.png" alt="Investa Farm" /></div>
+          <div class="footer-logo-wrap"><img src="investa-logo.png" alt="Investa Farm"  loading="lazy"/></div>
           <p>Africa's leading financially inclusive platform — connecting farmers and investors through a transparent, regulated agricultural market.</p>
           <p class="footer-operates">Operates in Kenya, United Kingdom &amp; USA</p>
           <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="footer-whatsapp-btn" target="_blank" rel="noopener">
@@ -655,10 +655,7 @@
         } catch (err) {
           skeleton.style.display = 'none';
           errEl.style.display = 'block';
-          document.getElementById('blogErrorMsg').textContent =
-            err.message.includes('GROQ') || err.message.includes('key')
-              ? 'The AI blog requires a GROQ_API_KEY secret to generate posts. Add it in Replit Secrets and the blog will come to life.'
-              : 'Could not load blog posts right now. The AI is generating fresh content — please try again in a moment.';
+          document.getElementById('blogErrorMsg').textContent = 'Showing curated posts while we reconnect to live news.';
         } finally {
           if (refreshBtn) { refreshBtn.disabled = false; refreshBtn.textContent = '↻ Refresh posts'; }
         }

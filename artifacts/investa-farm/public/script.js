@@ -286,6 +286,25 @@ if (revealTargets.length) {
   revealTargets.forEach((t) => observer.observe(t));
 }
 
+// ===== SCROLL TO TOP =====
+(function () {
+  const btn = document.createElement('button');
+  btn.id = 'scrollToTop';
+  btn.setAttribute('aria-label', 'Scroll to top');
+  btn.innerHTML = '↑';
+  document.body.appendChild(btn);
+  window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 420), { passive: true });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+// ===== TRUST BAR MARQUEE (mobile) =====
+(function () {
+  const inner = document.querySelector('.trust-bar-inner');
+  if (!inner || window.innerWidth > 640) return;
+  // duplicate items for seamless loop
+  inner.innerHTML += inner.innerHTML;
+})();
+
 // ===== MOBILE NAV =====
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
