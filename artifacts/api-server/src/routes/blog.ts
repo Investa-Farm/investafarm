@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { notifySubscribers } from "../lib/mailer.js";
 
 const router = Router();
 
@@ -92,12 +93,29 @@ async function fetchAllHeadlines(): Promise<string[]> {
 
 const BLOG_SYSTEM_PROMPT = `You are the content team at Investa Farm — Africa's leading financially inclusive agricultural investment platform based in Kenya, operating also in the UK and USA.
 
-Your job: given a list of real current news headlines, write exactly 6 engaging blog posts FOR Investa Farm's website. The posts should:
+Generate exactly 6 blog posts for Investa Farm's website. Write 3 posts grounded in the real news headlines provided AND 3 posts as practical how-to guides for users of the Investa Farm platform.
+
+News-based posts (3 posts) should:
 - Be written in Investa Farm's voice: warm, knowledgeable, empowering, Africa-focused
-- Connect the news to themes relevant to Investa Farm (farm investment, farmer revenue share, agri-fintech, Kenya agriculture, diaspora investment, food security, climate & crops)
-- Be educational and actionable for investors and farmers
+- Connect the news to Investa Farm's mission (farm investment, revenue share, agri-fintech, Kenya agriculture, diaspora investment, food security, climate & crops)
 - Feel timely — reference "right now" and "this season" naturally
 - NOT be generic; anchor each post to a real news angle you were given
+
+App tutorial posts (3 posts) — pick 3 topics from this list (rotate each time, do not always pick the same ones):
+- "How to start investing in farms from KES 100 — a step-by-step guide"
+- "Mid-Season Exit vs Full Season Exit: which is right for you?"
+- "How Investa Farm's revenue share works for farmers — no loans, no debt"
+- "How to read your portfolio dashboard and track your harvest returns"
+- "How to earn commissions through the Investa Farm Stock Broker Programme"
+- "How cooperatives can join Investa Farm as a group and earn collectively"
+- "How farm listings are verified before they go live on the platform"
+- "Funding your account: M-Pesa and bank transfer explained"
+- "Primary Market vs Secondary Market: trading farm shares explained"
+- "KYC verification on Investa Farm: what you need and why it matters"
+- "How to apply as a farmer partner — the full onboarding process"
+- "Maximising your returns: diversifying across multiple farm listings"
+
+Tutorial posts should be warm, educational, and feel like they were written by someone who uses the product daily.
 
 Return ONLY valid JSON — an array of exactly 6 objects with these keys:
 {
@@ -108,11 +126,11 @@ Return ONLY valid JSON — an array of exactly 6 objects with these keys:
   "category": one of: "investment" | "farming" | "news" | "impact",
   "emoji": single relevant emoji,
   "date": current month and year like "July 2026",
-  "source": source label from the headline used (e.g. "BBC Africa"),
+  "source": "Investa Farm Guide" for tutorial posts, or the news source label for news posts,
   "featured": true for the single best post, false for the rest
 }
 
-Make the first post (id:"1") the featured one (featured:true). It should be your strongest, most timely piece.`;
+Make the first post (id:"1") the featured one (featured:true). It should be either a powerful news angle or a must-read app tutorial — whichever is strongest.`;
 
 async function generatePosts(headlines: string[]): Promise<BlogPost[]> {
   const GROQ_API_KEY = process.env.GROQ_API_KEY;
@@ -195,6 +213,8 @@ router.get("/blog/posts", async (req, res) => {
     const headlines = await fetchAllHeadlines();
     const posts = await generatePosts(headlines);
     cache = { posts, generatedAt: Date.now(), headlines };
+    // Notify newsletter subscribers in the background (non-blocking)
+    notifySubscribers(posts).catch(() => {});
     return res.json({
       posts,
       generatedAt: new Date(cache.generatedAt).toISOString(),
