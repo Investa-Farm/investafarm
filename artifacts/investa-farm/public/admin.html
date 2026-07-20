@@ -5,104 +5,374 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard | Investa Farm</title>
     <meta name="robots" content="noindex, nofollow" />
-    <meta name="theme-color" content="#0f8e5e" />
+    <meta name="theme-color" content="#1b5e20" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
     <style>
-      .admin-shell { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem 1rem; }
-      .admin-login-card { background: #fff; border-radius: 18px; padding: 2.5rem; max-width: 380px; width: 100%; box-shadow: 0 12px 40px rgba(14,34,58,0.12); text-align: center; }
-      .admin-login-card img { width: 56px; margin-bottom: 1rem; }
-      .admin-login-card h1 { font-size: 1.3rem; margin-bottom: 0.4rem; }
-      .admin-login-card p { color: #667085; font-size: 0.9rem; margin-bottom: 1.5rem; }
-      .admin-login-card input { width: 100%; padding: 0.8rem 1rem; border: 1.5px solid #e3e8ef; border-radius: 10px; font-size: 0.95rem; margin-bottom: 1rem; box-sizing: border-box; }
-      .admin-login-card input:focus { outline: none; border-color: var(--primary); }
-      .admin-login-card button { width: 100%; padding: 0.85rem; border: none; border-radius: 10px; background: var(--primary); color: #fff; font-weight: 600; font-size: 0.95rem; cursor: pointer; }
-      .admin-login-card button:hover { opacity: 0.92; }
-      .admin-error { color: #d92d20; font-size: 0.85rem; margin-top: 0.75rem; display: none; }
-      .admin-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; display: none; }
-      .admin-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-      .admin-header h1 { font-size: 1.5rem; margin: 0; }
-      .admin-logout-btn { padding: 0.6rem 1.2rem; border-radius: 10px; border: 1.5px solid #e3e8ef; background: #fff; cursor: pointer; font-weight: 600; font-size: 0.85rem; color: #344054; }
-      .admin-logout-btn:hover { border-color: var(--primary); color: var(--primary); }
-      .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-bottom: 2.5rem; }
-      .stat-card { background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(14,34,58,0.06); }
-      .stat-card .stat-value { font-size: 2rem; font-weight: 800; color: var(--primary); }
-      .stat-card .stat-label { color: #667085; font-size: 0.85rem; margin-top: 0.3rem; }
-      .admin-panel { background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(14,34,58,0.06); margin-bottom: 1.5rem; }
-      .admin-panel h2 { font-size: 1.05rem; margin: 0 0 1rem; }
-      .page-row { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f2f5; font-size: 0.9rem; }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: 'Inter', sans-serif; background: #f2f4f7; color: #1a2332; min-height: 100vh; }
+
+      /* ── LOGIN ── */
+      .admin-shell {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 55%, #388e3c 100%);
+        padding: 2rem 1rem;
+      }
+      .admin-login-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 2.8rem 2.5rem;
+        max-width: 400px;
+        width: 100%;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        text-align: center;
+      }
+      .admin-login-logo {
+        width: 60px;
+        height: 60px;
+        background: #f0f9f0;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.25rem;
+        border: 1.5px solid rgba(46,125,50,0.15);
+      }
+      .admin-login-logo img { width: 38px; }
+      .admin-login-card h1 { font-size: 1.45rem; font-weight: 800; color: #0d1f0e; margin-bottom: 0.35rem; }
+      .admin-login-card p { color: #667085; font-size: 0.9rem; margin-bottom: 2rem; }
+      .login-field { position: relative; margin-bottom: 1rem; }
+      .login-field label { display: block; text-align: left; font-size: 0.82rem; font-weight: 600; color: #344054; margin-bottom: 0.4rem; }
+      .login-field input {
+        width: 100%; padding: 0.85rem 1rem;
+        border: 1.5px solid #d0d5dd; border-radius: 10px;
+        font-size: 0.95rem; font-family: inherit;
+        transition: border-color 0.15s;
+      }
+      .login-field input:focus { outline: none; border-color: #2e7d32; box-shadow: 0 0 0 3px rgba(46,125,50,0.12); }
+      .admin-login-btn {
+        width: 100%; padding: 0.9rem;
+        background: linear-gradient(135deg, #2e7d32, #388e3c);
+        color: #fff; border: none; border-radius: 10px;
+        font-weight: 700; font-size: 0.95rem; cursor: pointer;
+        font-family: inherit; transition: opacity 0.15s;
+        margin-top: 0.25rem;
+      }
+      .admin-login-btn:hover { opacity: 0.9; }
+      .admin-error { color: #d92d20; font-size: 0.84rem; margin-top: 0.85rem; display: none; background: #fff5f5; border: 1px solid #fecdca; border-radius: 8px; padding: 0.6rem 0.8rem; }
+
+      /* ── TOPBAR ── */
+      .admin-topbar {
+        background: #fff;
+        border-bottom: 1px solid #e4e7ec;
+        padding: 0 2rem;
+        height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      }
+      .topbar-left { display: flex; align-items: center; gap: 0.75rem; }
+      .topbar-logo { width: 32px; height: 32px; object-fit: contain; }
+      .topbar-title { font-size: 1rem; font-weight: 700; color: #0d1f0e; }
+      .topbar-badge {
+        font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.55rem;
+        background: #e8f5e9; color: #2e7d32; border-radius: 20px;
+        border: 1px solid rgba(46,125,50,0.2);
+      }
+      .topbar-right { display: flex; align-items: center; gap: 1rem; }
+      .topbar-time { font-size: 0.8rem; color: #667085; }
+      .admin-logout-btn {
+        padding: 0.5rem 1.1rem; border-radius: 8px;
+        border: 1.5px solid #d0d5dd; background: #fff;
+        cursor: pointer; font-weight: 600; font-size: 0.82rem;
+        color: #344054; font-family: inherit; transition: all 0.15s;
+      }
+      .admin-logout-btn:hover { border-color: #d92d20; color: #d92d20; }
+
+      /* ── MAIN WRAP ── */
+      .admin-wrap { max-width: 1180px; margin: 0 auto; padding: 2rem 1.5rem 4rem; display: none; }
+
+      /* ── PAGE TITLE ── */
+      .admin-page-head { margin-bottom: 1.75rem; }
+      .admin-page-head h2 { font-size: 1.35rem; font-weight: 800; color: #0d1f0e; }
+      .admin-page-head p { color: #667085; font-size: 0.88rem; margin-top: 0.25rem; }
+
+      /* ── STAT GRID ── */
+      .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.1rem; margin-bottom: 1.75rem; }
+      .stat-card {
+        background: #fff; border-radius: 14px;
+        padding: 1.35rem 1.4rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+        border: 1px solid #f0f2f5;
+        display: flex; flex-direction: column; gap: 0.75rem;
+      }
+      .stat-card-top { display: flex; align-items: center; justify-content: space-between; }
+      .stat-icon {
+        width: 38px; height: 38px; border-radius: 10px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.1rem;
+      }
+      .stat-icon.green { background: #e8f5e9; }
+      .stat-icon.blue  { background: #e8f0fe; }
+      .stat-icon.amber { background: #fff8e1; }
+      .stat-icon.teal  { background: #e0f7fa; }
+      .stat-icon.red   { background: #fce8e6; }
+      .stat-icon.purple{ background: #f3e8fd; }
+      .stat-trend {
+        font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.5rem;
+        border-radius: 20px;
+      }
+      .stat-trend.up   { background: #e8f5e9; color: #2e7d32; }
+      .stat-trend.down { background: #fce8e6; color: #c62828; }
+      .stat-trend.flat { background: #f5f5f5; color: #757575; }
+      .stat-value { font-size: 2rem; font-weight: 800; color: #0d1f0e; line-height: 1; }
+      .stat-label { font-size: 0.8rem; color: #667085; font-weight: 500; }
+
+      /* ── TWO-COL GRID ── */
+      .admin-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+      @media (max-width: 800px) { .admin-two-col { grid-template-columns: 1fr; } }
+
+      /* ── PANELS ── */
+      .admin-panel {
+        background: #fff; border-radius: 14px;
+        padding: 1.4rem 1.5rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+        border: 1px solid #f0f2f5;
+        margin-bottom: 1.25rem;
+      }
+      .panel-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.1rem; }
+      .panel-header h3 { font-size: 0.95rem; font-weight: 700; color: #0d1f0e; }
+      .panel-sub { font-size: 0.78rem; color: #98a2b3; font-weight: 500; }
+
+      /* ── BAR CHART (7-day) ── */
+      .bar-chart { display: flex; align-items: flex-end; gap: 6px; height: 80px; margin-bottom: 0.5rem; }
+      .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+      .bar-col-fill { width: 100%; border-radius: 4px 4px 0 0; background: #c8e6c9; min-height: 4px; transition: height 0.3s; }
+      .bar-col-fill.today { background: #2e7d32; }
+      .bar-col-label { font-size: 0.65rem; color: #98a2b3; white-space: nowrap; }
+      .bar-chart-x { display: flex; gap: 6px; }
+      .bar-chart-x span { flex: 1; text-align: center; font-size: 0.65rem; color: #98a2b3; }
+
+      /* ── PAGE ROWS ── */
+      .page-row { display: flex; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid #f5f6f8; font-size: 0.87rem; gap: 0.75rem; }
       .page-row:last-child { border-bottom: none; }
-      .page-row .bar-track { flex: 1; height: 8px; background: #f0f2f5; border-radius: 6px; margin: 0 1rem; overflow: hidden; }
-      .page-row .bar-fill { height: 100%; background: var(--primary); border-radius: 6px; }
-      .visit-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-      .visit-table th { text-align: left; color: #667085; font-weight: 600; padding: 0.5rem; border-bottom: 1.5px solid #f0f2f5; }
-      .visit-table td { padding: 0.55rem 0.5rem; border-bottom: 1px solid #f5f6f8; color: #344054; }
-      .visit-table tr:last-child td { border-bottom: none; }
-      .empty-note { color: #98a2b3; font-size: 0.88rem; padding: 1rem 0; text-align: center; }
+      .page-row-name { flex: 1; color: #344054; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 180px; }
+      .page-row-bar { flex: 2; height: 7px; background: #f0f2f5; border-radius: 4px; overflow: hidden; }
+      .page-row-bar-fill { height: 100%; background: linear-gradient(90deg, #2e7d32, #66bb6a); border-radius: 4px; }
+      .page-row-count { font-weight: 700; color: #0d1f0e; min-width: 32px; text-align: right; font-size: 0.85rem; }
+      .page-row-pct { font-size: 0.75rem; color: #98a2b3; min-width: 36px; text-align: right; }
+
+      /* ── TABLE ── */
+      .visit-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+      .visit-table thead th {
+        text-align: left; color: #667085; font-weight: 600;
+        padding: 0.5rem 0.75rem; border-bottom: 2px solid #f0f2f5;
+        font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em;
+      }
+      .visit-table tbody td { padding: 0.6rem 0.75rem; border-bottom: 1px solid #f5f6f8; color: #344054; }
+      .visit-table tbody tr:last-child td { border-bottom: none; }
+      .visit-table tbody tr:hover td { background: #fafbfc; }
+      .page-chip {
+        display: inline-block; background: #f0f9f0; color: #2e7d32;
+        border-radius: 6px; padding: 0.15rem 0.5rem; font-size: 0.78rem; font-weight: 600;
+      }
+      .ref-chip {
+        display: inline-block; background: #f5f6f8; color: #667085;
+        border-radius: 6px; padding: 0.15rem 0.5rem; font-size: 0.78rem;
+      }
+
+      /* ── REFERRERS ── */
+      .ref-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid #f5f6f8; font-size: 0.86rem; }
+      .ref-row:last-child { border-bottom: none; }
+      .ref-icon { width: 28px; height: 28px; border-radius: 7px; background: #f5f6f8; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+      .ref-name { flex: 1; font-weight: 500; color: #344054; }
+      .ref-count { font-weight: 700; color: #0d1f0e; font-size: 0.85rem; }
+
+      /* ── EMPTY ── */
+      .empty-note { color: #98a2b3; font-size: 0.88rem; padding: 1.5rem 0; text-align: center; }
+
+      /* ── REFRESH BTN ── */
+      .refresh-btn {
+        background: none; border: 1px solid #e4e7ec; border-radius: 7px;
+        padding: 0.3rem 0.65rem; font-size: 0.78rem; font-family: inherit;
+        color: #667085; cursor: pointer; display: flex; align-items: center; gap: 0.35rem;
+      }
+      .refresh-btn:hover { background: #f9fafb; }
+
+      @media (max-width: 600px) {
+        .stat-grid { grid-template-columns: 1fr 1fr; }
+        .admin-wrap { padding: 1.25rem 1rem 3rem; }
+      }
     </style>
   </head>
-  <body style="background:#f7f8fa;">
+  <body>
 
+    <!-- ── LOGIN ── -->
     <div class="admin-shell" id="loginShell">
       <div class="admin-login-card">
-        <img src="investa-logo.png" alt="Investa Farm" />
+        <div class="admin-login-logo">
+          <img src="investa-logo.png" alt="Investa Farm" />
+        </div>
         <h1>Admin Dashboard</h1>
-        <p>Sign in to view site visit analytics.</p>
+        <p>Sign in with your admin password to view site analytics and visitor data.</p>
         <form onsubmit="return false;" autocomplete="on">
-          <input type="password" id="adminPassword" name="password" placeholder="Enter admin password" autocomplete="current-password" />
-          <button id="adminLoginBtn" type="submit">Sign In</button>
+          <div class="login-field">
+            <label for="adminPassword">Admin Password</label>
+            <input type="password" id="adminPassword" name="password" placeholder="••••••••••••" autocomplete="current-password" />
+          </div>
+          <button class="admin-login-btn" id="adminLoginBtn" type="submit">Sign In →</button>
         </form>
-        <div class="admin-error" id="adminError">Incorrect password. Please try again.</div>
+        <div class="admin-error" id="adminError">⚠ Incorrect password. Please try again.</div>
       </div>
     </div>
 
+    <!-- ── TOPBAR ── -->
+    <div id="topbar" style="display:none;">
+      <div class="admin-topbar">
+        <div class="topbar-left">
+          <img src="investa-logo.png" alt="Investa Farm" class="topbar-logo" />
+          <span class="topbar-title">Investa Farm</span>
+          <span class="topbar-badge">Admin</span>
+        </div>
+        <div class="topbar-right">
+          <span class="topbar-time" id="topbarTime"></span>
+          <button class="admin-logout-btn" id="adminLogoutBtn">Sign Out</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── DASHBOARD ── -->
     <div class="admin-wrap" id="dashboardWrap">
-      <div class="admin-header">
-        <h1>📊 Site Visit Dashboard</h1>
-        <button class="admin-logout-btn" id="adminLogoutBtn">Log Out</button>
+
+      <div class="admin-page-head">
+        <h2>Site Analytics</h2>
+        <p>Live visitor data tracked across all Investa Farm pages.</p>
       </div>
 
+      <!-- Stat cards -->
       <div class="stat-grid">
         <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-icon green">📊</div>
+            <span class="stat-trend flat" id="trendTotal">—</span>
+          </div>
           <div class="stat-value" id="statTotal">0</div>
           <div class="stat-label">Total Page Views</div>
         </div>
         <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-icon blue">📅</div>
+            <span class="stat-trend flat" id="trendToday">—</span>
+          </div>
           <div class="stat-value" id="statToday">0</div>
           <div class="stat-label">Visits Today</div>
         </div>
         <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-icon amber">📆</div>
+            <span class="stat-trend flat" id="trendWeek">—</span>
+          </div>
+          <div class="stat-value" id="statWeek">0</div>
+          <div class="stat-label">Visits This Week</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-icon teal">📈</div>
+            <span class="stat-trend flat">avg</span>
+          </div>
+          <div class="stat-value" id="statAvg">0</div>
+          <div class="stat-label">Avg Visits / Day</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-icon purple">📄</div>
+            <span class="stat-trend flat">pages</span>
+          </div>
           <div class="stat-value" id="statPages">0</div>
           <div class="stat-label">Pages Tracked</div>
         </div>
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-icon red">🔥</div>
+            <span class="stat-trend flat">top</span>
+          </div>
+          <div class="stat-value" style="font-size:1rem; padding-top:0.3rem;" id="statTopPage">—</div>
+          <div class="stat-label">Most Visited Page</div>
+        </div>
       </div>
 
+      <!-- 7-day chart + page breakdown -->
+      <div class="admin-two-col">
+        <div class="admin-panel">
+          <div class="panel-header">
+            <h3>Last 7 Days</h3>
+            <span class="panel-sub" id="weekRange"></span>
+          </div>
+          <div class="bar-chart" id="weekChart"></div>
+          <div class="bar-chart-x" id="weekChartX"></div>
+        </div>
+
+        <div class="admin-panel">
+          <div class="panel-header">
+            <h3>Traffic Sources</h3>
+            <span class="panel-sub">By referrer</span>
+          </div>
+          <div id="referrerList"></div>
+        </div>
+      </div>
+
+      <!-- Views by page -->
       <div class="admin-panel">
-        <h2>Views by Page</h2>
+        <div class="panel-header">
+          <h3>Views by Page</h3>
+          <button class="refresh-btn" onclick="loadStats()">↻ Refresh</button>
+        </div>
         <div id="pageBreakdown"></div>
       </div>
 
+      <!-- Recent visits -->
       <div class="admin-panel">
-        <h2>Recent Visits</h2>
+        <div class="panel-header">
+          <h3>Recent Visits</h3>
+          <span class="panel-sub">Last 50 events</span>
+        </div>
         <div id="recentVisits"></div>
       </div>
+
     </div>
 
     <script>
-      const loginShell = document.getElementById('loginShell');
+      const loginShell    = document.getElementById('loginShell');
       const dashboardWrap = document.getElementById('dashboardWrap');
-      const adminError = document.getElementById('adminError');
+      const adminError    = document.getElementById('adminError');
+      const topbar        = document.getElementById('topbar');
+
+      // Clock
+      function updateClock() {
+        const el = document.getElementById('topbarTime');
+        if (el) el.textContent = new Date().toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' });
+      }
+      setInterval(updateClock, 1000);
 
       function showDashboard() {
         loginShell.style.display = 'none';
+        topbar.style.display = 'block';
         dashboardWrap.style.display = 'block';
+        updateClock();
         loadStats();
       }
 
       function showLogin() {
         loginShell.style.display = 'flex';
+        topbar.style.display = 'none';
         dashboardWrap.style.display = 'none';
       }
 
@@ -110,17 +380,12 @@
         try {
           const res = await fetch('/api/admin/check');
           const data = await res.json();
-          if (data.authenticated) showDashboard();
-          else showLogin();
-        } catch {
-          showLogin();
-        }
+          if (data.authenticated) showDashboard(); else showLogin();
+        } catch { showLogin(); }
       }
 
       document.getElementById('adminLoginBtn').addEventListener('click', login);
-      document.getElementById('adminPassword').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') login();
-      });
+      document.getElementById('adminPassword').addEventListener('keydown', e => { if (e.key === 'Enter') login(); });
 
       async function login() {
         const password = document.getElementById('adminPassword').value;
@@ -131,14 +396,8 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ password })
           });
-          if (res.ok) {
-            showDashboard();
-          } else {
-            adminError.style.display = 'block';
-          }
-        } catch {
-          adminError.style.display = 'block';
-        }
+          if (res.ok) showDashboard(); else adminError.style.display = 'block';
+        } catch { adminError.style.display = 'block'; }
       }
 
       document.getElementById('adminLogoutBtn').addEventListener('click', async () => {
@@ -150,45 +409,108 @@
         try {
           const res = await fetch('/api/admin/stats');
           if (!res.ok) { showLogin(); return; }
-          const data = await res.json();
-          renderStats(data);
-        } catch (err) {
-          console.error('Failed to load stats', err);
-        }
+          renderStats(await res.json());
+        } catch (err) { console.error('Failed to load stats', err); }
       }
 
       function renderStats(data) {
-        const today = new Date().toISOString().slice(0, 10);
-        document.getElementById('statTotal').textContent = data.totalVisits || 0;
-        document.getElementById('statToday').textContent = (data.dailyVisits && data.dailyVisits[today]) || 0;
-        const pageEntries = Object.entries(data.pageViews || {}).sort((a, b) => b[1] - a[1]);
-        document.getElementById('statPages').textContent = pageEntries.length;
+        const today     = new Date().toISOString().slice(0, 10);
+        const daily     = data.dailyVisits || {};
+        const pageViews = data.pageViews   || {};
+        const recent    = data.recentVisits || [];
 
+        // Basic stats
+        document.getElementById('statTotal').textContent = (data.totalVisits || 0).toLocaleString();
+        document.getElementById('statToday').textContent = (daily[today] || 0).toLocaleString();
+
+        // Week
+        let weekTotal = 0;
+        const days = [];
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(); d.setDate(d.getDate() - i);
+          const key = d.toISOString().slice(0, 10);
+          const count = daily[key] || 0;
+          weekTotal += count;
+          days.push({ key, count, label: d.toLocaleDateString('en-GB', { weekday: 'short' }), isToday: key === today });
+        }
+        document.getElementById('statWeek').textContent = weekTotal.toLocaleString();
+
+        // Avg per day (over days with data)
+        const daysWithData = Object.values(daily).filter(v => v > 0).length || 1;
+        document.getElementById('statAvg').textContent = Math.round((data.totalVisits || 0) / daysWithData).toLocaleString();
+
+        // Pages
+        const pageEntries = Object.entries(pageViews).sort((a, b) => b[1] - a[1]);
+        document.getElementById('statPages').textContent = pageEntries.length;
+        document.getElementById('statTopPage').textContent = pageEntries.length ? pageEntries[0][0] : '—';
+
+        // Today trend vs yesterday
+        const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
+        const ydKey = yesterday.toISOString().slice(0, 10);
+        const todayV = daily[today] || 0; const ydV = daily[ydKey] || 0;
+        const trendEl = document.getElementById('trendToday');
+        if (ydV > 0) {
+          const pct = Math.round(((todayV - ydV) / ydV) * 100);
+          trendEl.textContent = (pct >= 0 ? '▲' : '▼') + Math.abs(pct) + '%';
+          trendEl.className = 'stat-trend ' + (pct >= 0 ? 'up' : 'down');
+        }
+
+        // 7-day bar chart
+        const maxDay = Math.max(...days.map(d => d.count), 1);
+        const chartEl = document.getElementById('weekChart');
+        const chartX  = document.getElementById('weekChartX');
+        chartEl.innerHTML = days.map(d => `
+          <div class="bar-col">
+            <div class="bar-col-fill${d.isToday ? ' today' : ''}"
+                 style="height:${Math.round((d.count / maxDay) * 80)}px"
+                 title="${d.key}: ${d.count} visits"></div>
+          </div>`).join('');
+        chartX.innerHTML = days.map(d => `<span>${d.label}</span>`).join('');
+        const start = days[0].key.slice(5).replace('-', '/');
+        const end   = days[6].key.slice(5).replace('-', '/');
+        document.getElementById('weekRange').textContent = `${start} – ${end}`;
+
+        // Page breakdown
+        const totalViews = pageEntries.reduce((s, [, v]) => s + v, 0) || 1;
         const maxViews = pageEntries.length ? pageEntries[0][1] : 1;
-        const breakdown = document.getElementById('pageBreakdown');
-        breakdown.innerHTML = pageEntries.length
+        document.getElementById('pageBreakdown').innerHTML = pageEntries.length
           ? pageEntries.map(([page, count]) => `
-            <div class="page-row">
-              <span>${page}</span>
-              <div class="bar-track"><div class="bar-fill" style="width:${(count / maxViews) * 100}%"></div></div>
-              <strong>${count}</strong>
-            </div>
-          `).join('')
+              <div class="page-row">
+                <span class="page-row-name" title="${page}">${page}</span>
+                <div class="page-row-bar"><div class="page-row-bar-fill" style="width:${(count/maxViews)*100}%"></div></div>
+                <span class="page-row-count">${count.toLocaleString()}</span>
+                <span class="page-row-pct">${Math.round((count/totalViews)*100)}%</span>
+              </div>`).join('')
           : '<div class="empty-note">No page views recorded yet.</div>';
 
-        const recent = document.getElementById('recentVisits');
-        const visits = (data.recentVisits || []).slice(0, 25);
-        recent.innerHTML = visits.length
+        // Referrers
+        const refs = {};
+        recent.forEach(v => {
+          const r = v.referrer === 'direct' ? 'Direct' : (() => { try { return new URL(v.referrer).hostname; } catch { return v.referrer || 'Direct'; } })();
+          refs[r] = (refs[r] || 0) + 1;
+        });
+        const refEntries = Object.entries(refs).sort((a, b) => b[1] - a[1]).slice(0, 6);
+        const refIcons = { 'Direct': '🔗', 'google.com': '🔍', 'facebook.com': '👥', 'twitter.com': '🐦', 'instagram.com': '📸', 'linkedin.com': '💼', 'whatsapp.com': '💬' };
+        document.getElementById('referrerList').innerHTML = refEntries.length
+          ? refEntries.map(([ref, count]) => `
+              <div class="ref-row">
+                <div class="ref-icon">${refIcons[ref] || '🌐'}</div>
+                <span class="ref-name">${ref}</span>
+                <span class="ref-count">${count}</span>
+              </div>`).join('')
+          : '<div class="empty-note">No referrer data yet.</div>';
+
+        // Recent visits table (last 50)
+        const visits = recent.slice(0, 50);
+        document.getElementById('recentVisits').innerHTML = visits.length
           ? `<table class="visit-table">
               <thead><tr><th>Page</th><th>Time</th><th>Referrer</th></tr></thead>
-              <tbody>
-                ${visits.map(v => `
-                  <tr>
-                    <td>${v.page}</td>
-                    <td>${new Date(v.timestamp).toLocaleString()}</td>
-                    <td>${v.referrer === 'direct' ? 'Direct' : v.referrer}</td>
-                  </tr>
-                `).join('')}
+              <tbody>${visits.map(v => `
+                <tr>
+                  <td><span class="page-chip">${v.page}</span></td>
+                  <td>${new Date(v.timestamp).toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'short' })}</td>
+                  <td><span class="ref-chip">${v.referrer === 'direct' ? '— Direct' : v.referrer}</span></td>
+                </tr>`).join('')}
               </tbody>
             </table>`
           : '<div class="empty-note">No visits recorded yet.</div>';
