@@ -1,23 +1,53 @@
 {
   "name": "Investa Farm",
   "short_name": "InvestaFarm",
-  "description": "Africa's leading financially inclusive agricultural investment platform",
+  "description": "Africa's leading financially inclusive agricultural investment platform. Invest in farms from KES 100. Farmers earn 35–55% revenue share.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f4f8ff",
-  "theme_color": "#0f8e5e",
+  "background_color": "#ffffff",
+  "theme_color": "#2e7d32",
   "orientation": "portrait-primary",
+  "lang": "en-GB",
+  "scope": "/",
   "icons": [
     {
-      "src": "investa-logo.png",
+      "src": "logo-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "investa-logo.png",
+      "src": "logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "logo-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "categories": ["finance", "business"]
+  "categories": ["finance", "business"],
+  "screenshots": [
+    {
+      "src": "app-live-market-dark.jpeg",
+      "sizes": "460x980",
+      "type": "image/jpeg",
+      "label": "Live Investment Market"
+    },
+    {
+      "src": "app-farmer-home-dashboard.png",
+      "sizes": "460x980",
+      "type": "image/png",
+      "label": "Farmer Home Dashboard"
+    }
+  ]
 }

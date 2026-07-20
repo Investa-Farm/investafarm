@@ -1,16 +1,45 @@
 import { Router } from "express";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { notifySubscribers } from "../lib/mailer.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = path.join(__dirname, "..", "..", "data");
+const BLOG_CACHE_FILE = path.join(DATA_DIR, "blog-cache.json");
 
 const router = Router();
 
-// ── In-memory cache: regenerate posts at most once per hour ──────────────────
+// ── Disk-backed cache: survives server restarts, regenerates at most hourly ───
 interface CachedPosts {
   posts: BlogPost[];
   generatedAt: number;
   headlines: string[];
 }
-let cache: CachedPosts | null = null;
 const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+
+function loadCacheFromDisk(): CachedPosts | null {
+  try {
+    const raw = fs.readFileSync(BLOG_CACHE_FILE, "utf-8");
+    const parsed = JSON.parse(raw) as CachedPosts;
+    // Only restore if still fresh
+    if (Date.now() - parsed.generatedAt < CACHE_TTL_MS) return parsed;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function saveCacheToDisk(c: CachedPosts): void {
+  try {
+    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+    fs.writeFileSync(BLOG_CACHE_FILE, JSON.stringify(c), "utf-8");
+  } catch {
+    // Non-fatal — fall back to in-memory only
+  }
+}
+
+let cache: CachedPosts | null = loadCacheFromDisk();
 
 export interface BlogPost {
   id: string;
@@ -213,6 +242,7 @@ router.get("/blog/posts", async (req, res) => {
     const headlines = await fetchAllHeadlines();
     const posts = await generatePosts(headlines);
     cache = { posts, generatedAt: Date.now(), headlines };
+    saveCacheToDisk(cache);
     // Notify newsletter subscribers in the background (non-blocking)
     notifySubscribers(posts).catch(() => {});
     return res.json({

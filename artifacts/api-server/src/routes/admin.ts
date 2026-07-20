@@ -50,6 +50,46 @@ function saveVisitsSoon() {
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const adminSessions = new Set<string>();
 
+// ── Simple in-memory rate limiter (no extra deps) ──────────────────────────
+const RATE_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const RATE_MAX_ATTEMPTS = 10;
+const loginAttempts = new Map<string, { count: number; resetAt: number }>();
+
+function getClientIp(req: Request): string {
+  const forwarded = req.headers["x-forwarded-for"];
+  const raw = Array.isArray(forwarded) ? forwarded[0] : forwarded;
+  return (raw?.split(",")[0] ?? req.socket.remoteAddress ?? "unknown").trim();
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = loginAttempts.get(ip);
+  if (!entry || now >= entry.resetAt) return false;
+  return entry.count >= RATE_MAX_ATTEMPTS;
+}
+
+function recordFailedAttempt(ip: string): void {
+  const now = Date.now();
+  const entry = loginAttempts.get(ip);
+  if (!entry || now >= entry.resetAt) {
+    loginAttempts.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+  } else {
+    entry.count += 1;
+  }
+}
+
+function clearAttempts(ip: string): void {
+  loginAttempts.delete(ip);
+}
+
+// Prune old entries every 30 minutes
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, entry] of loginAttempts) {
+    if (now >= entry.resetAt) loginAttempts.delete(ip);
+  }
+}, 30 * 60 * 1000);
+
 function parseCookies(req: Request): Record<string, string> {
   const header = req.headers.cookie;
   const cookies: Record<string, string> = {};
@@ -98,10 +138,16 @@ router.post("/admin/login", (req, res) => {
   if (!ADMIN_PASSWORD) {
     return res.status(503).json({ error: "admin_not_configured" });
   }
+  const ip = getClientIp(req);
+  if (isRateLimited(ip)) {
+    return res.status(429).json({ error: "too_many_attempts", message: "Too many failed attempts. Try again in 15 minutes." });
+  }
   const { password } = req.body as { password?: string };
   if (password !== ADMIN_PASSWORD) {
+    recordFailedAttempt(ip);
     return res.status(401).json({ error: "invalid_password" });
   }
+  clearAttempts(ip);
   const token = crypto.randomBytes(32).toString("hex");
   adminSessions.add(token);
   const secureFlag = process.env.NODE_ENV === "production" ? "; Secure" : "";
