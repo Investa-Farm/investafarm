@@ -1,12 +1,12 @@
 {
-  "totalVisits": 30,
+  "totalVisits": 35,
   "pageViews": {
-    "/": 15,
+    "/": 16,
     "/investors.html": 2,
     "/farmers.html": 1,
     "/app.html": 2,
     "/team.html": 2,
-    "/cooperatives.html": 2,
+    "/cooperatives.html": 6,
     "/blog.html": 3,
     "/public/cooperatives.html": 3
   },
@@ -14,9 +14,40 @@
     "2026-07-06": 3,
     "2026-07-07": 8,
     "2026-07-14": 16,
-    "2026-07-17": 3
+    "2026-07-17": 3,
+    "2026-07-20": 5
   },
   "recentVisits": [
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:37:27.934Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:36:51.000Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:36:37.503Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:36:06.780Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-20T08:25:45.904Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
     {
       "page": "/public/cooperatives.html",
       "timestamp": "2026-07-17T11:20:36.147Z",
