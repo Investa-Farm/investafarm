@@ -865,3 +865,42 @@ document.addEventListener('DOMContentLoaded', function () {
     navCloseBtn.addEventListener('click', () => navLinks.classList.remove('open'));
   }
 })();
+
+// ===== PARTNERS SLIDESHOW =====
+(function () {
+  const slides = Array.from(document.querySelectorAll('.partners-slide'));
+  const dots   = Array.from(document.querySelectorAll('.ps-dot'));
+  const prev   = document.querySelector('.ps-prev');
+  const next   = document.querySelector('.ps-next');
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer;
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = ((idx % slides.length) + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    resetTimer();
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 4500);
+  }
+
+  prev && prev.addEventListener('click', () => goTo(current - 1));
+  next && next.addEventListener('click', () => goTo(current + 1));
+  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.idx)));
+
+  // Pause on hover
+  const wrap = document.querySelector('.partners-slideshow');
+  if (wrap) {
+    wrap.addEventListener('mouseenter', () => clearInterval(timer));
+    wrap.addEventListener('mouseleave', resetTimer);
+  }
+
+  resetTimer();
+})();
