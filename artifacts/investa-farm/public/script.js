@@ -386,14 +386,8 @@ function resetChat() {
   renderFollowups();
 }
 
-// Restore saved chat history on load
-const savedSession = loadChatSession();
-if (savedSession && savedSession.html && chatMessages && savedSession.html.length > 100) {
-  chatMessages.innerHTML = savedSession.html;
-  chatHistory = savedSession.history || [];
-  if (chatSuggestionsEl) chatSuggestionsEl.style.display = 'none';
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
+// Chat history is intentionally not restored on load — each session starts fresh.
+clearChatSession();
 
 chatFab   && chatFab.addEventListener("click", openChat);
 chatNewEl && chatNewEl.addEventListener("click", resetChat);
