@@ -1,13 +1,13 @@
 {
-  "totalVisits": 42,
+  "totalVisits": 48,
   "pageViews": {
     "/": 18,
-    "/investors.html": 3,
-    "/farmers.html": 1,
-    "/app.html": 2,
-    "/team.html": 2,
-    "/cooperatives.html": 10,
-    "/blog.html": 3,
+    "/investors.html": 4,
+    "/farmers.html": 2,
+    "/app.html": 3,
+    "/team.html": 3,
+    "/cooperatives.html": 11,
+    "/blog.html": 4,
     "/public/cooperatives.html": 3
   },
   "dailyVisits": {
@@ -16,9 +16,45 @@
     "2026-07-14": 16,
     "2026-07-17": 3,
     "2026-07-20": 8,
-    "2026-08-06": 4
+    "2026-08-06": 10
   },
   "recentVisits": [
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-08-06T10:03:44.528Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/app.html",
+      "timestamp": "2026-08-06T10:03:41.749Z",
+      "referrer": "http://127.0.0.1/app.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/team.html",
+      "timestamp": "2026-08-06T10:03:39.200Z",
+      "referrer": "http://127.0.0.1/team.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/blog.html",
+      "timestamp": "2026-08-06T10:03:30.869Z",
+      "referrer": "http://127.0.0.1/blog.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/farmers.html",
+      "timestamp": "2026-08-06T10:03:28.441Z",
+      "referrer": "http://127.0.0.1/farmers.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/investors.html",
+      "timestamp": "2026-08-06T10:03:25.999Z",
+      "referrer": "http://127.0.0.1/investors.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
     {
       "page": "/",
       "timestamp": "2026-08-06T10:01:52.089Z",
