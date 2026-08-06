@@ -1,12 +1,12 @@
 {
-  "totalVisits": 38,
+  "totalVisits": 41,
   "pageViews": {
-    "/": 16,
-    "/investors.html": 2,
+    "/": 17,
+    "/investors.html": 3,
     "/farmers.html": 1,
     "/app.html": 2,
     "/team.html": 2,
-    "/cooperatives.html": 9,
+    "/cooperatives.html": 10,
     "/blog.html": 3,
     "/public/cooperatives.html": 3
   },
@@ -15,9 +15,28 @@
     "2026-07-07": 8,
     "2026-07-14": 16,
     "2026-07-17": 3,
-    "2026-07-20": 8
+    "2026-07-20": 8,
+    "2026-08-06": 3
   },
   "recentVisits": [
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-08-06T09:45:13.565Z",
+      "referrer": "https://1c24f259-88b5-4283-8eac-61dbf448e8ca-00-235urjm463gzm.riker.replit.dev/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/investors.html",
+      "timestamp": "2026-08-06T09:44:55.025Z",
+      "referrer": "https://1c24f259-88b5-4283-8eac-61dbf448e8ca-00-235urjm463gzm.riker.replit.dev/investors.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-08-06T09:43:30.765Z",
+      "referrer": "https://1c24f259-88b5-4283-8eac-61dbf448e8ca-00-235urjm463gzm.riker.replit.dev/",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    },
     {
       "page": "/cooperatives.html",
       "timestamp": "2026-07-20T08:43:47.520Z",

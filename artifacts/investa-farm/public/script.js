@@ -904,3 +904,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
   resetTimer();
 })();
+
+/* ===== TESTIMONIALS SLIDESHOW ===== */
+(function () {
+  const slideshow = document.querySelector('.proof-slideshow');
+  if (!slideshow) return;
+
+  const track  = slideshow.querySelector('.proof-track');
+  const cards  = Array.from(track.querySelectorAll('.proof-card'));
+  const dots   = Array.from(slideshow.querySelectorAll('.proof-dot'));
+  const btnPrev = slideshow.querySelector('.proof-prev');
+  const btnNext = slideshow.querySelector('.proof-next');
+
+  let current = 0;
+  let timer;
+
+  function perView() {
+    return window.innerWidth >= 768 ? 2 : 1;
+  }
+
+  function maxIndex() {
+    return Math.max(0, cards.length - perView());
+  }
+
+  function goTo(idx) {
+    current = ((idx % cards.length) + cards.length) % cards.length;
+    if (current > maxIndex()) current = 0;
+    track.style.transform = `translateX(-${current * (100 / perView())}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  btnPrev && btnPrev.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+  btnNext && btnNext.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+  dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.idx); resetTimer(); }));
+
+  slideshow.addEventListener('mouseenter', () => clearInterval(timer));
+  slideshow.addEventListener('mouseleave', resetTimer);
+
+  window.addEventListener('resize', () => goTo(current));
+
+  resetTimer();
+})();
