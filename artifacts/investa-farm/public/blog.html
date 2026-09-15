@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Investa Farm</title>
+    <meta name="description" content="News, insights, and farm updates from Investa Farm. Agricultural investment, farmer success stories, crop performance, and the future of African farming — powered by AI and real-time news." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://investafarm.com/blog.html" />
+    <meta name="theme-color" content="#2e7d32" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="investa-logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="investa-logo.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://investafarm.com/blog.html" />
+    <meta property="og:title" content="Blog | Investa Farm" />
+    <meta property="og:description" content="AI-powered blog: current agricultural news reframed for investors and farmers in Kenya, UK, and USA." />
+    <meta property="og:image" content="https://investafarm.com/investa-logo.png" />
+    <meta property="og:site_name" content="Investa Farm" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@investa_farm" />
+    <meta name="twitter:title" content="Blog | Investa Farm" />
+    <meta name="twitter:description" content="AI-powered agricultural investment insights, updated from real-time news." />
+    <meta name="twitter:image" content="https://investafarm.com/investa-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ===== BLOG PAGE ===== */
+      .blog-hero {
+        background: linear-gradient(150deg, #1a3d2e 0%, #2d6e3b 45%, #3a8c46 100%);
+        padding: 5rem 0 4rem;
+        text-align: center;
+        color: #fff;
+      }
+      .blog-hero .section-kicker { background: rgba(255,255,255,0.15); color: #a5d6a7; border-color: rgba(255,255,255,0.2); }
+      .blog-hero h1 { color: #fff; font-size: clamp(2rem, 5vw, 3rem); margin: 0.75rem 0 1rem; }
+      .blog-hero p { color: rgba(255,255,255,0.82); max-width: 580px; margin: 0 auto 1.25rem; font-size: 1.05rem; }
+      .blog-hero-badge {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+        color: rgba(255,255,255,0.88); font-size: 0.8rem; font-weight: 600;
+        padding: 0.35rem 0.9rem; border-radius: 999px; margin-top: 0.5rem;
+      }
+      .blog-hero-badge span.dot { width: 7px; height: 7px; background: #69f0ae; border-radius: 50%; display: inline-block; animation: blogPulse 2s ease-in-out infinite; }
+      @keyframes blogPulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+      .blog-filters {
+        display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;
+        padding: 2.25rem 0 0;
+      }
+      .blog-filter-btn {
+        padding: 0.45rem 1.1rem; border-radius: 999px; border: 1.5px solid var(--line);
+        background: transparent; color: var(--muted); font-size: 0.875rem; font-weight: 600;
+        cursor: pointer; transition: all 0.18s; font-family: inherit;
+      }
+      .blog-filter-btn:hover, .blog-filter-btn.active {
+        background: var(--primary); color: #fff; border-color: var(--primary);
+      }
+
+      /* Loading skeleton */
+      .blog-skeleton { margin-top: 2.5rem; }
+      .skeleton-featured {
+        display: grid; grid-template-columns: 1fr 1fr; border-radius: 18px;
+        overflow: hidden; border: 1px solid var(--line); height: 280px; margin-bottom: 1.75rem;
+      }
+      .skeleton-card-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+      .skeleton-block {
+        background: linear-gradient(90deg, #e8f5e9 25%, #d4edda 50%, #e8f5e9 75%);
+        background-size: 400% 100%;
+        animation: shimmer 1.5s infinite;
+        border-radius: 14px;
+      }
+      .skeleton-featured .skeleton-block { border-radius: 0; }
+      .skeleton-card { height: 280px; border-radius: 18px; overflow: hidden; }
+      @keyframes shimmer { 0%{background-position:100% 0} 100%{background-position:-100% 0} }
+      @media(max-width:900px){ .skeleton-card-grid{grid-template-columns:repeat(2,1fr)} .skeleton-featured{grid-template-columns:1fr;height:auto} .skeleton-featured .skeleton-block:first-child{height:160px} }
+      @media(max-width:580px){ .skeleton-card-grid{grid-template-columns:1fr} }
+
+      /* Error state */
+      .blog-error {
+        text-align: center; padding: 3rem 1.5rem; background: #fff8f8;
+        border: 1px solid #ffd7d7; border-radius: 18px; margin-top: 2.5rem;
+      }
+      .blog-error h3 { color: #c0392b; margin: 0 0 0.5rem; }
+      .blog-error p { color: var(--muted); margin: 0 0 1.25rem; }
+
+      /* Blog grid */
+      .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; margin-top: 2.5rem; }
+      @media(max-width:900px){ .blog-grid{grid-template-columns:repeat(2,1fr)} }
+      @media(max-width:580px){ .blog-grid{grid-template-columns:1fr} }
+
+      /* Cards */
+      .blog-card {
+        background: #fff; border: 1px solid var(--line); border-radius: 18px;
+        overflow: hidden; box-shadow: var(--glow-card); display: flex;
+        flex-direction: column; transition: transform 0.18s, box-shadow 0.18s; cursor: pointer;
+      }
+      .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(30,94,32,0.13); }
+      .blog-card-icon {
+        display: flex; align-items: center; justify-content: center;
+        font-size: 2.8rem; height: 130px;
+        background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      }
+      .blog-card-body { padding: 1.35rem 1.5rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+      .blog-card-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+      .blog-tag {
+        font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+        padding: 0.25rem 0.65rem; border-radius: 999px;
+      }
+      .blog-tag-investment { color: #1a56db; background: #e8f0fe; }
+      .blog-tag-farming    { color: var(--primary); background: var(--primary-light); }
+      .blog-tag-news       { color: #92400e; background: #fef3c7; }
+      .blog-tag-impact     { color: #065f46; background: #d1fae5; }
+      .blog-card-date { font-size: 0.78rem; color: var(--muted); }
+      .blog-card-source { font-size: 0.72rem; color: var(--muted); font-style: italic; }
+      .blog-card h3 { font-size: 1.05rem; font-weight: 700; color: #0d1f0e; margin: 0 0 0.6rem; line-height: 1.4; }
+      .blog-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; flex: 1; margin: 0 0 1.1rem; }
+      .blog-card-link { font-size: 0.875rem; font-weight: 600; color: var(--primary); cursor: pointer; }
+      .blog-card:hover .blog-card-link { text-decoration: underline; }
+
+      /* Featured card */
+      .blog-featured {
+        grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr;
+        border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
+        box-shadow: var(--glow-card); background: #fff;
+        transition: transform 0.18s, box-shadow 0.18s; cursor: pointer;
+      }
+      .blog-featured:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(30,94,32,0.13); }
+      .blog-featured-visual {
+        display: flex; align-items: center; justify-content: center;
+        font-size: 5rem; min-height: 280px;
+        background: linear-gradient(135deg, #1a3d2e, #2e7d32);
+      }
+      .blog-featured-body { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+      .blog-featured-body .blog-tag { margin-bottom: 1rem; display: inline-block; width: fit-content; }
+      .blog-featured-body h2 { font-size: 1.5rem; font-weight: 800; color: #0d1f0e; margin: 0 0 0.75rem; line-height: 1.3; }
+      .blog-featured-body p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin: 0 0 0.5rem; }
+      .blog-featured-body .blog-card-meta { margin-bottom: 1rem; }
+      .blog-featured-body .blog-card-link { margin-top: 1rem; display: inline-block; }
+      @media(max-width:700px){
+        .blog-featured{grid-template-columns:1fr}
+        .blog-featured-visual{min-height:160px}
+      }
+
+      /* Modal */
+      .blog-modal-overlay {
+        display: none; position: fixed; inset: 0; z-index: 9000;
+        background: rgba(10,30,15,0.6); backdrop-filter: blur(6px);
+        align-items: center; justify-content: center; padding: 1.5rem;
+      }
+      .blog-modal-overlay.open { display: flex; }
+      .blog-modal {
+        background: #fff; border-radius: 20px; max-width: 720px; width: 100%;
+        max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.22);
+        animation: modalIn 0.25s cubic-bezier(0.16,1,0.3,1);
+      }
+      @keyframes modalIn { from{transform:translateY(20px);opacity:0} to{transform:translateY(0);opacity:1} }
+      .blog-modal-header {
+        padding: 2rem 2rem 1.25rem; border-bottom: 1px solid var(--line);
+        display: flex; gap: 1rem; align-items: flex-start; position: sticky; top: 0; background: #fff; z-index: 1;
+      }
+      .blog-modal-emoji { font-size: 2.5rem; flex-shrink: 0; }
+      .blog-modal-header-text { flex: 1; }
+      .blog-modal-close {
+        background: none; border: none; font-size: 1.3rem; cursor: pointer;
+        color: var(--muted); padding: 0.25rem; line-height: 1; flex-shrink: 0;
+        transition: color 0.15s;
+      }
+      .blog-modal-close:hover { color: #0d1f0e; }
+      .blog-modal-header h2 { font-size: 1.35rem; font-weight: 800; color: #0d1f0e; margin: 0 0 0.5rem; line-height: 1.35; }
+      .blog-modal-meta { display: flex; gap: 0.65rem; flex-wrap: wrap; align-items: center; }
+      .blog-modal-body { padding: 1.75rem 2rem 2.5rem; }
+      .blog-modal-body p { color: #2d4a30; line-height: 1.8; font-size: 1rem; margin: 0 0 1.1rem; }
+      .blog-modal-source { font-size: 0.82rem; color: var(--muted); margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+      .blog-modal-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+      @media(max-width:540px){ .blog-modal-header{padding:1.5rem 1.25rem 1rem} .blog-modal-body{padding:1.25rem 1.25rem 2rem} }
+
+      /* Newsletter */
+      .newsletter-blog {
+        background: linear-gradient(145deg, #1b5e20, #2e7d32); border-radius: 20px;
+        padding: 3rem 2.5rem; text-align: center; color: #fff; margin-top: 3rem;
+      }
+      .newsletter-blog h3 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+      .newsletter-blog p { color: rgba(255,255,255,0.82); margin: 0 0 1.5rem; }
+      .newsletter-blog-form { display: flex; gap: 0.75rem; max-width: 440px; margin: 0 auto; }
+      .newsletter-blog-form input {
+        flex: 1; padding: 0.7rem 1rem; border-radius: 10px; border: none;
+        font-size: 0.95rem; outline: none; font-family: inherit;
+      }
+      .newsletter-blog-form button {
+        padding: 0.7rem 1.4rem; border-radius: 10px; border: none;
+        background: #fff; color: var(--primary-strong); font-weight: 700;
+        font-size: 0.95rem; cursor: pointer; white-space: nowrap; font-family: inherit;
+        transition: transform 0.18s;
+      }
+      .newsletter-blog-form button:hover { transform: translateY(-1px); }
+      @media(max-width:500px){ .newsletter-blog-form{flex-direction:column} }
+
+      /* Refresh bar */
+      .blog-meta-bar {
+        display: flex; align-items: center; justify-content: space-between;
+        flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; padding: 0.85rem 1.25rem;
+        background: #f0faf0; border: 1px solid #c8dfc4; border-radius: 12px;
+        font-size: 0.83rem; color: var(--muted);
+      }
+      .blog-meta-bar strong { color: var(--primary); }
+      .blog-refresh-btn {
+        background: none; border: 1px solid var(--primary); color: var(--primary);
+        padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.8rem;
+        font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.18s;
+      }
+      .blog-refresh-btn:hover { background: var(--primary); color: #fff; }
+      .blog-refresh-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
+  </head>
+  <body>
+
+    <!-- ===== CHATBOT ===== -->
+    <div class="chatbot-fab" id="chatFab" title="Chat with Investa Farm Bot">
+      <span class="fab-pulse-ring"></span>
+      <span class="fab-pulse-ring fab-pulse-ring-2"></span>
+      <div class="fab-inner"><img src="investa-logo.png" alt="Investa Farm Bot" class="chat-fab-logo"  loading="lazy"/></div>
+      <span class="fab-notification-dot"></span>
+    </div>
+    <div class="chatbot-panel" id="chatPanel">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <div class="chat-bot-avatar">
+            <img src="investa-logo.png" alt="Investa Farm Bot"  loading="lazy"/>
+            <span class="avatar-online-ring"></span>
+          </div>
+          <div class="chat-header-text">
+            <strong>Investa Farm Bot</strong>
+            <small><span class="online-dot-small"></span>Online · AI-powered · Replies instantly</small>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button class="chat-new-btn" id="chatNew" title="New Chat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            New
+          </button>
+          <button class="chat-close" id="chatClose" title="Close">✕</button>
+        </div>
+      </div>
+      <div class="chat-suggestions" id="chatSuggestions">
+        <button class="suggestion-chip" data-q="How do I invest in a farm?">💰 How to invest</button>
+        <button class="suggestion-chip" data-q="What returns can investors expect?">📈 Investor returns</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">
+          <div class="msg-bubble">Hi! 👋 Ask me anything about Investa Farm — investing, farming, partnerships, or how to get started. 🌾</div>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask anything about Investa Farm…" autocomplete="off" />
+        <button id="chatSend" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="brand">
+          <a href="index.html"><img src="investa-logo.png" alt="Investa Farm logo"  loading="lazy"/></a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Open menu" id="menuToggle">&#9776;</button>
+        <div class="nav-links" id="navLinks">
+          <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">✕</button>
+          <a href="investors.html">For Investors</a>
+          <a href="farmers.html">For Farmers</a>
+          <a href="app.html">App</a>
+          <a href="cooperatives.html">Cooperatives</a>
+          <a href="team.html">Team</a>
+          <a href="blog.html" class="nav-active">Blog</a>
+          <a href="admin.html">Admin</a>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" target="_blank" rel="noopener" class="community-nav-link">💬 Community</a>
+        </div>
+        <div class="nav-cta">
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="community-top-btn" target="_blank" rel="noopener">💬 Join Community</a>
+          <a href="https://app.investafarm.com" class="nav-open-app-btn outline-btn" target="_blank" rel="noopener">Open App</a>
+          <a href="https://app.investafarm.com/register" class="primary-btn" target="_blank" rel="noopener">Create Account</a>
+        </div>
+      </nav>
+    </header>
+    <!-- ===== TRUST BAR ===== -->
+
+
+    <!-- ===== HERO ===== -->
+    <section class="blog-hero">
+      <div class="container">
+        <span class="section-kicker">Investa Farm Blog</span>
+        <h1>Insights from the field</h1>
+        <p>Agricultural investment news, farmer stories, and market insights — written by AI from real-time sources, in Investa Farm's voice.</p>
+        <div class="blog-hero-badge">
+          <span class="dot"></span> AI-generated · Updated from live news every hour
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="section">
+        <div class="container">
+
+          <!-- Filter tabs -->
+          <div class="blog-filters">
+            <button class="blog-filter-btn active" data-filter="all">All Posts</button>
+            <button class="blog-filter-btn" data-filter="investment">Investment</button>
+            <button class="blog-filter-btn" data-filter="farming">Farming</button>
+            <button class="blog-filter-btn" data-filter="news">Company News</button>
+            <button class="blog-filter-btn" data-filter="impact">Impact</button>
+          </div>
+
+          <!-- Meta bar (shown after load) -->
+          <div class="blog-meta-bar" id="blogMetaBar" style="display:none">
+            <span id="blogMetaText">Loading…</span>
+            <button class="blog-refresh-btn" id="blogRefreshBtn">↻ Refresh posts</button>
+          </div>
+
+          <!-- Loading skeleton -->
+          <div class="blog-skeleton" id="blogSkeleton">
+            <div class="skeleton-featured">
+              <div class="skeleton-block" style="height:100%"></div>
+              <div class="skeleton-block" style="height:100%;opacity:0.6"></div>
+            </div>
+            <div class="skeleton-card-grid">
+              <div class="skeleton-card skeleton-block"></div>
+              <div class="skeleton-card skeleton-block" style="opacity:0.7"></div>
+              <div class="skeleton-card skeleton-block" style="opacity:0.5"></div>
+              <div class="skeleton-card skeleton-block" style="opacity:0.4"></div>
+              <div class="skeleton-card skeleton-block" style="opacity:0.3"></div>
+            </div>
+          </div>
+
+          <!-- Error state with static fallback posts -->
+          <div class="blog-error" id="blogError" style="display:none">
+            <p id="blogErrorMsg" style="text-align:center;color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem">Fetching live content — showing curated posts below.</p>
+            <div class="blog-fallback-grid">
+              <article class="blog-featured blog-fallback-card" onclick="this.style.opacity=0.8">
+                <div class="blog-featured-visual">🌾</div>
+                <div class="blog-featured-body">
+                  <span class="blog-tag blog-tag-investment">Investment</span>
+                  <h2>How Kenyan Investors Are Earning 28% Returns from Real Farms</h2>
+                  <div class="blog-card-meta"><span class="blog-card-date">July 2026</span><span class="blog-card-source">Investa Farm Insights</span></div>
+                  <p>Not stocks, not crypto — verified farm seasons with harvest-linked returns paid directly to M-Pesa. We break down exactly how the exit strategy model works and what drives investor returns above 20%.</p>
+                  <a href="https://app.investafarm.com/register" class="blog-card-link" target="_blank" rel="noopener">Start investing →</a>
+                </div>
+              </article>
+              <article class="blog-card blog-fallback-card">
+                <div class="blog-card-icon">🤝</div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta"><span class="blog-tag blog-tag-impact">Impact</span><span class="blog-card-date">June 2026</span></div>
+                  <h3>What 35–55% Revenue Share Means for a Kenyan Farmer</h3>
+                  <p>Real stories from farmers in Kiambu, Nakuru, and Meru on how Investa Farm's capital and agronomic support changed their season outcomes.</p>
+                  <a href="farmers.html" class="blog-card-link">Read more →</a>
+                </div>
+              </article>
+              <article class="blog-card blog-fallback-card">
+                <div class="blog-card-icon">📈</div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta"><span class="blog-tag blog-tag-farming">Farming</span><span class="blog-card-date">June 2026</span></div>
+                  <h3>FAO Report: African Smallholder Finance Gap Hits $170B — Here's How Investa Farm Is Closing It</h3>
+                  <p>The latest FAO data shows 70% of African smallholder farmers still lack access to formal agricultural finance. Investa Farm's revenue-share model bypasses collateral requirements entirely.</p>
+                  <a href="investors.html" class="blog-card-link">Learn more →</a>
+                </div>
+              </article>
+              <article class="blog-card blog-fallback-card">
+                <div class="blog-card-icon">🏆</div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta"><span class="blog-tag blog-tag-news">Company News</span><span class="blog-card-date">May 2026</span></div>
+                  <h3>Investa Farm Named Finalist at AfricArena — What It Means for Our Platform</h3>
+                  <p>The recognition from AfricArena's agri-fintech track validates the model: connecting real farms to capital markets at KES 100 minimum investment.</p>
+                  <a href="team.html#awards" class="blog-card-link">Our story →</a>
+                </div>
+              </article>
+              <article class="blog-card blog-fallback-card">
+                <div class="blog-card-icon">🌍</div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta"><span class="blog-tag blog-tag-farming">Farming</span><span class="blog-card-date">May 2026</span></div>
+                  <h3>Guardian Agriculture: Avocado Exports From East Africa Surge 34% — and Our Farmers Are Benefitting</h3>
+                  <p>With export avocado prices at a 5-year high, Investa Farm's avocado farm partners are earning in the 48–55% revenue share tier this season.</p>
+                  <a href="cooperatives.html" class="blog-card-link">Join as farmer →</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Blog grid (populated by JS) -->
+          <div class="blog-grid" id="blogGrid" style="display:none"></div>
+
+          <!-- Newsletter -->
+          <div class="newsletter-blog" id="blogNewsletter" style="display:none">
+            <h3>Get farm updates in your inbox</h3>
+            <p>New farm listings, harvest reports, and investment insights — delivered monthly.</p>
+            <form class="newsletter-blog-form" onsubmit="handleBlogSubscribe(event)">
+              <input type="email" placeholder="your@email.com" required />
+              <button type="submit">Subscribe →</button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== POST MODAL ===== -->
+    <div class="blog-modal-overlay" id="blogModalOverlay" role="dialog" aria-modal="true">
+      <div class="blog-modal" id="blogModal">
+        <div class="blog-modal-header">
+          <div class="blog-modal-emoji" id="modalEmoji">🌾</div>
+          <div class="blog-modal-header-text">
+            <h2 id="modalTitle"></h2>
+            <div class="blog-modal-meta" id="modalMeta"></div>
+          </div>
+          <button class="blog-modal-close" id="blogModalClose" aria-label="Close">✕</button>
+        </div>
+        <div class="blog-modal-body">
+          <div id="modalBody"></div>
+          <p class="blog-modal-source" id="modalSource"></p>
+          <div class="blog-modal-cta">
+            <a href="https://app.investafarm.com/register" class="primary-btn" target="_blank" rel="noopener">Create Account →</a>
+            <a href="https://app.investafarm.com" class="outline-btn" target="_blank" rel="noopener">Browse Farms →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap"><img src="investa-logo.png" alt="Investa Farm"  loading="lazy"/></div>
+          <p>Africa's leading financially inclusive platform — connecting farmers and investors through a transparent, regulated agricultural market.</p>
+          <p class="footer-operates">Operates in Kenya, United Kingdom &amp; USA</p>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="footer-whatsapp-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Join Our WhatsApp Community
+          </a>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <p><a href="investors.html">For Investors</a></p>
+          <p><a href="farmers.html">For Farmers</a></p>
+          <p><a href="cooperatives.html">Cooperatives</a></p>
+          <p><a href="app.html">App Walkthrough</a></p>
+          <p><a href="https://app.investafarm.com" target="_blank" rel="noopener">Live Farm Listings</a></p>
+          <p><a href="https://app.investafarm.com/register" target="_blank" rel="noopener">Create Account</a></p>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <p><a href="team.html">Our Team &amp; History</a></p>
+          <p><a href="team.html#awards">Awards &amp; Recognition</a></p>
+          <p><a href="blog.html">Blog</a></p>
+          <p><a href="index.html#partners">Our Partners</a></p>
+          <p><a href="mailto:info@investafarm.com">Contact Us</a></p>
+          <h4>Community</h4>
+          <p><a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" target="_blank" rel="noopener">💬 WhatsApp Community</a></p>
+        </div>
+        <div class="footer-offices">
+          <h4>Contact Us</h4>
+          <p><a href="mailto:info@investafarm.com">info@investafarm.com</a></p>
+          <p>Mon – Fri, 8:00 – 18:00 EAT</p>
+          <h4>Offices</h4>
+          <p>Kenya: P.O. Box CPA 5364</p>
+          <p>London: 21 Wenlock Road, N1 7GU</p>
+          <p>United States</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Investa Farm Limited. All rights reserved.</p>
+        <p>Kenya · United Kingdom · USA</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    (function () {
+      'use strict';
+
+      const TAG_CLASS = {
+        investment: 'blog-tag-investment',
+        farming:    'blog-tag-farming',
+        news:       'blog-tag-news',
+        impact:     'blog-tag-impact',
+      };
+
+      let allPosts = [];
+      let activeFilter = 'all';
+      let openPost = null;
+
+      // ── Render helpers ──────────────────────────────────────────────────────
+      function tagHtml(category) {
+        const cls = TAG_CLASS[category] || 'blog-tag-farming';
+        const label = { investment:'Investment', farming:'Farming', news:'Company News', impact:'Impact' }[category] || category;
+        return `<span class="blog-tag ${cls}">${label}</span>`;
+      }
+
+      function renderFeatured(post) {
+        return `
+          <article class="blog-featured" data-id="${post.id}" data-category="${post.category}">
+            <div class="blog-featured-visual">${post.emoji}</div>
+            <div class="blog-featured-body">
+              ${tagHtml(post.category)}
+              <h2>${escHtml(post.title)}</h2>
+              <div class="blog-card-meta">
+                <span class="blog-card-date">${escHtml(post.date)}</span>
+                ${post.source ? `<span class="blog-card-source">via ${escHtml(post.source)}</span>` : ''}
+              </div>
+              <p>${escHtml(post.excerpt)}</p>
+              <span class="blog-card-link">Read full article →</span>
+            </div>
+          </article>`;
+      }
+
+      function renderCard(post) {
+        return `
+          <article class="blog-card" data-id="${post.id}" data-category="${post.category}">
+            <div class="blog-card-icon">${post.emoji}</div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                ${tagHtml(post.category)}
+                <span class="blog-card-date">${escHtml(post.date)}</span>
+              </div>
+              <h3>${escHtml(post.title)}</h3>
+              <p>${escHtml(post.excerpt)}</p>
+              <span class="blog-card-link">Read more →</span>
+            </div>
+          </article>`;
+      }
+
+      function escHtml(s) {
+        return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      }
+
+      // ── Grid rendering ───────────────────────────────────────────────────────
+      function renderGrid(posts) {
+        const grid = document.getElementById('blogGrid');
+        const filtered = activeFilter === 'all' ? posts : posts.filter(p => p.category === activeFilter);
+        if (!filtered.length) { grid.innerHTML = '<p style="text-align:center;color:var(--muted);grid-column:1/-1;padding:2rem">No posts in this category yet.</p>'; return; }
+
+        const featured = filtered.find(p => p.featured) || filtered[0];
+        const rest = filtered.filter(p => p.id !== featured.id);
+        grid.innerHTML = renderFeatured(featured) + rest.map(renderCard).join('');
+
+        grid.querySelectorAll('[data-id]').forEach(el => {
+          el.addEventListener('click', () => openModal(allPosts.find(p => p.id === el.dataset.id)));
+        });
+      }
+
+      // ── Modal ────────────────────────────────────────────────────────────────
+      function openModal(post) {
+        if (!post) return;
+        openPost = post;
+        document.getElementById('modalEmoji').textContent = post.emoji;
+        document.getElementById('modalTitle').textContent = post.title;
+        document.getElementById('modalMeta').innerHTML =
+          tagHtml(post.category) +
+          `<span class="blog-card-date">${escHtml(post.date)}</span>` +
+          (post.source ? `<span class="blog-card-source">via ${escHtml(post.source)}</span>` : '');
+
+        // Body: split into paragraphs
+        const bodyEl = document.getElementById('modalBody');
+        bodyEl.innerHTML = (post.body || post.excerpt)
+          .split(/\n{2,}/)
+          .filter(Boolean)
+          .map(p => `<p>${escHtml(p.trim())}</p>`)
+          .join('');
+
+        document.getElementById('modalSource').textContent =
+          post.source ? `Sources: ${post.source} — This post was written by Investa Farm's AI content engine based on real-time news.` :
+          'This post was written by Investa Farm\'s AI content engine based on real-time agricultural and financial news.';
+
+        document.getElementById('blogModalOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        document.getElementById('blogModalOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+        openPost = null;
+      }
+
+      document.getElementById('blogModalClose').addEventListener('click', closeModal);
+      document.getElementById('blogModalOverlay').addEventListener('click', e => {
+        if (e.target === e.currentTarget) closeModal();
+      });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+      // ── Filter tabs ──────────────────────────────────────────────────────────
+      document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeFilter = btn.dataset.filter;
+          if (allPosts.length) renderGrid(allPosts);
+        });
+      });
+
+      // ── Meta bar ─────────────────────────────────────────────────────────────
+      function showMetaBar(data) {
+        const bar = document.getElementById('blogMetaBar');
+        const txt = document.getElementById('blogMetaText');
+        const stale = data.stale ? ' (stale — will refresh shortly)' : '';
+        const cached = data.cached ? 'Cached' : 'Fresh';
+        const when = data.generatedAt ? new Date(data.generatedAt).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}) : '';
+        txt.innerHTML = `<strong>AI-generated</strong> from <strong>${data.headlineCount ?? 0}</strong> live headlines · ${cached}${when ? ` · Generated at ${when}` : ''}${stale}`;
+        bar.style.display = 'flex';
+      }
+
+      // ── Fetch posts ───────────────────────────────────────────────────────────
+      async function loadPosts(forceRefresh) {
+        const skeleton = document.getElementById('blogSkeleton');
+        const grid = document.getElementById('blogGrid');
+        const errEl = document.getElementById('blogError');
+        const newsletter = document.getElementById('blogNewsletter');
+        const refreshBtn = document.getElementById('blogRefreshBtn');
+
+        skeleton.style.display = '';
+        grid.style.display = 'none';
+        errEl.style.display = 'none';
+        newsletter.style.display = 'none';
+        if (refreshBtn) { refreshBtn.disabled = true; refreshBtn.textContent = '↻ Refreshing…'; }
+
+        try {
+          const url = forceRefresh ? '/api/blog/posts?bust=' + Date.now() : '/api/blog/posts';
+          const res = await fetch(url);
+          const data = await res.json();
+
+          if (!res.ok || data.error) {
+            throw new Error(data.message || data.error || 'Failed to load');
+          }
+
+          allPosts = data.posts || [];
+          if (!allPosts.length) throw new Error('No posts returned');
+
+          skeleton.style.display = 'none';
+          grid.style.display = 'grid';
+          newsletter.style.display = 'block';
+          renderGrid(allPosts);
+          showMetaBar(data);
+        } catch (err) {
+          skeleton.style.display = 'none';
+          errEl.style.display = 'block';
+          document.getElementById('blogErrorMsg').textContent = 'Showing curated posts while we reconnect to live news.';
+        } finally {
+          if (refreshBtn) { refreshBtn.disabled = false; refreshBtn.textContent = '↻ Refresh posts'; }
+        }
+      }
+
+      document.getElementById('blogRefreshBtn')?.addEventListener('click', () => loadPosts(true));
+
+      // Newsletter submit — POSTs to API and stores email server-side
+      window.handleBlogSubscribe = async function(e) {
+        e.preventDefault();
+        const input = e.target.querySelector('input[type=email]');
+        const btn = e.target.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Subscribing…';
+        try {
+          const res = await fetch('/api/newsletter/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: input.value.trim() })
+          });
+          const data = await res.json();
+          btn.textContent = '✓ You\'re in!';
+          btn.style.background = '#0b744c';
+          input.value = '';
+          setTimeout(() => { btn.textContent = 'Subscribe →'; btn.style.background = ''; btn.disabled = false; }, 4000);
+        } catch {
+          btn.textContent = 'Try again';
+          btn.disabled = false;
+        }
+      };
+
+      // Boot
+      loadPosts(false);
+    })();
+    </script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+{
+  "totalVisits": 48,
+  "pageViews": {
+    "/": 18,
+    "/investors.html": 4,
+    "/farmers.html": 2,
+    "/app.html": 3,
+    "/team.html": 3,
+    "/cooperatives.html": 11,
+    "/blog.html": 4,
+    "/public/cooperatives.html": 3
+  },
+  "dailyVisits": {
+    "2026-07-06": 3,
+    "2026-07-07": 8,
+    "2026-07-14": 16,
+    "2026-07-17": 3,
+    "2026-07-20": 8,
+    "2026-08-06": 10
+  },
+  "recentVisits": [
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-08-06T10:03:44.528Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/app.html",
+      "timestamp": "2026-08-06T10:03:41.749Z",
+      "referrer": "http://127.0.0.1/app.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/team.html",
+      "timestamp": "2026-08-06T10:03:39.200Z",
+      "referrer": "http://127.0.0.1/team.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/blog.html",
+      "timestamp": "2026-08-06T10:03:30.869Z",
+      "referrer": "http://127.0.0.1/blog.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/farmers.html",
+      "timestamp": "2026-08-06T10:03:28.441Z",
+      "referrer": "http://127.0.0.1/farmers.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/investors.html",
+      "timestamp": "2026-08-06T10:03:25.999Z",
+      "referrer": "http://127.0.0.1/investors.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-08-06T10:01:52.089Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-08-06T09:45:13.565Z",
+      "referrer": "https://1c24f259-88b5-4283-8eac-61dbf448e8ca-00-235urjm463gzm.riker.replit.dev/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/investors.html",
+      "timestamp": "2026-08-06T09:44:55.025Z",
+      "referrer": "https://1c24f259-88b5-4283-8eac-61dbf448e8ca-00-235urjm463gzm.riker.replit.dev/investors.html",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-08-06T09:43:30.765Z",
+      "referrer": "https://1c24f259-88b5-4283-8eac-61dbf448e8ca-00-235urjm463gzm.riker.replit.dev/",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:43:47.520Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:43:38.824Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:43:28.243Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:37:27.934Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:36:51.000Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:36:37.503Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-20T08:36:06.780Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-20T08:25:45.904Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/public/cooperatives.html",
+      "timestamp": "2026-07-17T11:20:36.147Z",
+      "referrer": "http://127.0.0.1/public/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/public/cooperatives.html",
+      "timestamp": "2026-07-17T11:20:06.231Z",
+      "referrer": "http://127.0.0.1/public/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/public/cooperatives.html",
+      "timestamp": "2026-07-17T11:19:52.438Z",
+      "referrer": "http://127.0.0.1/public/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/blog.html",
+      "timestamp": "2026-07-14T10:03:51.836Z",
+      "referrer": "http://127.0.0.1/blog.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/investors.html",
+      "timestamp": "2026-07-14T10:03:49.836Z",
+      "referrer": "http://127.0.0.1/investors.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T10:03:47.756Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T10:02:44.670Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T09:51:19.454Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T09:40:59.248Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T09:40:48.073Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T09:35:17.236Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-14T08:02:04.031Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T08:02:01.284Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T07:49:53.839Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/blog.html",
+      "timestamp": "2026-07-14T06:54:01.117Z",
+      "referrer": "http://127.0.0.1/blog.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T06:49:13.882Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/blog.html",
+      "timestamp": "2026-07-14T06:49:04.525Z",
+      "referrer": "http://127.0.0.1/blog.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T06:49:03.066Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-14T06:41:41.933Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/app.html",
+      "timestamp": "2026-07-07T08:08:39.668Z",
+      "referrer": "http://127.0.0.1/app.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/team.html",
+      "timestamp": "2026-07-07T08:08:36.291Z",
+      "referrer": "http://127.0.0.1/team.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/cooperatives.html",
+      "timestamp": "2026-07-07T08:00:37.405Z",
+      "referrer": "http://127.0.0.1/cooperatives.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/team.html",
+      "timestamp": "2026-07-07T08:00:14.316Z",
+      "referrer": "http://127.0.0.1/team.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/app.html",
+      "timestamp": "2026-07-07T08:00:12.600Z",
+      "referrer": "http://127.0.0.1/app.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/farmers.html",
+      "timestamp": "2026-07-07T08:00:10.577Z",
+      "referrer": "http://127.0.0.1/farmers.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/investors.html",
+      "timestamp": "2026-07-07T08:00:08.465Z",
+      "referrer": "http://127.0.0.1/investors.html",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-07T07:59:59.116Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-06T16:31:19.894Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-06T16:18:31.820Z",
+      "referrer": "http://127.0.0.1/",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0"
+    },
+    {
+      "page": "/",
+      "timestamp": "2026-07-06T15:33:09.863Z",
+      "referrer": "https://85d16f7c-f8d0-493c-b433-0d5177785fc9-00-4b0yzbycjatz.riker.replit.dev/",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+    }
+  ]
+}

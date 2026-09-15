@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investa Farm | The Marketplace for Agricultural Investment</title>
+    <meta name="description" content="Investa Farm is the marketplace for agricultural investment—connecting investors to real agricultural opportunities without requiring them to own or manage a farm." />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Investa Farm, farm investment Kenya, agricultural investment, invest in farms, farmer revenue share, agri fintech Kenya" />
+    <link rel="canonical" href="https://investafarm.com/" />
+    <meta name="google-site-verification" content="hEkrYAthcF71uHf20CSd3xoahrJJnljvu_7RnXCqSEo" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <meta name="theme-color" content="#2e7d32" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="investa-logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="investa-logo.png" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://investafarm.com/" />
+    <meta property="og:title" content="Investa Farm | The Marketplace for Agricultural Investment" />
+    <meta property="og:description" content="Discover, evaluate and monitor real agricultural investment opportunities through Investa Farm." />
+    <meta property="og:image" content="https://investafarm.com/investa-logo.png" />
+    <meta property="og:site_name" content="Investa Farm" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@investa_farm" />
+    <meta name="twitter:title" content="Investa Farm | The Marketplace for Agricultural Investment" />
+    <meta name="twitter:description" content="Discover, evaluate and monitor real agricultural investment opportunities through Investa Farm." />
+    <meta name="twitter:image" content="https://investafarm.com/investa-logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://investafarm.com/#organization",
+          "name": "Investa Farm",
+          "url": "https://investafarm.com/",
+          "logo": "https://investafarm.com/investa-logo.png",
+          "description": "A digital marketplace connecting investors with real agricultural investment opportunities and productive farm activity.",
+          "foundingDate": "2021",
+          "areaServed": ["KE", "GB", "US"],
+          "contactPoint": { "@type": "ContactPoint", "email": "info@investafarm.com", "contactType": "customer support" },
+          "sameAs": [
+            "https://www.linkedin.com/company/investafarm/",
+            "https://x.com/investa_farm",
+            "https://www.facebook.com/share/1Cw8vD8Ti1/",
+            "https://www.instagram.com/investa_farm"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://investafarm.com/#website",
+          "url": "https://investafarm.com/",
+          "name": "Investa Farm",
+          "publisher": { "@id": "https://investafarm.com/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "https://app.investafarm.com/?q={search_term_string}" },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "name": "Investa Farm — Key Pages",
+          "itemListElement": [
+            { "@type": "SiteLinksSearchBox", "url": "https://investafarm.com/" },
+            { "@type": "ListItem", "position": 1, "name": "For Investors",  "url": "https://investafarm.com/investors.html" },
+            { "@type": "ListItem", "position": 2, "name": "For Farmers",    "url": "https://investafarm.com/farmers.html" },
+            { "@type": "ListItem", "position": 3, "name": "The App",        "url": "https://investafarm.com/app.html" },
+            { "@type": "ListItem", "position": 4, "name": "Blog",           "url": "https://investafarm.com/blog.html" },
+            { "@type": "ListItem", "position": 5, "name": "Create Account", "url": "https://app.investafarm.com/register" },
+            { "@type": "ListItem", "position": 6, "name": "Cooperatives",   "url": "https://investafarm.com/cooperatives.html" },
+            { "@type": "ListItem", "position": 7, "name": "Our Team",       "url": "https://investafarm.com/team.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <!-- ===== COOKIE BANNER ===== -->
+    <div class="cookie-banner" id="cookieBanner">
+      <div class="cookie-inner">
+        <span class="cookie-icon">🍪</span>
+        <p>We use cookies to improve your experience and analyse site traffic. By continuing, you agree to our <a href="mailto:info@investafarm.com?subject=Privacy Policy Question">Privacy Policy</a>.</p>
+        <div class="cookie-btns">
+          <button class="cookie-accept" id="cookieAccept">Accept All</button>
+          <button class="cookie-decline" id="cookieDecline">Decline</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CHATBOT ===== -->
+    <div class="chatbot-fab" id="chatFab" title="Chat with Investa Farm Bot">
+      <span class="fab-pulse-ring"></span>
+      <span class="fab-pulse-ring fab-pulse-ring-2"></span>
+      <div class="fab-inner">
+        <img src="investa-logo.png" alt="Investa Farm Bot" class="chat-fab-logo"  loading="lazy"/>
+      </div>
+      <span class="fab-notification-dot"></span>
+    </div>
+
+    <div class="chatbot-panel" id="chatPanel">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <div class="chat-bot-avatar">
+            <img src="investa-logo.png" alt="Investa Farm Bot"  loading="lazy"/>
+            <span class="avatar-online-ring"></span>
+          </div>
+          <div class="chat-header-text">
+            <strong>Investa Farm Bot</strong>
+            <small><span class="online-dot-small"></span>Online · AI-powered · Replies instantly</small>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button class="chat-new-btn" id="chatNew" title="New Chat">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            New
+          </button>
+          <button class="chat-close" id="chatClose" title="Close">✕</button>
+        </div>
+      </div>
+      <div class="chat-suggestions" id="chatSuggestions">
+        <button class="suggestion-chip" data-q="How do I invest in a farm?">💰 How to invest</button>
+        <button class="suggestion-chip" data-q="What returns can investors expect?">📈 Investor returns</button>
+        <button class="suggestion-chip" data-q="How do farmers earn on Investa Farm?">🌾 Farmer revenue share</button>
+        <button class="suggestion-chip" data-q="What is a stock broker on Investa Farm?">📊 Stock brokers</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">
+          <div class="msg-bubble">Hi! 👋 I'm the <strong>Investa Farm Bot</strong>. I can help you with investing in farms, how farmers earn revenue share, our app, cooperatives, and more. What would you like to know? 🌾</div>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask anything about Investa Farm…" autocomplete="off" />
+        <button id="chatSend" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="brand">
+          <a href="index.html"><img src="investa-logo.png" alt="Investa Farm logo"  loading="lazy"/></a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Open menu" id="menuToggle">&#9776;</button>
+        <div class="nav-links" id="navLinks">
+          <button class="nav-close-btn" id="navCloseBtn" aria-label="Close menu">✕</button>
+          <a href="investors.html">For Investors</a>
+          <a href="farmers.html">For Farmers</a>
+          <a href="app.html">App</a>
+          <a href="cooperatives.html">Cooperatives</a>
+          <a href="team.html">Team</a>
+          <a href="blog.html">Blog</a>
+          <a href="admin.html">Admin</a>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" target="_blank" rel="noopener" class="community-nav-link">💬 Community</a>
+        </div>
+        <div class="nav-cta">
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="community-top-btn" target="_blank" rel="noopener">💬 Join Community</a>
+          <a href="https://app.investafarm.com" class="nav-open-app-btn outline-btn" target="_blank" rel="noopener">Open App</a>
+          <a href="https://app.investafarm.com/register" class="primary-btn" target="_blank" rel="noopener">Create Account</a>
+        </div>
+      </nav>
+    </header>
+    <!-- ===== TRUST BAR ===== -->
+
+
+    <!-- ===== HERO ===== -->
+    <section class="hero section">
+      <div class="hero-content container">
+        <div class="hero-copy">
+          <h1>What If You Could<br>Own a Piece of Agriculture?</h1>
+          <p>Investa Farm is the marketplace for agricultural investment—connecting investors to real agricultural opportunities without requiring them to own or manage a farm.</p>
+          <div class="hero-cta-row">
+            <a href="investors.html" class="primary-btn">Explore Investments</a>
+            <a href="#how-it-works" class="outline-btn">How It Works</a>
+          </div>
+          <div class="role-chooser">
+            <a href="investors.html" class="role-card role-investor">
+              <span class="role-badge investor-badge">For Investors</span>
+              <strong>I want to explore investments</strong>
+              <small>From KES 100 · Projected returns by opportunity · M-Pesa payouts</small>
+              <span class="role-arrow">→</span>
+            </a>
+            <a href="farmers.html" class="role-card role-farmer">
+              <span class="role-badge farmer-badge">For Farmers</span>
+              <strong>I want productive capital</strong>
+              <small>Input vouchers · Expert support · Revenue share at harvest</small>
+              <span class="role-arrow">→</span>
+            </a>
+          </div>
+          <div class="pwa-bar">
+            <span class="pwa-icon">📲</span>
+            <span>No download needed — works on any phone, right now.</span>
+            <a href="https://app.investafarm.com" class="pwa-install-btn" id="pwaInstallBtn" target="_blank" rel="noopener">Start Now →</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-collage">
+            <div class="collage-photo cp1">
+              <img src="team-investor-farm-customer.png" alt="Investa Farm team with farmers in the field"  loading="lazy"/>
+              <span class="collage-caption">In the field 🌱</span>
+            </div>
+            <div class="collage-photo cp2">
+              <img src="award-africarena-pitch.jpeg" alt="AfricArena pitch"  loading="lazy"/>
+              <span class="collage-caption">AfricArena pitch 🏆</span>
+            </div>
+            <div class="collage-photo cp3">
+              <img src="award-blockchain-kenya.jpeg" alt="Kenya Blockchain Conference winner"  loading="lazy"/>
+              <span class="collage-caption">Blockchain Kenya 🥇</span>
+            </div>
+            <div class="collage-photo cp4">
+              <img src="photo-kpmg.jpeg" alt="Exhibiting with KPMG"  loading="lazy"/>
+              <span class="collage-caption">KPMG Demo 📊</span>
+            </div>
+            <div class="collage-photo cp5">
+              <img src="photo-britam.jpeg" alt="Britam event demo"  loading="lazy"/>
+              <span class="collage-caption">Britam 2024 💼</span>
+            </div>
+            <div class="collage-photo cp6">
+              <img src="appscreens/app-home.png" alt="Investa Farm App"  loading="lazy"/>
+              <span class="collage-caption">The App 📱</span>
+            </div>
+             <div class="collage-sticker sticker-returns">Up to 28%<small>projected target</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+
+      <!-- ===== MARKETPLACE INTRO ===== -->
+      <section id="marketplace" class="section marketplace-intro reveal">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-kicker">The Marketplace</span>
+            <h2>Agriculture Is an Asset. We're Building the Marketplace.</h2>
+            <p>Agriculture creates enormous economic value, but accessing it as an investment has traditionally been complicated.</p>
+          </div>
+          <div class="marketplace-intro-copy">
+            <p>Investa Farm structures agricultural production into investable opportunities, allowing people to discover, evaluate, invest in and monitor agriculture digitally.</p>
+            <strong>Think stocks, but for agricultural opportunities.</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== WHY NOW ===== -->
+      <section id="why-now" class="section why-now-section reveal">
+        <div class="container why-now-inner">
+          <div>
+            <span class="section-kicker">Why Now</span>
+            <h2>Why Agriculture. Why Now.</h2>
+          </div>
+          <div class="why-now-copy">
+            <strong>Agriculture needs capital. Investors need access to new assets. Digital finance makes the connection possible.</strong>
+            <p>Food demand, climate resilience, supply-chain security and the search for alternative investments are making agricultural capital increasingly important.</p>
+            <p class="why-now-emphasis">The opportunity is to build the marketplace connecting the two.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== MARKETPLACE SIDES ===== -->
+      <section class="section marketplace-sides reveal">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-kicker">One Platform</span>
+            <h2>One Marketplace. Two Sides.</h2>
+          </div>
+          <div class="marketplace-flow" aria-label="Investors connect through Investa Farm to agriculture">
+            <article class="marketplace-side investor-side">
+              <span class="marketplace-side-icon">📈</span>
+              <h3>For Investors</h3>
+              <p>Discover agricultural opportunities, understand the project economics, invest digitally and track your portfolio.</p>
+            </article>
+            <div class="marketplace-node">
+              <span>IF</span>
+              <strong>Investa Farm</strong>
+              <small>The technology and financial marketplace connecting both sides.</small>
+            </div>
+            <article class="marketplace-side agriculture-side">
+              <span class="marketplace-side-icon">🌱</span>
+              <h3>For Farmers &amp; Agribusinesses</h3>
+              <p>Access productive capital to finance agricultural activity and expand production.</p>
+            </article>
+          </div>
+          <div class="marketplace-flow-label">INVESTORS <span>→</span> INVESTA FARM <span>→</span> AGRICULTURE</div>
+        </div>
+      </section>
+
+      <!-- ===== WHAT YOU ARE INVESTING IN ===== -->
+      <section class="section investment-clarity reveal">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-kicker">What Are You Investing In?</span>
+            <h2>Know What You're Investing In</h2>
+            <p>Every opportunity should make the production, economics and risk easy to understand before you invest.</p>
+          </div>
+          <div class="investment-clarity-grid">
+            <article><span>🌱</span><div><h3>What is being produced?</h3><p>See the crop or agricultural activity behind the opportunity.</p></div></article>
+            <article><span>📍</span><div><h3>Where is it produced?</h3><p>Understand the farm location and production context.</p></div></article>
+            <article><span>⏱</span><div><h3>How long is the investment?</h3><p>Review the expected production and investment duration.</p></div></article>
+            <article><span>💰</span><div><h3>How does it generate returns?</h3><p>See the project's commercial and offtake structure.</p></div></article>
+            <article><span>⚠️</span><div><h3>What are the risks?</h3><p>Consider agricultural, market and project-specific risks.</p></div></article>
+            <article><span>📊</span><div><h3>How can I track it?</h3><p>Follow project progress and your portfolio digitally.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== OPPORTUNITIES PROMO ===== -->
+      <section class="section opportunities-promo reveal">
+        <div class="container opportunities-promo-inner">
+          <div>
+            <span class="section-kicker">Explore the Marketplace</span>
+            <h2>Explore Agricultural Opportunities</h2>
+            <p>Browse available opportunities by crop, location, investment period and projected economics.</p>
+          </div>
+          <a href="investors.html" class="primary-btn">Explore Opportunities →</a>
+        </div>
+      </section>
+
+      <!-- ===== METRICS ===== -->
+      <section class="section metrics-strip reveal">
+        <div class="container metrics-grid">
+          <article><strong>120,000+</strong><span>Farmers in network</span></article>
+          <article><strong>$4.8M</strong><span>Paid out at harvest</span></article>
+          <article><strong>+$28</strong><span>Per $100 invested</span></article>
+          <article><strong>KES 100</strong><span>Minimum investment</span></article>
+        </div>
+      </section>
+
+      <!-- ===== HOW IT WORKS ===== -->
+      <section id="how-it-works" class="section how-it-works reveal">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-kicker">How it works</span>
+            <h2>From Investment to Harvest</h2>
+            <p>Move from discovery to a clearer view of agricultural production and project performance.</p>
+          </div>
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-num">1</div>
+              <div><h3>Discover</h3><p>Find agricultural opportunities on the marketplace.</p></div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">2</div>
+              <div><h3>Evaluate</h3><p>Understand the crop, duration, economics and risks.</p></div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">3</div>
+              <div><h3>Invest</h3><p>Invest digitally after completing KYC.</p></div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">4</div>
+              <div><h3>Track</h3><p>Follow the progress of your agricultural investment.</p></div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">5</div>
+              <div><h3>Harvest</h3><p>Agricultural output moves through the project's commercial/offtake structure.</p></div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">6</div>
+              <div><h3>Receive</h3><p>Receive distributions according to the investment structure and project performance.</p></div>
+            </div>
+          </div>
+          <div class="how-cta-row">
+            <a href="investors.html" class="primary-btn">Explore Investments</a>
+            <a href="farmers.html" class="outline-btn">Become a Partner</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PRODUCTION CAPITAL ===== -->
+      <section class="section production-capital reveal">
+        <div class="container production-capital-inner">
+          <div class="production-capital-copy">
+            <span class="section-kicker">For Farmers &amp; Agribusinesses</span>
+            <h2>Capital That Goes Into Production</h2>
+            <p>Investa Farm primarily finances agricultural activity through <strong>input vouchers</strong>, helping farmers access approved inputs such as seeds, fertilizer and crop-treatment products rather than simply receiving unrestricted cash.</p>
+            <p>This creates a direct connection between investment capital and productive farm activity.</p>
+          </div>
+          <div class="impact-card">
+            <span class="impact-card-icon">🌾</span>
+            <h3>Built for Investment. Built for Impact.</h3>
+            <p>Investa Farm is a commercially driven social enterprise connecting investment capital with productive agriculture.</p>
+            <strong>More capital into agriculture can mean more production, more farmers financed and more economic opportunity.</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PARTNERS ===== -->
+      <section id="partners" class="section partners-section reveal">
+        <div class="container">
+          <div class="partners-header">
+            <div class="section-head partners-section-head">
+              <span class="section-kicker">Our Partners</span>
+              <h2>Backed by the best in African agri-finance</h2>
+            </div>
+            <div class="partners-trust-row">
+              <div class="partners-trust-item">
+                <strong>16+</strong>
+                <span>Global Partners</span>
+              </div>
+              <div class="partners-trust-item">
+                <strong>3</strong>
+                <span>Continents</span>
+              </div>
+              <div class="partners-trust-item">
+                <strong>5+</strong>
+                <span>Accelerators</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partners Slideshow -->
+          <div class="partners-slideshow">
+            <div class="partners-slides" id="partnersSlides">
+
+              <!-- Slide 1: Financial & Corporate -->
+              <div class="partners-slide active">
+                <div class="partners-category-pill">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  Financial &amp; Corporate
+                </div>
+                <div class="partners-logo-row">
+                  <div class="partner-card"><img src="logo-microsoft.png" alt="Microsoft for Startups" loading="lazy"/><span>Microsoft for Startups</span></div>
+                  <div class="partner-card"><img src="logo-mastercard.png" alt="Mastercard Foundation" loading="lazy"/><span>Mastercard Foundation</span></div>
+                  <div class="partner-card"><img src="logo-futuremakers.jpeg" alt="Standard Chartered Futuremakers" loading="lazy"/><span>Futuremakers</span></div>
+                  <div class="partner-card"><img src="logo-pesira.png" alt="Pesira" loading="lazy"/><span>Pesira</span></div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Accelerators -->
+              <div class="partners-slide">
+                <div class="partners-category-pill">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  Accelerators &amp; Investment Partners
+                </div>
+                <div class="partners-logo-row">
+                  <div class="partner-card"><img src="logo-startupbootcamp.png" alt="Startupbootcamp" loading="lazy"/><span>Startupbootcamp</span></div>
+                  <div class="partner-card"><img src="logo-katapult.jpeg" alt="Katapult Africa" loading="lazy"/><span>Katapult Africa</span></div>
+                  <div class="partner-card"><img src="logo-ygap.jpeg" alt="ygap Kenya" loading="lazy"/><span>ygap Kenya</span></div>
+                  <div class="partner-card"><img src="logo-mest.jpeg" alt="MEST Africa" loading="lazy"/><span>MEST Africa</span></div>
+                  <div class="partner-card"><img src="logo-africarena.png" alt="AfricArena" loading="lazy"/><span>AfricArena</span></div>
+                  <div class="partner-card"><img src="logo-ibiz.png" alt="iBiz Africa" loading="lazy"/><span>iBiz Africa</span></div>
+                  <div class="partner-card"><img src="logo-alx.jpeg" alt="ALX Ventures" loading="lazy"/><span>ALX Ventures</span></div>
+                </div>
+              </div>
+
+              <!-- Slide 3: Agriculture & Networks -->
+              <div class="partners-slide">
+                <div class="partners-category-pill">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 7 4 2 6M12 12C12 7 17 4 22 6"/></svg>
+                  Agriculture &amp; Farmer Networks
+                </div>
+                <div class="partners-logo-row">
+                  <div class="partner-card"><img src="logo-ishamba.jpeg" alt="iShamba" loading="lazy"/><span>iShamba</span></div>
+                  <div class="partner-card"><img src="logo-terralima.jpeg" alt="TerraLima" loading="lazy"/><span>TerraLima</span></div>
+                  <div class="partner-card"><img src="logo-kncci.png" alt="KNCCI" loading="lazy"/><span>KNCCI</span></div>
+                  <div class="partner-card"><img src="logo-plugmtaani.png" alt="Plug Mtaani" loading="lazy"/><span>Plug Mtaani</span></div>
+                  <div class="partner-card"><img src="logo-talenteum.png" alt="Talenteum" loading="lazy"/><span>Talenteum</span></div>
+                </div>
+              </div>
+
+            </div><!-- /slides -->
+
+            <div class="partners-slideshow-nav">
+              <button class="ps-arrow ps-prev" aria-label="Previous partners">&#8249;</button>
+              <div class="ps-dots">
+                <button class="ps-dot active" data-idx="0" aria-label="Financial &amp; Corporate"></button>
+                <button class="ps-dot" data-idx="1" aria-label="Accelerators"></button>
+                <button class="ps-dot" data-idx="2" aria-label="Agriculture Networks"></button>
+              </div>
+              <button class="ps-arrow ps-next" aria-label="Next partners">&#8250;</button>
+            </div>
+          </div>
+
+          <div class="partners-footer-bar">
+            <p>Interested in partnering with Investa Farm?</p>
+            <a href="mailto:info@investafarm.com?subject=Partnership Enquiry" class="outline-btn">Get in touch →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== TESTIMONIALS ===== -->
+      <section class="section proof reveal">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-kicker">Real Stories</span>
+            <h2>What farmers and investors say</h2>
+          </div>
+          <div class="proof-slideshow" aria-label="Testimonials">
+            <div class="proof-track">
+              <article class="proof-card">
+                <div class="proof-avatar" style="background:linear-gradient(135deg,#2e7d32,#43a047)">PM</div>
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Investa Farm came in with full capital support and connected us to offtakers. We earned over 40% of the harvest revenue — far better than any loan structure."</p>
+                <div class="proof-footer">
+                  <div><span class="proof-author">Peter Mwangi</span><span class="proof-role">Farm Partner</span></div>
+                  <span class="proof-county">📍 Kiambu</span>
+                </div>
+              </article>
+              <article class="proof-card">
+                <div class="proof-avatar" style="background:linear-gradient(135deg,#1565c0,#1976d2)">AN</div>
+                <div class="stars">★★★★★</div>
+                <p class="quote">"The app feels like a modern trading platform but focused on real agricultural value. I earned a 22% return on my first investment in GoldenBeans Farm."</p>
+                <div class="proof-footer">
+                  <div><span class="proof-author">Aisha Njeri</span><span class="proof-role">Investor</span></div>
+                  <span class="proof-county">📍 Nairobi</span>
+                </div>
+              </article>
+              <article class="proof-card">
+                <div class="proof-avatar" style="background:linear-gradient(135deg,#6a1b9a,#8e24aa)">JO</div>
+                <div class="stars">★★★★★</div>
+                <p class="quote">"As a cooperative, we struggled to get financing. Investa Farm onboarded our group of 40 farmers, managed the entire production cycle, and we earned a strong revenue share."</p>
+                <div class="proof-footer">
+                  <div><span class="proof-author">James Otieno</span><span class="proof-role">Cooperative Chairman</span></div>
+                  <span class="proof-county">📍 Nakuru</span>
+                </div>
+              </article>
+              <article class="proof-card">
+                <div class="proof-avatar" style="background:linear-gradient(135deg,#e65100,#f57c00)">DK</div>
+                <div class="stars">★★★★★</div>
+                <p class="quote">"The exit strategy feature is brilliant. I chose Full Season Exit and got 28% return. Better than anything my bank offers, and it directly helps real farmers."</p>
+                <div class="proof-footer">
+                  <div><span class="proof-author">David Kamau</span><span class="proof-role">Individual Investor</span></div>
+                  <span class="proof-county">📍 London, UK</span>
+                </div>
+              </article>
+            </div>
+            <div class="proof-controls">
+              <button class="proof-prev" aria-label="Previous testimonial">&#8249;</button>
+              <div class="proof-dots">
+                <span class="proof-dot active" data-idx="0"></span>
+                <span class="proof-dot" data-idx="1"></span>
+                <span class="proof-dot" data-idx="2"></span>
+                <span class="proof-dot" data-idx="3"></span>
+              </div>
+              <button class="proof-next" aria-label="Next testimonial">&#8250;</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section id="faq" class="section faq-section reveal">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-kicker">Common Questions</span>
+            <h2>Your questions. Straight answers.</h2>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What's the minimum amount I can invest?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>You can start investing from as little as KES 100 (approximately £0.60 / $0.75). You can invest across multiple farms to diversify your portfolio.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How and when do I get my returns?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Distributions are paid according to the investment structure and project performance. Where applicable, opportunities may show a projected or target return, such as a Mid-Season Exit target of +10% in 30–60 days or a Full Season Exit target of up to +28% in around 6 months. Actual results can vary.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Is this a loan for farmers?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>No — it's a revenue share partnership, not a loan. Investa Farm provides 100% of the capital, inputs, and agronomic support, and farmers keep 35–55% of harvest revenue depending on crop type. No debt, no interest, no repayment.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How do I pay and how secure is it?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Kenyan investors pay via M-Pesa STK Push; international investors can pay by card. All transactions are secured by Paystack, which is PCI-DSS compliant.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What documents do farmers need for KYC?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>National ID, a live selfie, a farm report, land title or lease, group certificate (for cooperatives), and farm location GPS.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do I need to download an app from an app store?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>No. Investa Farm is a Progressive Web App — open app.investafarm.com in your mobile browser and tap "Add to Home Screen" to install it like a native app.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What happens if a crop fails?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Every farm is verified before listing (land title, KYC, farm reports), payments are secured by Paystack, and expert agronomists monitor farms throughout the season. Agricultural investment still carries inherent weather and market risk, so we recommend diversifying across crops and farms.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How do I become an Investa Farm Stock Broker?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Once you've invested $500 or more, you qualify to apply. Brokers get a personalised portfolio to share, earn commissions on referred investments, and are paid directly to M-Pesa at each harvest cycle.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section final-cta reveal">
+      <div class="container final-cta-inner">
+        <span class="section-kicker">Participate in Agriculture</span>
+        <h2>Agriculture Is Already Creating Value.</h2>
+        <p>Now more people can participate in it.</p>
+        <p>Explore agricultural investment opportunities through Investa Farm.</p>
+        <div class="final-cta-actions">
+          <a href="investors.html" class="primary-btn">Explore Investments</a>
+          <a href="farmers.html" class="outline-btn">Become a Partner</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT + NEWSLETTER ===== -->
+    <section id="contact" class="section contact-section reveal">
+      <div class="container">
+        <div class="contact-top">
+          <div class="section-head contact-head">
+            <span class="section-kicker">Get In Touch</span>
+            <h2>Contact Investa Farm</h2>
+            <p>Have a question, partnership enquiry, or want to get started? Fill out the form and our team will respond within 24 hours.</p>
+          </div>
+          <div class="contact-info-cards">
+            <a href="mailto:info@investafarm.com" class="ci-card">
+              <span class="ci-icon">📧</span>
+              <div><strong>Email Us</strong><small>info@investafarm.com</small></div>
+            </a>
+            <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="ci-card" target="_blank" rel="noopener">
+              <span class="ci-icon">💬</span>
+              <div><strong>WhatsApp Community</strong><small>Join our group</small></div>
+            </a>
+            <div class="ci-card">
+              <span class="ci-icon">🇰🇪</span>
+              <div><strong>Kenya</strong><small>P.O. Box CPA 5364, Nairobi</small></div>
+            </div>
+            <div class="ci-card">
+              <span class="ci-icon">🇬🇧</span>
+              <div><strong>London, UK</strong><small>21 Wenlock Road, N1 7GU</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" action="https://formspree.io/f/xgegrznv" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-name">Full Name *</label>
+                <input id="cf-name" type="text" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="cf-email">Email Address *</label>
+                <input id="cf-email" type="email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-type">I am a...</label>
+                <select id="cf-type" name="type">
+                  <option value="investor">Investor</option>
+                  <option value="farmer">Farmer</option>
+                  <option value="cooperative">Cooperative / Farmer Group</option>
+                  <option value="agribusiness">Agribusiness / Partner</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cf-phone">Phone Number (optional)</label>
+                <input id="cf-phone" type="tel" name="phone" placeholder="+254 700 000 000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cf-msg">Message *</label>
+              <textarea id="cf-msg" name="message" rows="5" placeholder="Tell us about your enquiry…" required></textarea>
+            </div>
+            <button type="submit" class="primary-btn contact-submit-btn">Send Message →</button>
+          </form>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter-bar reveal">
+          <div class="newsletter-inner">
+            <div class="newsletter-copy">
+              <span class="newsletter-icon">📬</span>
+              <div>
+                <h3>Subscribe to our newsletter</h3>
+                <p>Get new farm listings, harvest results, and platform updates — straight to your inbox.</p>
+              </div>
+            </div>
+            <form class="newsletter-form" onsubmit="handleNewsletterSub(event)">
+              <div class="newsletter-input-row">
+                <input type="email" id="nlEmail" placeholder="Enter your email address" required />
+                <button type="submit" class="primary-btn" id="nlBtn">Subscribe →</button>
+              </div>
+            </form>
+            <script>
+            async function handleNewsletterSub(e) {
+              e.preventDefault();
+              const btn = document.getElementById('nlBtn');
+              const email = document.getElementById('nlEmail').value.trim();
+              btn.disabled = true; btn.textContent = 'Subscribing…';
+              try {
+                await fetch('/api/newsletter/subscribe', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email}) });
+                btn.textContent = '✓ Subscribed!';
+                document.getElementById('nlEmail').value = '';
+                setTimeout(() => { btn.textContent = 'Subscribe →'; btn.disabled = false; }, 4000);
+              } catch { btn.textContent = 'Try again'; btn.disabled = false; }
+            }
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="investa-logo.png" alt="Investa Farm"  loading="lazy"/>
+          </div>
+          <p>Investa Farm is a digital marketplace connecting investors with productive agricultural opportunities and the people who grow them.</p>
+          <p class="footer-operates">Operates in Kenya, United Kingdom &amp; USA</p>
+          <a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" class="footer-whatsapp-btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Join Our WhatsApp Community
+          </a>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <p><a href="investors.html">For Investors</a></p>
+          <p><a href="farmers.html">For Farmers</a></p>
+          <p><a href="cooperatives.html">Cooperatives</a></p>
+          <p><a href="app.html">App Walkthrough</a></p>
+          <p><a href="https://app.investafarm.com" target="_blank" rel="noopener">Live Farm Listings</a></p>
+          <p><a href="https://app.investafarm.com/register" target="_blank" rel="noopener">Create Account</a></p>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <p><a href="team.html">Our Team &amp; History</a></p>
+          <p><a href="team.html#awards">Awards &amp; Recognition</a></p>
+          <p><a href="blog.html">Blog</a></p>
+          <p><a href="#partners">Our Partners</a></p>
+          <p><a href="mailto:info@investafarm.com">Contact Us</a></p>
+          <h4>Community</h4>
+          <p><a href="https://chat.whatsapp.com/BWfnSpL4GTl0EsFpuPMKOK" target="_blank" rel="noopener">💬 WhatsApp Community</a></p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/investafarm/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://x.com/investa_farm?s=21" target="_blank" rel="noopener" aria-label="X / Twitter" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1Cw8vD8Ti1/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/investa_farm?utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-offices">
+          <h4>Contact Us</h4>
+          <p><a href="mailto:info@investafarm.com">info@investafarm.com</a></p>
+          <p>Mon – Fri, 8:00 – 18:00 EAT</p>
+          <h4>Offices</h4>
+          <p>Kenya: P.O. Box CPA 5364</p>
+          <p>London: 21 Wenlock Road, N1 7GU</p>
+          <p>United States</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Investa Farm Limited. All rights reserved.</p>
+        <p>Kenya · United Kingdom · USA</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

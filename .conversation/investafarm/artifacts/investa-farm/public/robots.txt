@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Point crawlers at the sitemap
+Sitemap: https://investafarm.com/sitemap.xml
+
+# Keep admin out of search results
+Disallow: /admin.html

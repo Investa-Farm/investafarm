@@ -1,0 +1,1 @@
+- [Vanilla HTML port strategy](vanilla-html-port.md) — for plain HTML/JS apps, serve via Vite public/ dir rather than converting to React; backend routes go to api-server
