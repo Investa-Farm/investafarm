@@ -21,11 +21,11 @@ const RULES = [
   },
   {
     match: ["what is investa", "about investa", "tell me about", "what do you do", "explain", "overview", "who are you"],
-    response: "**Investa Farm** is Africa's leading financially inclusive agricultural investment platform 🌍\n\n**For investors**: Buy farm shares from KES 100. Earn up to **+28% returns** at harvest.\n\n**For farmers**: We own the entire production process — providing 100% capital, seeds, inputs, equipment & hands-on support. You earn **35–55% revenue share** at harvest. No loans, no debt.\n\nFounded in 2023. Based in Kenya 🇰🇪 and the UK 🇬🇧. Operating in Kenya, UK & USA."
+    response: "**Investa Farm** is a digital agricultural-investment marketplace and social enterprise 🌍\n\n**For investors**: Explore farm opportunities from $0.75. Projected returns are shown by opportunity and actual results can vary.\n\n**For farmers**: We connect productive capital with inputs, production support and a commercial route to market. Revenue-share terms are shown by opportunity.\n\nFounded in 2023. Based in Kenya 🇰🇪 and the UK 🇬🇧. Operating in Kenya, UK & USA."
   },
   {
     match: ["invest", "how to invest", "get started", "buy share", "start investing", "begin", "sign up", "register"],
-    response: "**How to invest on Investa Farm:**\n\n1. Sign up at **app.investafarm.com**\n2. Browse verified farm listings\n3. Choose your exit strategy:\n   • **Mid-Season Exit**: +10% return in 30–60 days\n   • **Full Season Exit**: up to +28% in ~6 months\n4. Pay securely via **M-Pesa** STK Push\n5. Track your portfolio & receive returns at harvest\n\n💡 Minimum investment: **KES 100** (≈ £0.60 / $0.75)"
+    response: "**How to explore Investa Farm:**\n\n1. Sign up at **app.investafarm.com**\n2. Browse available farm opportunities\n3. Review the crop, duration, economics and risks\n4. Invest digitally after completing KYC\n5. Track production progress and receive distributions according to the project structure and performance\n\n💡 Starting point: **$0.75**. Minimums and terms vary by opportunity."
   },
   {
     match: ["return", "how much earn", "profit", "interest", "roi", "income", "yield", "percentage", "28%", "10%"],
@@ -88,8 +88,8 @@ const RULES = [
     response: "📬 **Subscribe to our newsletter!**\n\nScroll to the **Contact section** on our homepage to subscribe. Enter your email and you'll receive:\n\n• 🌾 New farm investment opportunities\n• 💰 Harvest results & payout announcements\n• 📊 Platform updates & market insights\n\nOr join our **WhatsApp Community** for real-time updates!"
   },
   {
-    match: ["minimum", "how much to invest", "minimum invest", "least amount", "kes 100", "start with"],
-    response: "**Minimum Investment:**\n\nYou can invest from as little as **KES 100** (approximately £0.60 or $0.75).\n\nThis makes Investa Farm accessible to everyday investors — you don't need large sums to start earning from real African farms. You can invest across multiple farms to diversify your portfolio."
+    match: ["minimum", "how much to invest", "minimum invest", "least amount", "start with", "$0.75"],
+    response: "**Starting point:**\n\nYou can explore opportunities from as little as **$0.75**. Minimums, project terms and projected returns vary by opportunity.\n\nReview the details and risks before participating. You can diversify across multiple farms where suitable."
   },
   {
     match: ["kenya", "uk", "united kingdom", "nairobi", "london", "location", "where", "country"],
