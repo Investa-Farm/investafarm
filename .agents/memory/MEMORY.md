@@ -1,2 +1,3 @@
 - [Vanilla HTML port strategy](vanilla-html-port.md) — for plain HTML/JS apps, serve via Vite public/ dir rather than converting to React; backend routes go to api-server
 - [Filtered workspace installs](filtered-workspace-installs.md) — when a full pnpm install is blocked by an unrelated package, install the target artifact and workspace dependencies with a focused filter
+- [GitHub token push auth](github-token-push-auth.md) — if Bearer auth is rejected, use GitHub's x-access-token Basic header without putting the token in the remote URL
