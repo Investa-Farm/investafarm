@@ -9113,3 +9113,417 @@ body { overflow-x: hidden; max-width: 100vw; }
     min-height: 0;
   }
 }
+
+/* ====================================================
+   FEATURE SECTION POLISH
+   Transparency, production capital and harvest journey
+   ==================================================== */
+
+/* ---- Transparency / testimony-style cards ---- */
+.proof-section {
+  background: linear-gradient(160deg, #f0fdf4 0%, #e8f5e9 60%, #fafff8 100%);
+}
+
+.proof-header {
+  margin-bottom: 2.25rem;
+}
+
+.proof-section-head {
+  text-align: left;
+  padding: 0;
+}
+
+.proof-section-head h2 {
+  max-width: 520px;
+  font-size: 2rem;
+}
+
+.proof-section-head p {
+  max-width: 620px;
+}
+
+.proof-trust-row {
+  gap: 1.25rem;
+}
+
+.proof-trust-row .partners-trust-item {
+  min-width: 62px;
+}
+
+.proof-trust-row .partners-trust-item strong {
+  font-size: 1.75rem;
+}
+
+.proof-slideshow {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.proof-track .proof-card {
+  flex: 0 0 50%;
+  min-width: 50%;
+  padding: 1.55rem;
+  border: 1.5px solid rgba(46, 125, 50, 0.14);
+  border-top: 3px solid var(--primary);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(27, 94, 32, 0.06);
+  min-height: 285px;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.proof-track .proof-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(46, 125, 50, 0.32);
+  box-shadow: 0 10px 28px rgba(27, 94, 32, 0.12);
+}
+
+.proof-track .proof-card:nth-child(2) {
+  border-top-color: #2f74c0;
+}
+
+.proof-track .proof-card:nth-child(3) {
+  border-top-color: #7c3aed;
+}
+
+.proof-track .proof-card:nth-child(4) {
+  border-top-color: #e65100;
+}
+
+.proof-avatar {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  border: 4px solid #edf7ec;
+  box-shadow: none;
+  font-size: 0.82rem;
+}
+
+.proof-label {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(46, 125, 50, 0.18);
+  border-radius: 999px;
+  background: #edf7ec;
+  color: var(--primary-strong);
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.proof-card .quote {
+  color: #526b58;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.proof-footer {
+  margin-top: auto;
+}
+
+.proof-author {
+  color: #16351b;
+}
+
+.proof-role {
+  color: #708074;
+}
+
+.proof-controls {
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.proof-prev,
+.proof-next {
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid rgba(46, 125, 50, 0.25);
+  background: transparent;
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.proof-prev:hover,
+.proof-next:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.proof-dot {
+  width: 9px;
+  height: 9px;
+  background: rgba(46, 125, 50, 0.22);
+}
+
+.proof-dot.active {
+  width: 26px;
+  border-radius: 999px;
+  background: var(--primary);
+  transform: none;
+}
+
+/* ---- Production capital split panel ---- */
+.production-capital {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 92% 18%, rgba(191, 229, 187, 0.45), transparent 28%),
+    linear-gradient(160deg, #ffffff 0%, #f1f8ee 100%);
+}
+
+.production-capital-inner {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.production-capital-copy {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.production-capital-copy::before {
+  position: absolute;
+  top: -3rem;
+  left: -1.5rem;
+  color: rgba(46, 125, 50, 0.07);
+  content: "03";
+  font-size: clamp(8rem, 16vw, 13rem);
+  font-weight: 900;
+  letter-spacing: -0.1em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.production-capital-copy > * {
+  position: relative;
+  z-index: 1;
+}
+
+.production-stat-row {
+  display: flex;
+  gap: clamp(1.25rem, 4vw, 2.75rem);
+  margin-top: 1.7rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(46, 125, 50, 0.18);
+}
+
+.production-stat-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.production-stat-row strong {
+  color: var(--primary-strong);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.production-stat-row span {
+  color: #607365;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.production-capital .impact-card {
+  min-height: 100%;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 0;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #173b29 0%, #2e7d32 100%);
+  box-shadow: 0 18px 42px rgba(27, 94, 32, 0.18);
+  color: #fff;
+}
+
+.production-capital .impact-card::after {
+  position: absolute;
+  right: -3rem;
+  bottom: -4rem;
+  width: 13rem;
+  height: 13rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2rem rgba(255, 255, 255, 0.04), 0 0 0 4rem rgba(255, 255, 255, 0.025);
+  content: "";
+}
+
+.production-capital .impact-card-icon {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 1.55rem;
+}
+
+.production-capital .impact-card-label {
+  color: #bfe8bb;
+}
+
+.production-capital .impact-card h3 {
+  max-width: 420px;
+  color: #fff;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  line-height: 1.25;
+}
+
+.production-capital .impact-points {
+  position: relative;
+  z-index: 1;
+}
+
+.production-capital .impact-points > div {
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+.production-capital .impact-points strong {
+  background: rgba(255, 255, 255, 0.16);
+  color: #e7f8e4;
+}
+
+.production-capital .impact-points span {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.production-capital .impact-note {
+  position: relative;
+  z-index: 1;
+  color: #d8f1d5 !important;
+}
+
+/* ---- Investment-to-harvest journey ---- */
+.harvest-journey {
+  background:
+    radial-gradient(circle at 8% 20%, rgba(215, 240, 210, 0.55), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f7fbf6 100%) !important;
+}
+
+.journey-section-head {
+  max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.harvest-steps {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.harvest-steps .step-card {
+  position: relative;
+  display: flex;
+  min-height: 224px;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.35rem;
+  border: 1px solid rgba(46, 125, 50, 0.14);
+  border-top: 3px solid var(--primary);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 8px 22px rgba(27, 94, 32, 0.06) !important;
+}
+
+.harvest-steps .step-card:nth-child(2),
+.harvest-steps .step-card:nth-child(5) {
+  border-top-color: #2f74c0;
+}
+
+.harvest-steps .step-card:nth-child(3),
+.harvest-steps .step-card:nth-child(6) {
+  border-top-color: #e08b2e;
+}
+
+.harvest-steps .step-card::after {
+  position: absolute;
+  right: -2rem;
+  bottom: -3rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: rgba(191, 229, 187, 0.2);
+  content: "";
+  pointer-events: none;
+}
+
+.harvest-steps .step-phase {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+  color: #6d8070;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.harvest-steps .step-num {
+  position: relative;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(46, 125, 50, 0.2);
+  background: #e4f3e1 !important;
+  color: var(--primary-strong) !important;
+  font-size: 1rem;
+}
+
+.harvest-steps .step-card > div:last-child {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+}
+
+.harvest-steps .step-card h3 {
+  margin-bottom: 0.45rem;
+  color: #16351b;
+  font-size: 1.05rem;
+}
+
+.harvest-steps .step-card p {
+  color: #607365;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .harvest-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .proof-section-head h2 {
+    font-size: 1.7rem;
+  }
+
+  .proof-trust-row {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .proof-track .proof-card {
+    flex-basis: 100%;
+    min-width: 100%;
+  }
+
+  .harvest-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .production-stat-row {
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+}
