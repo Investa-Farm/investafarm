@@ -1,6 +1,7 @@
 kind = "web"
 previewPath = "/"
 title = "Investa Farm"
+description = "Investa Farm is a digital marketplace connecting investors with real agricultural investment opportunities and productive farm activity."
 version = "1.0.0"
 id = "artifacts/investa-farm"
 router = "path"
